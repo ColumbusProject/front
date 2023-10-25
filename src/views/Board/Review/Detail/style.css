@@ -1,0 +1,111 @@
+
+.board-detail-page {
+    width: 1324px;
+    display: flex;
+    border-bottom: 2px solid #000;
+
+    justify-content: space-between;
+}
+
+
+.board-detail-page-image-title {
+    display: flex;
+    align-items: center;
+    color: #000;
+
+    font-size: 70px;
+    font-weight: 400;
+}
+
+.board-detail-page-container {
+    width: 565px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+}
+
+.board-detail-page-container-profile-image {
+    width: 45px;
+    height: 45px;
+    
+    background: url(assets/image\ 954.png);
+    background-size: 100% 100%;
+    background-position: 50% 50%;
+}
+
+.board-detail-page-container-info-box {
+    display: flex;
+    width: 240px;
+    height: 60px;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.board-detail-page-container-info-box-nickname {
+    color: #000;
+
+    text-align: center;
+    font-family: NanumGothic;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.board-detail-page-container-info-box-divider {
+    color: #000;
+
+    text-align: center;
+    font-family: NanumGothic;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.board-detail-page-container-info-box-write-datetime {
+    color: #000;
+
+    text-align: center;
+    font-family: NanumGothic;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.board-detail-page-container-view-count {
+    display: flex;
+    width: 120px;
+    height: 60px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+
+    color: #000;
+
+    text-align: center;
+    font-family: NanumGothic;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.board-detail-page-container-more {
+    background: url('assets/more\ 3.png');
+
+    width: 30px;
+    height: 30px;
+}
+.board-detail-page-location {
+    width: 150px;
+    height: 35px;
+    display: flex;
+    margin-top: 192px;
+    border-radius: 12px;
+    background: #FFF;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+}

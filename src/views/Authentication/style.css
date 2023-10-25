@@ -1,0 +1,130 @@
+.sign-up-page {
+    gap: 60px;
+    width: 1920px;
+    height: 1080px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    background-size: 100%;
+    background-image: url('assets/background_image.png');
+}
+
+.sign-up-page-container-01 {
+
+}
+
+.sign-up-page-title {
+    display: flex;
+    width: 600px;
+    height: 120px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+
+    color: #FFF;
+
+    text-align: center;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.sign-up-page-container-02 {
+    gap: 75px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sign-up-page-box-01 {
+    width: 600px;
+    height: 90px;
+    flex-shrink: 0;
+
+    border-radius: 45px;
+    background: rgba(255, 255, 255, 0.50);
+}
+
+.sign-up-page-id-icon {
+    background-image: url('assets/user_icon.png');
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+}
+
+.sign-up-page-id-input {
+
+}
+
+.sign-up-page-box-02 {
+    width: 600px;
+    height: 90px;
+    flex-shrink: 0;
+
+    border-radius: 45px;
+    background: rgba(255, 255, 255, 0.50);
+}
+
+.sign-up-page-password-icon {
+    background-image: url(assets/password_icon.png);
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+}
+
+.sign-up-page-password-input {
+
+}
+
+.sign-up-page-box-03{
+    gap: 75px;
+
+    width: 600px;
+    height: 90px;
+    flex-shrink: 0;
+
+    border-radius: 45px;
+    background: rgba(0, 0, 0, 0.50);
+
+    display: flex;
+    width: 600px;
+    height: 90px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+
+    color: #FFF;
+
+    text-align: center;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: NanumGothic;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.sign-up-page-sign-up {
+    gap: 0px;
+    display: flex;
+    width: 600px;
+    height: 60px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+
+    color: #000;
+
+    text-align: center;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: NanumGothic;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
