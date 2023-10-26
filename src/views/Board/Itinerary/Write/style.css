@@ -1,3 +1,4 @@
+
 .board-write-title-input {
 
     margin-top: 76px;
@@ -20,7 +21,19 @@
     background: #FFF;
 }
 
-.board-write-calendar-text {
+.board-write-calendar-notepad-box {
+
+    margin-top: 12px;
+
+    display: flex;
+    align-items: center;
+}
+
+.board-write-calendar-start-text {
+    width: 120px;
+
+    margin-left: 120px;
+    
     color: #000;
 
     text-align: center;
@@ -29,6 +42,35 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+.board-write-calendar-start-input-box {
+    width: 180px;
+
+    display: flex;
+    align-items: center;
+}
+
+.board-write-calendar-end-text {
+    width: 120px;
+
+    margin-left: 60px;
+    
+    color: #000;
+
+    text-align: center;
+    font-family: NanumGothic;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.board-write-calendar-end-input-box {
+    width: 180px;
+
+    display: flex;
+    align-items: center;
 }
 
 .board-write-calendar-input {
@@ -42,6 +84,7 @@
 }
 
 .calendar-icon {
+
     width: 24px;
     height: 24px;
 
@@ -50,7 +93,7 @@
 
 .board-write-calendar-limit-day-text {
     display: flex;
-    width: 180px;
+    width: 185px;
     height: 32px;
     flex-direction: column;
     justify-content: center;
@@ -66,6 +109,9 @@
 }
 
 .board-write-notepad-accountbook-text {
+
+    margin-left: 175px;
+
     width: 180px;
     height: 60px;
 
@@ -88,4 +134,16 @@
     background: #FFF;
 
     box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.25);
+}
+
+.board-write-map-api {
+
+    width: 1200px;
+    height: 540px;
+
+    
+    margin-left: 120px;
+    margin-top: 60px;
+
+    outline: #000000 solid 1px;
 }
