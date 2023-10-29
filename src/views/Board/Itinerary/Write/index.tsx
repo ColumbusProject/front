@@ -14,7 +14,7 @@ function ItineraryCard() {
                 <div className='day-count-text'>{'DAY 1'}</div>
             </div>
             <div className='itinerary-text-box'>
-
+                {'to do: 일정 추가 기능'}
             </div>
         </div>
     )
@@ -47,7 +47,7 @@ export default function ItineraryBoardWrite() {
 
     //          render: 게시물 작성 화면 렌더링          //
     return (
-        <div id='board-write-wrapper'>
+        <div className='board-write-wrapper'>
             <div className='board-write-container'>
                 <div className='board-write-box'>
                     <div className='board-write-title-box'>
@@ -81,7 +81,6 @@ export default function ItineraryBoardWrite() {
                     <div className='save-text'>{'저장'}</div>
                     <div className='cancel-text'>{'취소'}</div>
                 </div>
-
             </div>
         </div>
     )
