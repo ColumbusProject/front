@@ -1,53 +1,49 @@
-import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import './style.css';
 import { useState, useRef, useEffect } from 'react';
-import { Map } from "typescript";
+
+declare global {
+    interface Window {
+    kakao: any
+    }
+}
+//          component: 하단 일정 카드          //
+function ItineraryCard() {
+    return (
+        <div className='itinerary-card-wrapper'>
+            <div className='day-count-box'>
+                <div className='day-count-text'>{'DAY 1'}</div>
+            </div>
+            <div className='itinerary-text-box'>
+
+            </div>
+        </div>
+    )
+}
+
+//          component: 카카오맵          //
+const { kakao } = window;
+function Kakaomap() {
+    useEffect(() => {
+        const container = document.getElementById('map'); // 지도를 담을 영역의 DOM 레퍼런스
+        const options = {
+            center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표.
+            level: 3
+        };
+        const map = new kakao.maps.Map(container, options); // 지도 생성 및 객체 리턴
+    }, [])
+
+    return (
+        <div id="map" style={{
+            width: '1200px',
+            height: '540px',
+            marginLeft: '120px',
+            marginTop: '60px'
+        }}></div>
+    )
+}
 
 //          component: 게시물 작성 화면          //
 export default function ItineraryBoardWrite() {
-
-    // const GoogleMapComponent = ()=>{
-    //     const [map, setMap] = useState<google.maps.Map | null>(null);
-    //     const ref = useRef<HTMLDivElement | null>(null);
-    
-    //     useEffect(()=>{
-    //         if (!ref.current) return;
-    //         const newMap = new window.google.maps.Map(ref.current, {
-    //             center : { lat: 37.569227, lng: 126.9777256},
-    //             zoom : 16,
-    //         });     
-            
-    //         setMap(newMap);
-    //     },[])
-    
-    //     return (
-    //         <div ref={ref} id="map" style={{width:"100%", height: "400px"}}></div>
-    //     )
-    // }
-
-    const { kakao } = window;
-
-    function Kakao() {
-
-        useEffect(() => {
-            const container = document.getElementById('map'); // 지도를 담을 영역의 DOM 레퍼런스
-            const options = {
-                center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표.
-                level: 3
-            };
-            const map = new kakao.maps.Map(container, options); // 지도 생성 및 객체 리턴
-        }, [])
-
-        return (
-            <div id="map" style={{
-                width: '1200px',
-                height: '540px',
-                marginLeft: '120px',
-                marginTop: '60px'
-            }}></div>
-        )
-
-    }
 
     //          render: 게시물 작성 화면 렌더링          //
     return (
@@ -72,9 +68,21 @@ export default function ItineraryBoardWrite() {
                         <div className='board-write-notepad-accountbook-text'>{'메모 / 가계부 보기'}</div>
                     </div>
                 </div>
-                <Kakao />
+                <Kakaomap />
+                <div className='itinerary-card-container'>
+                    <div className='left-arrow-icon'>{'<'}</div>
+                    <div className='itinerary-card-box'>
+                        <ItineraryCard />
+                        <ItineraryCard />
+                    </div>
+                    <div className='right-arrow-icon'>{'>'}</div>
+                </div>
+                <div className='save-cancel-box'>
+                    <div className='save-text'>{'저장'}</div>
+                    <div className='cancel-text'>{'취소'}</div>
+                </div>
+
             </div>
-            
         </div>
     )
 }
