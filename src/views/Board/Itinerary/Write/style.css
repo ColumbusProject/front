@@ -87,14 +87,6 @@
     background: #FFFFFF;
 }
 
-.calendar-icon {
-
-    width: 24px;
-    height: 24px;
-
-    background: url('assets/calendar_icon.png');
-}
-
 .board-write-calendar-limit-day-text {
     display: flex;
     width: 185px;
@@ -167,7 +159,6 @@
     height: 600px;
 
     margin-top: 120px;
-    margin-left: 60px;
 
     display: flex;
     gap: 60px;
@@ -176,6 +167,7 @@
 }
 
 .left-arrow-icon {
+    margin-left: 60px;
 
     border-radius: 30px;
     background: #FFF;
@@ -296,6 +288,7 @@
 }
 
 .day-count-box {
+    display: flex;
     width: 480px;
     height: 60px;
 
@@ -314,6 +307,25 @@
     text-align: center;
     font-family: NanumGothic;
     font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.day-text {
+    display: flex;
+    width: 120px;
+    height: 60px;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-left: 60px;
+
+    color: #FFF;
+
+    text-align: center;
+    font-family: NanumGothic;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;

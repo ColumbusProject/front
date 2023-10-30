@@ -9,7 +9,7 @@ import Header from './layouts/Header';
 
 function App() {
   return (
-    <div>
+    <div className='test'>
     <Header />
     <ItineraryBoardWrite />
   </div>
