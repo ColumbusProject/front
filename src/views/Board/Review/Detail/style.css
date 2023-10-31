@@ -1,8 +1,10 @@
+div {
+    outline: #000000 solid 1px;
+}
 
 .board-detail-page {
     width: 1324px;
-    display: flex;
-    border-bottom: 2px solid #000;
+    /* display: flex; */
 
     justify-content: space-between;
 }
@@ -100,6 +102,7 @@
     width: 30px;
     height: 30px;
 }
+
 .board-detail-page-location {
     width: 150px;
     height: 35px;
