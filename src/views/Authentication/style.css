@@ -1,25 +1,26 @@
 .sign-up-page {
-    gap: 60px;
-    width: 1920px;
+    width: 1440px;
     height: 1080px;
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     flex-direction: column;
     
-    background-size: 100%;
+    background-size: auto 100%;
     background-image: url('assets/background_image.png');
 }
 
 .sign-up-page-container-01 {
+    height: 120px;
 
+    margin-top: 180px;
 }
 
 .sign-up-page-title {
     display: flex;
     width: 600px;
-    height: 120px;
+    height: 100%;
     flex-direction: column;
     justify-content: center;
     flex-shrink: 0;
@@ -39,46 +40,80 @@
     gap: 75px;
     display: flex;
     flex-direction: column;
+
+    margin-top: 60px;
 }
 
 .sign-up-page-box-01 {
+    display: flex;
+    align-items: center;
+
     width: 600px;
     height: 90px;
-    flex-shrink: 0;
 
     border-radius: 45px;
     background: rgba(255, 255, 255, 0.50);
 }
 
 .sign-up-page-id-icon {
+    background-size: 100%;
     background-image: url('assets/user_icon.png');
     width: 30px;
     height: 30px;
-    flex-shrink: 0;
+
+    margin-left: 37px;
 }
 
 .sign-up-page-id-input {
+    width: 500px;
+    height: 30px;
 
+    margin-left: 5px;
+
+    font-size: 30px;
+    
+    border: none;
+    background: transparent;
+}
+
+.sign-up-page-id-input:focus {
+    outline: none;
 }
 
 .sign-up-page-box-02 {
+    display: flex;
+    align-items: center;
+
     width: 600px;
     height: 90px;
-    flex-shrink: 0;
 
     border-radius: 45px;
     background: rgba(255, 255, 255, 0.50);
 }
 
 .sign-up-page-password-icon {
+    background-size: 100%;
     background-image: url(assets/password_icon.png);
     width: 30px;
     height: 30px;
-    flex-shrink: 0;
+
+    margin-left: 37px;
 }
 
 .sign-up-page-password-input {
+    width: 500px;
+    height: 30px;
 
+    margin-left: 5px;
+    
+    font-size: 30px;
+
+    border: none;
+    background: transparent;
+}
+
+.sign-up-page-password-input:focus {
+    outline: none;
 }
 
 .sign-up-page-box-03{
@@ -114,9 +149,8 @@
     display: flex;
     width: 600px;
     height: 60px;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    flex-shrink: 0;
 
     color: #000;
 
@@ -126,5 +160,14 @@
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
+    line-height: normal;
+}
+
+.emphasis {
+    color: #000;
+    font-family: NanumGothic;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
     line-height: normal;
 }
