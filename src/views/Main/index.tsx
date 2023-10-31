@@ -19,7 +19,7 @@ export default function Main() {
         </div>
       </div>
       
-//            component:  드롭다운 메뉴           //
+//            component:  드롭다운 메뉴 menue           //
       <div className='top-navigation'>
         <div className='navigation'>
           <div className="jb-text">Columbus</div>
