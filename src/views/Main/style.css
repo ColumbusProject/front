@@ -1,179 +1,229 @@
-.jb-box {
-  width: 100%;
-  height: 780px;
-}
 
-.jb-video {
-  object-fit: cover;
-  width: 1440px;
-  height: 780px;
-}
-
-.top-navigation {
-  padding: 60px 120px 0px;
-  width: 1440px;
-  /* width: calc(100% - 240px); */
-
-  /* position: fixed; */
-  top: 0px;
-
-  background: none;
-}
-
-.navigation {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.jb-text {
-  color: #FFF;
-
-  text-align: center;
-  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: Montserrat;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.dropdown {
-  position: relative;
-}
-
-.dropdown-content {
-  position: absolute;
-  display: none;
-}
-
-.icon-button {
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-}
-
-.hamburger-icon {
-  width: 100%;
-  height: 100%;
-
-  background-image: url(asset/hamburger-icon.png);
-  background-size: 100% 100%;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-}
-
-.comment {
-  width: 1440px;
-  height: 115px;
-  justify-content: center;
-  color: #888;
-  text-align: center;
-  flex-direction: column;
-  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: Montserrat;
-  font-size: 40px;
-  line-height: normal;
-  padding-top: 65px;
-}
-
-
-.parent {
-   display: flex;
-
-   color: #FFF;
-text-align: center;
-text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-font-family: Montserrat;
-font-size: 40px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-
-
-   
-.text1 {
-  background-image: url(asset/japan.jpeg);
-  border-radius:3%;
-  display: flex;
-  width: 300px;
-  height: 600px;
-  flex-direction: column;
-  justify-content: center;
-  color: #FFF;
-  text-align: center;
-  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: Montserrat;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin: 0px 0px 0px 60px; 
-}
-
-.text2 {
-  background-image: url(asset/moldiv.jpg);
-  border-radius:3%;
-  display: flex;
-  width: 300px;
-  height: 600px;
-  flex-direction: column;
-  justify-content: center;
-  color: #FFF;
-  text-align: center;
-  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: Montserrat;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin: 0px 40px 60px 40px; 
+/* 배경화면 비디오*/
+.ReactPlayer{
+  pointer-events: none;
+  }
   
-}
+  .jb-box {
+    width: 100%;
+    height: 780px;
+  }
+  
+  .jb-video {
+    object-fit: cover;
+    width: 1440px;
+    height: 780px;
+  }
+  
+  /* 메뉴 드롭다운 */
+  .top-navigation {
+    padding: 60px 120px 0px;
+    width: 1440px;
+    width: calc(100% - 240px);
+  
+    position: fixed;
+    top: 0px;
+    background: none;
+  }
+  
+  .navigation {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .jb-text {
+    color: #FFF;
+    text-align: center;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .icon-button {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
 
-.text3 {
-  background-image: url(asset/spain.jpg);
-  border-radius:3%;
-  display: flex;
-  width: 300px;
-  height: 600px;
-  flex-direction: column;
-  justify-content: center;
-  color: #FFF;
-  text-align: center;
-  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: Montserrat;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin: 0px 40px 60px 0px; 
-}
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    position: absolute;
+    display: none;
+    background-color: #FFF;
+    min-width: 180px;
+    height: 60px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+  }
+  
+  .hamburger-icon {
+    width: 100%;
+    height: 100%;
+    background-image: url(asset/hamburger-icon.png);
+    background-size: 100% 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  
+  .inline-link{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .inline-box:hover {background-color: #f1f1f1}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+  }
+    
+  /* 화면 중간 멘트 */
+  .comment {
+    width: 1440px;
+    height: 115px;
+    justify-content: center;
+    color: #888;
+    text-align: center;
+    flex-direction: column;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-size: 40px;
+    line-height: normal;
+    padding-top: 65px;
+  }
 
-.text4 {
-  background-image: url(asset/swiss.jpg);
-  border-radius:3%;
-  display: flex;
-  width: 300px;
-  height: 600px;
-  flex-direction: column;
-  justify-content: center;
-  color: #FFF;
-  text-align: center;
-  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: Montserrat;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin: 0px 60px 60px 0px; 
-
-}
-}
 
 
+/* 메뉴 nav 카드 */
+  .parent {
+     display: flex;
+     color: #FFF;
+      text-align: center;
+      text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+      font-family: Montserrat;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+       
+  .text1 {
+    background-image: url(asset/japan.jpeg);
+    border-radius:3%;
+    display: flex;
+    width: 300px;
+    height: 600px;
+    flex-direction: column;
+    justify-content: center;
+    color: #FFF;
+    text-align: center;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0px 0px 0px 60px; 
+  }
+
+  .text2 {
+    background-image: url(asset/moldiv.jpg);
+    border-radius:3%;
+    display: flex;
+    width: 300px;
+    height: 600px;
+    flex-direction: column;
+    justify-content: center;
+    color: #FFF;
+    text-align: center;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0px 40px 60px 40px; 
+  }
+  
+  .text3 {
+    background-image: url(asset/spain.jpg);
+    border-radius:3%;
+    display: flex;
+    width: 300px;
+    height: 600px;
+    flex-direction: column;
+    justify-content: center;
+    color: #FFF;
+    text-align: center;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0px 40px 60px 0px; 
+  }
+  
+  .text4 {
+    background-image: url(asset/swiss.jpg);
+    border-radius:3%;
+    display: flex;
+    width: 300px;
+    height: 600px;
+    flex-direction: column;
+    justify-content: center;
+    color: #FFF;
+    text-align: center;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0px 60px 60px 0px; 
+  }
+  }
+
+  /* 비디오 관련 (삭제 예정) */
+  .video-background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .ReactPlayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1;
+  }
+  
+  
