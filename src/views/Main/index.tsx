@@ -1,5 +1,7 @@
 // import React, { Component } from 'react';
-// import './style.css';
+import './style.css';
+// player 설치 명령어: npm i react-player;
+import { useNavigate } from "react-router-dom";
 
 //            component:  메인화면 비디오 컴포넌트(비디오가 안떠서 비디오 라이브러리 찾는 중입니다.ㅠㅠ)        //
 // export default function Main() {       
