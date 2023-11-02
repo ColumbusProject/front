@@ -261,50 +261,121 @@ a { font-size: 24px;
 
 
   /*  검색바 */
-
   .parent{
-    display: flex;
+    position:relative;
     width: 1440px;
     height: 120px;
-    background-color: pink;
     flex-direction: row;
-    justify-content:space-between;
   }
 
   .test1{
+    position:absolute;
     width: 310px;
     height: 60px;
     color: #8C8C8C;
     font-family: NanumGothic;
     font-size: 40px;
-    font-style: normal;
     font-weight: 700;
-    line-height: normal;
-    background-color: aquamarine;
-    margin: 60px 0px 0px 60px;
+    margin: 60px 1080px 0px 60px;
   }
 
   .test2{
+    position:absolute;
     width: 300px;
-    height: 60px; 
+    height: 60px;
+    /* top: 180;
+    left: 1080;  */
     border-radius: 30px;
-    background: #FFF;
     box-shadow: 4px 4px 4px 5px rgba(0, 0, 0, 0.25);
-    margin: 180px 60px 0px 0px;
-    background-color: yellow;
+    margin: 60px 60px 0px 1080px;
     
   }
   .search-btn{
+    position: absolute;
     background-image: url(asset/search.jpg);
     width: 30px;
     height: 30px;
-    margin: 195px 77px 0px 1333px;
-    background-size: 100% 100%;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
+    margin: 75px 77px 0px 1333px;
+    z-index: 1;
+    border: none; 
+  }
+
+  /* 아이템 등록 버튼 */
+  .parent2 {
+    position:relative;
+    width: 1440px;
+    height: 60px;
+    flex-direction: row;
+  }
+
+  .item-enroll{
+    position: absolute;
+    width: 180px;
+    height: 60px;
+    margin: 0px 120px 0px 1140px;
+    border: none; 
+    justify-content: center;
+    text-align: center;
+    font-family: NanumGothic;
+    font-size: 20px;
+    font-weight: 400;
+    background-color:transparent;
+  }
+
+  /* 가로선 */
+  .divider{
+    border-top: 1px solid rgba(0,0,0,0.7);
+    width:1320px;
+    height: 1px;
+    justify-content: center;
+    margin-left: 60px;
+  }
+  
+  /*카드 아이템들*/
+
+  .container{
+    width: 1440px;
     display: flex;
-    position: relative;
+    justify-content: center;
+  }
+
+  .cards{
+    margin: 0;
+    padding: 55px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+  }
+
+  .card {
+    box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.25);
+    
+    background-color: #e5dbff;
+    border:1px solid#d0dfff;
+    border-radius: 5px;
+
+    width: 370px;
+    height: 492px;
+
 
   }
 
- 
+  .minicard {
+    background-color: pink;
+    /* background-image: url(asset/swiss.jpg); */
+    border: 1px solid #C0C0C0;
+    
+    width: 360px;
+    height: 360px;
+    z-index: 1;
+
+    margin: 6px 5px 0px 5px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* gap: 60px; */
+
+
+    
+  }
