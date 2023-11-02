@@ -157,12 +157,11 @@
 
 .itinerary-card-container {
     width: 1440px;
-    height: 600px;
+    height: 660px;
 
     margin-top: 120px;
 
     display: flex;
-    gap: 60px;
 
     align-items: center;
 }
@@ -192,7 +191,12 @@
 }
 
 .itinerary-card-box {
-    width: 1080px;
+    width: 1140px;
+    height: 100%;
+
+    margin-left: 60px;
+
+    /* overflow: hidden; */
 
     display: flex;
     gap: 120px
@@ -226,7 +230,6 @@
 
     display: flex;
 
-    margin-top: 60px;
     margin-left: 960px;
 
     gap: 60px;

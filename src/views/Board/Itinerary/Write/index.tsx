@@ -144,6 +144,8 @@ export default function ItineraryBoardWrite() {
     const [endDate, setEndDate] = useState<string>('');
     //          state: 여행일 개수 상태          //
     const [schedules, setSchedules] = useState<any[]>([]);
+    //          state: 일정카드 인덱스 상태          //
+    const [currentIndex, setCurrentIndex] = useState(0);
 
     //          effect: 여행시작일 설정 이벤트         //
     const onStartDateChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
