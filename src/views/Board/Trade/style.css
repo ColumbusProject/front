@@ -1,0 +1,310 @@
+:root{
+    --text-color: #ffff; 
+    --background-color: #1480CF;
+}
+
+body { 
+    margin: 0px;
+    font-family: 'Montserrat';
+}
+
+a { font-size: 24px;
+    text-decoration: none;
+    color: white;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+/* 파란색 길다란 바 -완료*/
+.navbar {
+    width: 1440px;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1480CF;
+}
+
+/* home 버튼 */
+.navbar__logo {
+    font-size:  40px;
+    color: white;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.navbar__logo:hover {
+  color: rgba(0, 0, 0, 0.25);
+};
+.a:hover {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+/* 햄버거 */
+
+
+.top-navigation {
+  padding: 60px 120px 0px;
+  width: 1440px;
+  width: calc(100% - 240px);
+
+  position: fixed;
+  top: 0px;
+  background: none;
+}
+
+.navigation {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.jb-text {
+  color: #FFF;
+  text-align: center;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Montserrat;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.icon-button {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  position: absolute;
+  display: none;
+  background-color: #FFF;
+  min-width: 180px;
+  height: 60px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 0;
+}
+
+.hamburger-icon {
+  width: 100%;
+  height: 100%;
+  background-image: url(asset/hamburger-icon.png);
+  background-size: 100% 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.inline-link{
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.inline-box:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+
+
+
+
+
+
+
+.navbar__icons {
+    list-style: none;
+    color: white;
+    display: flex;
+    padding-left: 0px;
+}
+
+.navbar__icons li {
+    padding: 8px 12px;
+}
+
+.navbar__toogleBtn {
+    display: none;
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+    color: #d49466;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+    
+    .navbar__menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar__menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar__icons {
+        display: none;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navbar__toogleBtn {
+        display: block;
+    }
+
+    .navbar__menu.active,
+    .navbar__icons.active {
+        display: flex;
+    }
+}
+
+
+  /* 메뉴 드롭다운 */
+  .top-navigation {
+    padding: 60px 120px 0px;
+    width: 1440px;
+    width: calc(100% - 240px);
+  
+    position: fixed;
+    top: 0px;
+    background: none;
+  }
+  
+  .navigation {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .jb-text {
+    color: #FFF;
+    text-align: center;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .icon-button {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    position: absolute;
+    display: none;
+    background-color: #FFF;
+    min-width: 180px;
+    height: 60px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+  }
+  
+  .hamburger-icon {
+    width: 100%;
+    height: 100%;
+    background-image: url(/front/src/views/Board/Trade/asset/hamburger-icon.png);
+    background-size: 100% 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-color: red;
+  }
+  
+  .inline-link{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .inline-box:hover {background-color: #f1f1f1}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+  }
+
+
+
+  /*  검색바 */
+
+  .parent{
+    display: flex;
+    width: 1440px;
+    height: 120px;
+    background-color: pink;
+    flex-direction: row;
+    justify-content:space-between;
+  }
+
+  .test1{
+    width: 310px;
+    height: 60px;
+    color: #8C8C8C;
+    font-family: NanumGothic;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    background-color: aquamarine;
+    margin: 60px 0px 0px 60px;
+  }
+
+  .test2{
+    width: 300px;
+    height: 60px; 
+    border-radius: 30px;
+    background: #FFF;
+    box-shadow: 4px 4px 4px 5px rgba(0, 0, 0, 0.25);
+    margin: 180px 60px 0px 0px;
+    background-color: yellow;
+    
+  }
+  .search-btn{
+    background-image: url(asset/search.jpg);
+    width: 30px;
+    height: 30px;
+    margin: 195px 77px 0px 1333px;
+    background-size: 100% 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    display: flex;
+    position: relative;
+
+  }
+
+ 
