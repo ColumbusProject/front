@@ -5,7 +5,7 @@ import Authentication from './views/Authentication';
 function App() {
   return (
     <div className='test'>
-      < Authentication />
+      < ItineraryBoardWrite />
     </div>
   );
 }

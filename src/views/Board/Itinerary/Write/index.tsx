@@ -9,15 +9,15 @@ declare global {
 }
 
 //          component: 일정 관리 카드          //
-function ItineraryCard({ index, startDate }: { index: number, startDate: string }) {
+function ItineraryCard({ index }: { index: number }) {
     return (
         <div className='itinerary-card-wrapper'>
             <div className='day-count-box'>
                 <div className='day-count-text'>{`DAY ${index + 1}`}</div>
-                <div className='day-text'>{`${startDate}`}</div>
+                <div className='day-text'>{'todo: 날짜 표시'}</div>
             </div>
             <div className='itinerary-text-box'>
-                {'to do: 일정 추가 기능'}
+                <div className='itinerary-add-text'>{'+ 일정 추가'}</div>
             </div>
         </div>
     )
@@ -50,14 +50,17 @@ function Kakaomap() {
 //          component: 게시물 작성 화면          //
 export default function ItineraryBoardWrite() {
 
+    //          state: 여행시작일 상태          //
     const [startDate, setStartDate] = useState<string>('');
+    //          state: 여행종료일 상태          //
     const [endDate, setEndDate] = useState<string>('');
-
+    //          state: 일정카드 갯수 상태          //
     const [schedules, setSchedules] = useState<any[]>([]);
+    //          state: 일정카드 인덱스 상태          //
+    const [currentIndex, setCurrentIndex] = useState(0);
 
     const onStartDateChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
         const { value } = event.target;
-        console.log(value);
         setStartDate(value);
     }
     const onEndDateChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
@@ -67,10 +70,10 @@ export default function ItineraryBoardWrite() {
         const startDay = dayjs(startDate);
         const endDay = dayjs(value);
 
-        const result = endDay.diff(startDay, "day", true);
+        const result = endDay.diff(startDay, "day", true) + 1;
         const gap = Math.floor(result);
 
-        if (gap > 9) return;
+        if (gap > 10) return;
         if (gap < 0) return;
 
         setEndDate(value);
@@ -116,7 +119,7 @@ export default function ItineraryBoardWrite() {
                 <div className='itinerary-card-container'>
                     <div className='left-arrow-icon'>{'<'}</div>
                     <div className='itinerary-card-box'>
-                        {schedules.map((item, index) => <ItineraryCard index={index} startDate={startDate} />)}
+                        {schedules.map((item, index) => <ItineraryCard index={index} />)}
                     </div>
                     <div className='right-arrow-icon'>{'>'}</div>
                 </div>
