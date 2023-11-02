@@ -1,4 +1,5 @@
 .sign-in-page {
+    position: relative;
     width: 1440px;
     height: 1080px;
 
@@ -8,7 +9,13 @@
     flex-direction: column;
     
     background-size: auto 100%;
-    background-image: url('assets/background_image.png');
+    /* background-image: url('assets/background_image.png'); */
+}
+
+.sign-in-background-video {
+    position: absolute;
+    width: 100vw;
+    z-index: -9999;
 }
 
 .sign-in-page-title-box {
@@ -37,7 +44,6 @@
 }
 
 .sign-in-page-login-container {
-    gap: 75px;
     display: flex;
     flex-direction: column;
 
@@ -92,6 +98,8 @@
 
     width: 600px;
     height: 90px;
+    
+    margin-top: 60px;
 
     border-radius: 45px;
     background: rgba(255, 255, 255, 0.50);
@@ -124,6 +132,26 @@
 
 .sign-in-page-password-input:focus {
     outline: none;
+}
+
+.sign-in-bottom-box {
+    margin-top: 60px;
+    position: relative;
+}
+
+.sign-in-error-message {
+    width: 100%;
+    position: absolute;
+    top: -24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-size: 20px;
+    font-family: ONE-Mobile-POP;
+    color: #FF1F00;
+    opacity: 0.85;
+
 }
 
 .sign-in-page-login-button-box {
@@ -189,4 +217,29 @@
     line-height: normal;
 
     margin-left: 5px;
+}
+
+.sign-up-page {
+    width: 1440px;
+    height: 1080px;
+
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+    
+    background-size: auto 100%;
+    background-image: url('assets/background_image.png');
+}
+
+.sign-up-contents-box {
+    width: 1200px;
+    height: 1080px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #2d2d2d;
+    opacity: 50%;
 }
