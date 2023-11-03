@@ -290,6 +290,7 @@ a { font-size: 24px;
     margin: 60px 60px 0px 1080px;
     
   }
+
   .search-btn{
     position: absolute;
     background-image: url(asset/search.jpg);
@@ -363,6 +364,7 @@ a { font-size: 24px;
 
   .minicard {
     background-color: pink;
+    position: relative;
     /* background-image: url(asset/swiss.jpg); */
     border: 1px solid #C0C0C0;
     
@@ -374,8 +376,54 @@ a { font-size: 24px;
     list-style: none;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    /* gap: 60px; */
+    /* gap: 60px; */    
+  }
+  .title{
+    margin: 9px, 120px 0px 100px;
+    
 
 
+    display: flex;
+    width: 235px;
+    height: 23px;
+    flex-direction: column;
+    justify-content: center;
+
+    color: #000;
+    font-family: NanumGothic;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .content {
+    display: flex;
+    width: 235px;
+    height: 84px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+
+    color: #000;
+    font-family: NanumGothic;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
     
   }
+
+/* 북마크 */
+
+.bookmark{
+   position: absolute;
+    background-image: url(asset/bookmark_b.jpg);
+    width: 30px;
+    height: 30px;
+    margin: 9px 8px 321px 322px;
+    z-index: 2;
+    border: none; 
+}
+
+/* 페이지네이션 */

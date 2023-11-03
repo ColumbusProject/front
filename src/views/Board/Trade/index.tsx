@@ -3,10 +3,12 @@ import './commonlayout';
 
 const Trade = () => {
   return (
-    <commonlayout>
+    // <commonlayout>
       <div/>
-    </commonlayout>
+    // </commonlayout>
   )
 }
 
 export default Trade
+
+
