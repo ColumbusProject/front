@@ -1,0 +1,149 @@
+.memo-acountbook-wrapper {
+  width: 1440px;
+  height: 2048px;
+
+  display: flex;
+
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.80);
+}
+
+.memo-acountbook-card {
+  width: 1080px;
+  height: 840px;
+
+  margin-top: 120px;
+
+  border-radius: 12px;
+  background: #FFF;
+
+  box-shadow: 5px 5px 4px 5px rgba(0, 0, 0, 0.25);
+}
+
+.memo-acountbook-close-box {
+  width: 1080px;
+  height: 60px;
+
+  display: flex;
+}
+
+.memo-acountbook-close-icon {
+  width: 60px;
+  height: 60px;
+
+  margin-left: 1020px;
+
+  background-image: url('assets/close_icon.png');
+  background-position: 50% 50%;
+  background-size: 50%;
+  background-repeat: no-repeat;
+}
+
+.memo-acountbook-text-box {
+  width: 1080px;
+  height: 60px;
+
+  display: flex;
+}
+
+.memo-acountbook-text {
+  width: 300px;
+  height: 60px;
+
+  margin-left: 60px;
+
+  color: #000;
+
+  font-family: NanumGothic;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.memo-acountbook-divide-box {
+  width: 1080px;
+  height: 60px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.focus-menu {
+  width: 480px;
+  height: 60px;
+  
+  border-top: #000000 solid 1px;
+  border-left: #000000 solid 1px;
+  border-right: #000000 solid 1px;
+
+  color: #000;
+
+  text-align: center;
+  font-family: NanumGothic;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.out-focus-menu {
+  width: 480px;
+  height: 60px;
+
+  border: #888888 solid 1px;
+
+  color: #000;
+
+  text-align: center;
+  font-family: NanumGothic;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.memo-text-area-box {
+  width: 1080px;
+  height: 540px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.memo-text-area {
+  width: 960px;
+  height: 420px;
+}
+
+.confirm-box {
+  width: 1080px;
+  height: 60px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.confirm-text {
+  display: flex;
+  width: 240px;
+  height: 60px;
+  flex-direction: column;
+  justify-content: center;
+
+  color: #FFF;
+
+  text-align: center;
+  font-family: NanumGothic;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  background: #000;
+}
