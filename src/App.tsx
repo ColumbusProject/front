@@ -7,8 +7,9 @@ import ItineraryBoardWrite from './views/Board/Itinerary/Write';
 function App() {
   return (
     <div className='test'>
-      <Header />
-      <ItineraryBoardWrite />
+      {/* <Header /> */}
+      {/* <ItineraryBoardWrite /> */}
+      <Authentication />
     </div>
   );
 }
