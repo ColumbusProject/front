@@ -9,6 +9,8 @@ import { useNavigate } from 'react-router-dom';
 import { MAIN_PATH } from '../../constant';
 
 import backgroundVideo from './assets/videoplayback.mp4';
+import InputBox from '../../components/InputBox';
+import { error } from 'console';
 
 //          component: 인증 페이지          //
 export default function Authentication() {
@@ -131,13 +133,46 @@ export default function Authentication() {
     //          state: 전화번호 에러 메세지 상태          //
     const [telNumberErrorMessage, setTelNumberErrorMessage] = useState<string>('');
 
-    // description: 이메일 패턴 확인 //
-    // const emailPattern = /^[a-zA-Z0-9]*@([-.]?[a-zA-Z0-9])*\.[a-zA-Z]{2,4}$/;
-    // const checkedEmail = !emailPattern.test(email);
-    // if (checkedEmail) {
-    //   setEmailError(true);
-    //   setEmailErrorMessage('이메일 주소를 다시 확인해주세요.');
-    // }
+    //          event handler: 회원가입 버튼 클릭 이벤트 처리         //
+    const onSignUpButtonClick = () => {
+
+      setIdError(false);
+      setIdErrorMessage('');
+      setPasswordError(false);
+      setPasswordErrorMessage('');
+      setPasswordCheckError(false);
+      setPasswordCheckErrorMessage('');      
+      setNicknameError(false);
+      setNicknameErrorMessage('');
+      setEmailError(false);
+      setEmailErrorMessage('');
+      setTelNumberError(false);
+      setTelNumberErrorMessage('');
+
+      // description: 닉네임 입력 여부 확인 //
+      const checkedNickname = nickname.trim().length === 0;
+      if (checkedNickname) {
+        setNicknameError(true);
+        setNicknameErrorMessage('닉네임을 입력해주세요');
+      }
+      // description: 전화번호 패턴 및 입력 여부 확인 //
+      const telNumberPattern = /^[0-9]{10,12}$/;
+      const checkedTelNumber = !telNumberPattern.test(telNumber);
+      const checkedTelNumber2 = telNumber.trim().length === 0;
+      if (checkedTelNumber || checkedTelNumber2) {
+        setTelNumberError(true);
+        setTelNumberErrorMessage('전화번호를 정확하게 입력해주세요');
+      }
+      // description: 이메일 패턴 및 입력 여부 확인 //
+      const emailPattern = /^[a-zA-Z0-9]*@([-.]?[a-zA-Z0-9])*\.[a-zA-Z]{2,4}$/;
+      const checkedEmail = !emailPattern.test(email);
+      const checkedEmail2 = email.trim().length === 0;
+      if (checkedEmail || checkedEmail2) {
+        setEmailError(true);
+        setEmailErrorMessage('이메일 주소를 정확하게 입력해주세요');
+      }
+    }
+
 
     //          render: sign up 카드 컴포넌트 렌더링          //
     return (
@@ -147,47 +182,15 @@ export default function Authentication() {
             <div className='sign-up-logo'>{'Columbus'}</div>
           </div>
           <div className='sign-up-contents-middle'>
-            <div className='sign-up-id-box'>
-              <div className='sign-up-id-text'>{'아이디'}</div>
-              <div className='sign-up-id-input-box'>
-                <input className='sign-up-id-input' placeholder='사용하실 아이디를 입력해주세요'/>
-              </div>
-            </div>
-            <div className='sign-up-password-box'>
-              <div className='sign-up-password-text'>{'비밀번호'}</div>
-              <div className='sign-up-password-input-box'>
-                <div className='sign-up-password-icon'></div>
-                <input className='sign-up-password-input' placeholder='사용하실 비밀번호를 입력해주세요' type='password'/>
-              </div>
-            </div>
-            <div className='sign-up-password-check-box'>
-              <div className='sign-up-password-check-text'>{'비밀번호 확인'}</div>
-              <div className='sign-up-password-check-input-box'>
-                <div className='sign-up-password-icon'></div>
-                <input className='sign-up-password-check-input' placeholder='비밀번호를 다시 입력해주세요' type='password'/>
-              </div>
-            </div>
-            <div className='sign-up-nickname-box'>
-              <div className='sign-up-nickname-text'>{'닉네임'}</div>
-              <div className='sign-up-nickname-input-box'>
-                <input className='sign-up-nickname-input' placeholder='사용하실 닉네임을 입력해주세요' />
-              </div>
-            </div>
-            <div className='sign-up-email-box'>
-              <div className='sign-up-email-text'>{'이메일'}</div>
-              <div className='sign-up-email-input-box'>
-                <input className='sign-up-email-input' placeholder='이메일 주소를 입력해주세요' />
-              </div>
-            </div>
-            <div className='sign-up-tel-number-box'>
-              <div className='sign-up-tel-number-text'>{'전화번호'}</div>
-              <div className='sign-up-tel-number-input-box'>
-                <input className='sign-up-tel-number-input' placeholder='전화번호를 입력해주세요' />
-              </div>
-            </div>
+            <InputBox label='아이디' type='text' placeholder='사용하실 아이디를 입력해주세요' value={id} setValue={setId} error={idError} errorMessage={idErrorMessage} />
+            <InputBox label='비밀번호' type='password' placeholder='사용하실 비밀번호를 입력해주세요' value={password} setValue={setPassword} icon='password_icon' error={passwordError} errorMessage={passwordErrorMessage} />
+            <InputBox label='비밀번호 확인' type='password' placeholder='비밀번호를 다시 입력해주세요' value={passwordCheck} setValue={setPasswordCheck} icon='password_icon' error={passwordCheckError} errorMessage={passwordCheckErrorMessage} />
+            <InputBox label='닉네임' type='text' placeholder='사용하실 닉네임을 입력해주세요' value={nickname} setValue={setNickname} error={nicknameError} errorMessage={nicknameErrorMessage} />
+            <InputBox label='이메일' type='text' placeholder='사용하실 이메일 주소를 입력해주세요' value={email} setValue={setEmail} error={emailError} errorMessage={emailErrorMessage} />
+            <InputBox label='전화번호' type='text' placeholder='사용하실 전화번호를 입력해주세요' value={telNumber} setValue={setTelNumber} error={telNumberError} errorMessage={telNumberErrorMessage} />
           </div>
           <div className='sign-up-contents-bottom'>
-            <div className='sign-up-button-box'>
+            <div className='sign-up-button-box' onClick={onSignUpButtonClick}>
               <div className='sign-up-button-text'>{'회원가입'}</div>
             </div>
             <div className='sign-up-page-sign-in'>{'계정이 있으신가요?'}<span className='emphasis' >{'로그인'}</span></div>
