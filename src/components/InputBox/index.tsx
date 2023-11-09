@@ -8,7 +8,7 @@ interface Props {
   error: boolean;
   placeholder: string;
   value: string;
-  setValue: Dispatch<SetStateAction<string>>
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   icon?: string;
   errorMessage?: string;
   onKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => void;
@@ -19,13 +19,8 @@ const InputBox = forwardRef<HTMLInputElement, Props>((props: Props, ref) => {
 
   //          state: Properties         //
   const { label, type, error, placeholder, value, icon, errorMessage } = props;
-  const { setValue, onKeyDown } = props;
+  const { onChange, onKeyDown } = props;
 
-  //          event handler: input값 변경 이벤트 처리         //
-  const onInputValueChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    setValue(value);
-  }
   //          event handler: key down 이벤트 처리         //
   const onKeyDownHandler = (event: KeyboardEvent<HTMLInputElement>) => {
     if(!onKeyDown) return;
@@ -35,11 +30,11 @@ const InputBox = forwardRef<HTMLInputElement, Props>((props: Props, ref) => {
   return (
     <div className="inputbox">
       <div className='inputbox-label'>{label}</div>
-      <div className='inputbox-container'>
-        <input ref={ref} className='input' type={type} placeholder={placeholder} value={value} onChange={onInputValueChange} onKeyDown={onKeyDownHandler} />
-        {icon !== undefined && <div className={icon}></div>}
-      </div>
-      <div className={error ? 'inputbox-message-error' : 'inputbox-message'}></div>
+        <div className='inputbox-container'>
+          <input ref={ref} className='input' type={type} placeholder={placeholder} value={value} onChange={onChange} onKeyDown={onKeyDownHandler} />
+          {icon !== undefined && <div className={icon}></div>}
+        </div>
+      <div className={error ? 'inputbox-message-error' : 'inputbox-message'}>{errorMessage}</div>
     </div>
   )
 

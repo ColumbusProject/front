@@ -43,6 +43,8 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
+    cursor: pointer;
 }
 
 .sign-in-page-login-container {
@@ -177,6 +179,7 @@
     color: #FFF;
     text-align: center;
 
+    cursor: pointer;
 }
 
 .sign-in-text {
@@ -209,6 +212,8 @@
     font-style: normal;
     font-weight: 300;
     line-height: normal;
+
+    cursor: context-menu;
 }
 
 .emphasis {
@@ -220,6 +225,8 @@
     line-height: normal;
 
     margin-left: 5px;
+
+    cursor: pointer;
 }
 
 #sign-up-page {
@@ -264,6 +271,7 @@
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 
     margin-top: 60px;
+    cursor: pointer;
 }
 
 .sign-up-contents-middle {
@@ -287,6 +295,8 @@
 
     color: #FFF;
     text-align: center;
+
+    cursor: pointer;
 }
 
 .sign-up-button-text {
@@ -301,7 +311,7 @@
     align-items: center;
     justify-content: center;
 
-    color:rgba(0, 0, 0, 0.8);
+    color:rgba(0, 0, 0, 1);
 
     text-align: center;
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
@@ -310,4 +320,6 @@
     font-style: normal;
     font-weight: 300;
     line-height: normal;
+
+    cursor: context-menu;
 }

@@ -1,4 +1,5 @@
 .inputbox {
+  position: relative;
   display: flex;
   align-items: center;
 
@@ -19,6 +20,8 @@
   font-size: 34px;
   text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   color: #FFF;
+
+  cursor: context-menu;
 }
 
 .inputbox-container {
@@ -45,6 +48,7 @@
   align-items: center;
   justify-content: center;
 
+  font-family: ONE-Mobile-POP;
   font-size: 25px;
 
   border: none;
@@ -64,11 +68,11 @@
 .inputbox-message-error {
   width: 100%;
   position: absolute;
-  top: -24px;
   
   display: flex;
   flex-direction: column;
-  align-items: center;
+  bottom: -27px;
+  right: -280px;
 
   font-size: 20px;
   font-family: ONE-Mobile-POP;
@@ -79,11 +83,11 @@
 .inputbox-message {
   width: 100%;
   position: absolute;
-  top: -24px;
   
   display: flex;
   flex-direction: column;
-  align-items: center;
+  bottom: -27px;
+  right: -280px;
 
   font-size: 20px;
   font-family: ONE-Mobile-POP;
