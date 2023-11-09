@@ -1,15 +1,18 @@
 import React from 'react';
 import './App.css';
-import Authentication from './views/Authentication';
+
+import NoResult from './views/Board/Review/Search';
 import Detail from './views/Board/Review/Detail';
-import Write from './views/Board/Write';
-import ItineraryBoardWrite from './views/Board/Itinerary/Write';
-import Header from './layouts/Header';
+import Search from './views/Board/Review/Search';
+import BoardItem from './components/BoardItem';
+import BoardListItem from './components';
+import { Route, Routes } from 'react-router-dom';
+import Main from './views/Board/Main';
 
 function App() {
   return (
-    <div className='test'>
-      < Authentication />
+    <div>
+      <Main />
     </div>
   );
 }
