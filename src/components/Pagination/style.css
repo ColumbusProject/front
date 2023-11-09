@@ -1,0 +1,57 @@
+.pagination-container {
+    display: flex;
+    gap: 15px;
+}
+
+.pagination-change-link-box {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.pagination-change-link-icon-box {
+    font-size: 20px;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination-change-link-text {
+    color: rgba(0, 0, 0, 0.7);
+
+    font-size: 20px;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.pagination-divider {
+    color: #000;
+
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.pagination-active-text {
+    color: #000;
+
+    font-size: 20px;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.pagination-text {
+    color: #000;
+
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.pagination-text:hover {
+    color: rgba(0, 0, 0, 0.45);
+    cursor: pointer;
+}

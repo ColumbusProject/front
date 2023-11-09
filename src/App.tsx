@@ -1,14 +1,17 @@
 import React from 'react';
 import './App.css';
-import Authentication from './views/Authentication';
-import Header from './layouts/Header';
-import ItineraryBoardWrite from './views/Board/Itinerary/Write';
-import ItineraryMemoAcountBook from './components/MemoAcountBook';
+
+import NoResult from './views/Board/Review/Search';
+import Detail from './views/Board/Review/Detail';
+import Search from './views/Board/Review/Search';
+import BoardItem from './components/BoardItem';
+import { Route, Routes } from 'react-router-dom';
+import Main from './views/Board/Main';
 
 function App() {
   return (
-    <div className='test'>
-      <ItineraryMemoAcountBook />
+    <div>
+      <Main />
     </div>
   );
 }
