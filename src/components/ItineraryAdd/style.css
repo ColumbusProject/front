@@ -1,0 +1,104 @@
+.itinerary-add-warpper {
+    width: 1440px;
+    height: 2048px;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+.itinerary-add-card {
+    width: 1080px;
+    height: 1560px;
+
+    margin-top: 240px;
+
+    border-radius: 12px;
+    background: #FFF;
+
+    box-shadow: 5px 5px 4px 5px rgba(0, 0, 0, 0.25);
+}
+
+.day-select-close-box {
+    width: 1080px;
+    height: 60px;
+
+    display: flex;
+}
+
+.day-select-box {
+    width: 960px;
+    height: 60px;
+
+    margin-left: 60px;
+}
+
+.day-select {
+    width: 960px;
+    height: 60px;
+}
+
+.close-box {
+    width: 60px;
+    height: 60px;
+
+    background-image: url('assets/close_icon.png');
+    background-position: 50% 50%;
+    background-size: 50%;
+    background-repeat: no-repeat;
+}
+
+.location-search-box {
+    width: 1080px;
+    height: 60px;
+
+    margin-top: 60px;
+
+    display: flex;
+    align-items: center;
+}
+
+.loaction-input {
+    width: 900px;
+    height: 60px;
+
+    margin-left: 60px;
+
+    color: #000;
+
+    font-family: NanumGothic;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.search-button {
+    width: 60px;
+    height: 60px;
+
+    background-image: url('assets/search_icon.png');
+    background-position: 50% 50%;
+    background-size: 100%;
+}
+
+.kakao-map-box {
+    width: 960px;
+    height: 600px;
+
+    margin-top: 60px;
+    margin-left: 60px;
+
+    outline: #000 solid 1px;
+}
+
+.search-result-box {
+    width: 960px;
+    height: 600px;
+
+    margin-top: 60px;
+    margin-left: 60px;
+
+    border-top: #000 solid 1px;
+    border-bottom: #000 solid 1px;
+}

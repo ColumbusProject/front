@@ -1,5 +1,12 @@
 import React from 'react';
 import './App.css';
+<<<<<<< HEAD
+import ItineraryItem from './components/ItineraryItem';
+
+function App() {
+  return (
+    <div className='test'>
+=======
 
 import NoResult from './views/Board/Review/Search';
 import Detail from './views/Board/Review/Detail';
@@ -12,6 +19,7 @@ function App() {
   return (
     <div>
       <Main />
+>>>>>>> 87b26b31675527f12056fde5251677fe5f393391
     </div>
   );
 }
