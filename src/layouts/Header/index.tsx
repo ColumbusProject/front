@@ -17,7 +17,9 @@ export default function Header() {
                     <div>{'자유 거래'}</div>
                 </div>
                 <div className='profile-menu-box'>
-                    <div>{'To do: 닉네임 메뉴 아이콘 박스'}</div>
+                    <div className='profile-icon'></div>
+                    <div className='nickname-text'>{'닉네임'}</div>
+                    <div className='hamburger-icon'></div>
                 </div>
             </div>
         </div>

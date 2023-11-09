@@ -1,4 +1,5 @@
-.sign-up-page {
+.sign-in-page {
+    position: relative;
     width: 1440px;
     height: 1080px;
 
@@ -8,16 +9,22 @@
     flex-direction: column;
     
     background-size: auto 100%;
-    background-image: url('assets/background_image.png');
+    /* background-image: url('assets/background_image.png'); */
 }
 
-.sign-up-page-container-01 {
+.sign-in-background-video {
+    position: absolute;
+    width: 100vw;
+    z-index: -9999;
+}
+
+.sign-in-page-title-box {
     height: 120px;
 
     margin-top: 180px;
 }
 
-.sign-up-page-title {
+.sign-in-page-title {
     display: flex;
     width: 600px;
     height: 100%;
@@ -29,22 +36,21 @@
 
     text-align: center;
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: Montserrat;
+    font-family: ONE-Mobile-POP;
     font-size: 96px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-.sign-up-page-container-02 {
-    gap: 75px;
+.sign-in-page-login-container {
     display: flex;
     flex-direction: column;
 
     margin-top: 60px;
 }
 
-.sign-up-page-box-01 {
+.sign-in-page-id-box {
     display: flex;
     align-items: center;
 
@@ -55,7 +61,7 @@
     background: rgba(255, 255, 255, 0.50);
 }
 
-.sign-up-page-id-icon {
+.sign-in-page-id-icon {
     background-size: 100%;
     background-image: url('assets/user_icon.png');
     width: 30px;
@@ -64,34 +70,42 @@
     margin-left: 37px;
 }
 
-.sign-up-page-id-input {
-    width: 500px;
+.sign-in-page-id-input {
+    width: 450px;
     height: 30px;
 
-    margin-left: 5px;
+    margin-left: 20px;
 
+    font-family: ONE-Mobile-POP;
     font-size: 30px;
     
     border: none;
     background: transparent;
 }
 
-.sign-up-page-id-input:focus {
+.sign-in-page-id-input::placeholder {
+    opacity: 0.85;
+    font-family: ONE-Mobile-POP;
+}
+
+.sign-in-page-id-input:focus {
     outline: none;
 }
 
-.sign-up-page-box-02 {
+.sign-in-page-password-box {
     display: flex;
     align-items: center;
 
     width: 600px;
     height: 90px;
+    
+    margin-top: 60px;
 
     border-radius: 45px;
     background: rgba(255, 255, 255, 0.50);
 }
 
-.sign-up-page-password-icon {
+.sign-in-page-password-icon {
     background-size: 100%;
     background-image: url(assets/password_icon.png);
     width: 30px;
@@ -100,23 +114,47 @@
     margin-left: 37px;
 }
 
-.sign-up-page-password-input {
-    width: 500px;
+.sign-in-page-password-input {
+    width: 450px;
     height: 30px;
 
-    margin-left: 5px;
-    
+    margin-left: 20px;
     font-size: 30px;
 
     border: none;
     background: transparent;
 }
 
-.sign-up-page-password-input:focus {
+.sign-in-page-password-input::placeholder {
+    opacity: 0.85;
+    font-family: ONE-Mobile-POP;
+}
+
+.sign-in-page-password-input:focus {
     outline: none;
 }
 
-.sign-up-page-box-03{
+.sign-in-bottom-box {
+    margin-top: 60px;
+    position: relative;
+}
+
+.sign-in-error-message {
+    width: 100%;
+    position: absolute;
+    top: -24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-size: 20px;
+    font-family: ONE-Mobile-POP;
+    color: #FF1F00;
+    opacity: 0.85;
+
+}
+
+.sign-in-page-login-button-box {
     gap: 75px;
 
     width: 600px;
@@ -134,17 +172,24 @@
     flex-shrink: 0;
 
     color: #FFF;
-
     text-align: center;
-    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: NanumGothic;
+
+}
+
+.sign-in-page-login-text {
+    font-family: ONE-Mobile-POP;
     font-size: 48px;
     font-style: normal;
     font-weight: 400;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     line-height: normal;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.sign-up-page-sign-up {
+.sign-in-page-sign-up {
     gap: 0px;
     display: flex;
     width: 600px;
@@ -152,22 +197,49 @@
     align-items: center;
     justify-content: center;
 
-    color: #000;
+    color:rgba(0, 0, 0, 0.8);
 
     text-align: center;
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: NanumGothic;
+    font-family: ONE-Mobile-POP;
     font-size: 20px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: normal;
 }
 
 .emphasis {
     color: #000;
-    font-family: NanumGothic;
+    font-family: ONE-Mobile-POP;
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+
+    margin-left: 5px;
+}
+
+.sign-up-page {
+    width: 1440px;
+    height: 1080px;
+
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+    
+    background-size: auto 100%;
+    background-image: url('assets/background_image.png');
+}
+
+.sign-up-contents-box {
+    width: 1200px;
+    height: 1080px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #2d2d2d;
+    opacity: 50%;
 }

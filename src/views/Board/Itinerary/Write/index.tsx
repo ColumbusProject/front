@@ -9,19 +9,21 @@ declare global {
 }
 
 //          component: 일정 관리 카드          //
-function ItineraryCard({ index, startDate }: { index: number, startDate: string }) {
-    return (
+function ItineraryCard({ index }: { index: number }) {
+    return ( 
         <div className='itinerary-card-wrapper'>
             <div className='day-count-box'>
                 <div className='day-count-text'>{`DAY ${index + 1}`}</div>
-                <div className='day-text'>{`${startDate}`}</div>
+                <div className='day-text'>{'todo: 해당날짜 표시'}</div>
             </div>
             <div className='itinerary-text-box'>
-                {'to do: 일정 추가 기능'}
+                <div className='itinerary-add-text'>{'+ 일정 추가'}</div>
             </div>
         </div>
     )
 }
+
+
 
 //          component: 카카오맵          //
 const { kakao } = window;
@@ -45,21 +47,27 @@ function Kakaomap() {
     )
 }
 
-
-
 //          component: 게시물 작성 화면          //
 export default function ItineraryBoardWrite() {
 
+    //          state: 메모/가계부 표시 상태          //
+    const [showMemoAcountBook, setShowMemoAcountBook] = useState<boolean>(false);
+
+    //          state: 여행시작일 상태          //
     const [startDate, setStartDate] = useState<string>('');
+    //          state: 여행종료일 상태          //
     const [endDate, setEndDate] = useState<string>('');
-
+    //          state: 여행일 개수 상태          //
     const [schedules, setSchedules] = useState<any[]>([]);
+    //          state: 일정카드 인덱스 상태          //
+    const [currentIndex, setCurrentIndex] = useState(0);
 
+    //          effect: 여행시작일 설정 이벤트         //
     const onStartDateChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
         const { value } = event.target;
-        console.log(value);
         setStartDate(value);
     }
+    //          effect: 여행종료일 설정 이벤트         //
     const onEndDateChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
         if (!startDate) return;
         const { value } = event.target;
@@ -67,10 +75,10 @@ export default function ItineraryBoardWrite() {
         const startDay = dayjs(startDate);
         const endDay = dayjs(value);
 
-        const result = endDay.diff(startDay, "day", true);
+        const result = endDay.diff(startDay, "day", true) + 1;
         const gap = Math.floor(result);
 
-        if (gap > 9) return;
+        if (gap > 10) return;
         if (gap < 0) return;
 
         setEndDate(value);
@@ -91,6 +99,11 @@ export default function ItineraryBoardWrite() {
 
     }
 
+    //          effect: 메모/가계부 표시 설정 이벤트         //
+    const onMemoAcountBookClickHandler = () => {
+        setShowMemoAcountBook(!showMemoAcountBook);
+    }
+
     //          render: 게시물 작성 화면 렌더링          //
     return (
         <div className='board-write-wrapper'>
@@ -109,14 +122,14 @@ export default function ItineraryBoardWrite() {
                             <input className='board-write-calendar-input' type='date' value={endDate} onChange={onEndDateChangeHandler} />
                         </div>
                         <div className='board-write-calendar-limit-day-text'>{'최대 여행 일수 : 10일 제한'}</div>
-                        <div className='board-write-notepad-accountbook-text'>{'메모 / 가계부 보기'}</div>
+                        <div className='board-write-notepad-accountbook-text' onClick={onMemoAcountBookClickHandler}>{'메모 / 가계부 보기'}</div>
                     </div>
                 </div>
                 <Kakaomap />
                 <div className='itinerary-card-container'>
                     <div className='left-arrow-icon'>{'<'}</div>
                     <div className='itinerary-card-box'>
-                        {schedules.map((item, index) => <ItineraryCard index={index} startDate={startDate} />)}
+                        {schedules.map((item, index) => <ItineraryCard index={index} />)}
                     </div>
                     <div className='right-arrow-icon'>{'>'}</div>
                 </div>
