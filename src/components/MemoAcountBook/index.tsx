@@ -77,7 +77,7 @@ export default function ItineraryMemoAcountBook() {
                                     <option value={"USD"}>{'USD'}</option>
                                     <option value={"EUR"}>{'EUR'}</option>
                                 </select>
-                                <input className='cost-text' />
+                                <input className='cost-input' />
                                 <div className='delete-button'>{'삭제'}</div>
                             </div>
                         </div>
