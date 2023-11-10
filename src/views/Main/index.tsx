@@ -1,4 +1,4 @@
-// import React, { Component } from 'react';
+import React, { Component } from 'react';
 import './style.css';
 // player 설치 명령어: npm i react-player;
 
