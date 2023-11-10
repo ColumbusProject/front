@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+/* .password_icon {
+  display: flex;
+  align-items: center;
+
+  width: 30px;
+  height: 30px;
+  left: 444px;
+  top: 315px;
+
+  background: url(views/Authentication/assets/password_icon.png);
+
+} */
