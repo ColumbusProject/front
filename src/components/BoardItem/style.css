@@ -1,0 +1,157 @@
+.board-list-item-card {
+    width: 1200px;
+    height: 240px;
+
+    background: #FFF;
+
+    box-shadow: 4px 4px 4px 5px rgba(0, 0, 0, 0.25);
+
+    display: flex;  
+    flex-direction: column;
+}
+
+.board-list-item-card-title-box {
+    height: 60px;
+    width: 1200px;
+
+    display: flex;
+    align-items: center;
+}
+
+.board-list-item-card-title-box-01-title {
+    width: 540px;
+    height: 60px;
+
+    color: #000;
+
+    font-size: 24px;
+    font-weight: 400;
+
+    display: flex;
+    align-items: center;
+}
+
+.board-list-item-card-title-box-02 {
+    width: 660px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+}
+
+.board-list-item-card-title-box-02-location {
+    background-image: url(assets/location.png);
+
+    width: 45px;
+    height: 45px;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.board-list-item-card-title-box-02-text {
+    width: 120px;
+    height: 60px;
+
+    color: #000;
+
+    font-size: 20px;
+    font-weight: 400;
+
+    display: flex;
+    align-items: center;
+}
+
+.board-list-item-card-title-box-02-profile-image {
+    background-image: url(assets/image\ 953.png);
+
+    display: flex;
+    align-items: center;
+
+    width: 45px;
+    height: 45px;
+}
+
+.board-list-tiem-card-title-box-02-box {
+    width: 240px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+}
+
+.nickname-datetime {
+    width: 240px;
+    height: 60px;
+
+    color: #000;
+
+    text-align: center;
+    font-family: NanumGothic;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.board-list-item-card-title-box-02-view-count {
+    width: 120px;
+    height: 60px;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+
+    color: #000;
+
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.board-list-item-card-title-box-02-favorite-count {
+    background-image: url(assets/heart_black.png);
+
+    width: 30px;
+    height: 30px;
+}
+
+.divider {
+    width: 1200px;
+    height: 1px;
+
+    background: #BCBCBC;
+}
+
+.board-list-item-card-content-box {
+    height: 180px;
+    width: 1200px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.board-list-item-card-content-box-content {
+    color: #000;
+
+    font-size: 24px;
+    font-weight: 400;
+
+    margin-left: 30px;
+}
+
+.board-list-item-card-content-box-content-image {
+    background-image: url(assets/image\ 960.png);
+
+    width: 120px;
+    height: 120px;
+
+    margin-right: 30px;
+}
