@@ -5,11 +5,11 @@ import { useState, useRef, useEffect, ChangeEvent } from 'react';
 export default function ItineraryMemoAcountBook() {
     const [select, setSelect] = useState<string>('memo');
 
-    //          effect: 메모 메뉴 클릭 이벤트         //
+    //          event handler: 메모 메뉴 클릭 이벤트         //
     const onMemoMenuClickHandler = () => {
         setSelect('memo');
     }
-    //          effect: 가계부 메뉴 클릭 이벤트         //
+    //          event handler: 가계부 메뉴 클릭 이벤트         //
     const onAcountBookMenuClickHandler = () => {
         setSelect('acountbook');
     }
