@@ -8,7 +8,7 @@ const commentListMock: CommentListItem[] = [
         profileImage: null
     },
     {
-        content: '댓글 Mock데이터입니다.',
+        content: '댓글 Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다Mock데이터입니다.',
         writeDatetime: '3분 전',
         nickname: '봉봉야끼',
         profileImage: null
