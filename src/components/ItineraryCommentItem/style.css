@@ -1,6 +1,6 @@
 .comment-list-item-box {
     width: 1200px;
-    height: 180px;
+    min-height: 180px;
 }
 
 .comment-list-item-top {
@@ -29,4 +29,51 @@
     border-radius: 22.5px;
     background-position: 50% 50%;
     background-size: 100%;
+}
+
+.comment-list-item-nickname {
+    color: #000;
+
+    font-family: NanumGothic;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.comment-list-item-divider {
+    color: #979797;
+    font-family: NanumGothic;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.comment-list-item-time {
+    color: #979797;
+    font-family: NanumGothic;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.comment-list-item-main {
+    display: flex;
+    width: 1200px;
+    min-height: 120px;
+    flex-direction: column;
+
+    border-bottom: #979797 solid 1px;
+}
+
+.comment-list-item-contents {
+    color: #000;
+
+    font-family: NanumGothic;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }

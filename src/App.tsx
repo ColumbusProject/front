@@ -10,7 +10,7 @@ import ItineraryMemoAcountBook from './components/MemoAcountBook';
 function App() {
   return (
     <div className='test'>
-      <ItineraryMemoAcountBook />
+      <ItineraryDetail />
     </div>
   );
 }

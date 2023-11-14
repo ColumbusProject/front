@@ -18,7 +18,7 @@ export default function ItineraryDetail() {
         setViewComment(!viewComment);
     }
 
-
+    //          render: 상세 게시물 컴포넌트 렌더링          //
     return(
         <div className='itinerary-detail-wrapper'>
             <div className='detail-top-box'>
