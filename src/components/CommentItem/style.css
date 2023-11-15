@@ -1,0 +1,37 @@
+.profile-box-01 {
+    height: 60px;
+    width: 180px;
+
+    display: flex;
+}
+
+.profile-box-02 {
+    height: 60px;
+    width: 180px;
+
+    display: flex;
+}
+
+.profile-box-image {
+    background-image: url('assets/image\ 954.png');
+
+    width: 45px;
+    height: 45px;
+
+    margin-left: 15px;
+    margin-top: 8px;
+}
+
+.profile-box-nickname {
+    width: 120px;
+    height: 60px;
+    margin-left: 8px;
+
+    display: flex;
+    align-items: center;
+
+    color: #000;
+
+    font-size: 20px;
+    font-weight: 400;
+}
