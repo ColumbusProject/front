@@ -1,5 +1,5 @@
 import axios from "axios";
-import { SignInRequestDto } from "./dto/request/auth";
+import { SignInRequestDto, SignUpRequestDto } from "./dto/request/auth";
 import ResponseDto from "./dto/response";
 import SignInResponseDto from "./dto/response/auth/sign-in-response.dto";
 import GetBoardResponseDto from "./dto/response/board/get-board-response.dto";
@@ -14,7 +14,11 @@ const GET_BOARD_URL = (boardNumber: string | number) => `${API_DOMAIN}/board/${b
 const DOMAIN = 'http://localhost:4000';
 // description: API Domain 주소 //
 const API_DOMAIN = `${DOMAIN}/columbus/api`;
-
+// description: Authorizaition Header //
+const authorizaition = (token: string) => { 
+  return { headers: { Authorization: `Bearer ${token}`}}};
+// description: sign up API end point //
+const SIGN_UP_URL = () => `${API_DOMAIN}/auth/sign-up`;
 // description: sign in API end point //
 const SIGN_IN_URL = () => `${API_DOMAIN}/auth/sign-in`;
 

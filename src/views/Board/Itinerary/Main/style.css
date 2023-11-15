@@ -1,0 +1,97 @@
+.itinerary-main-wrapper {
+    width: 1440px;
+    height: 1800px;
+}
+
+.itinerary-main-title-search-box {
+    width: 1440px;
+    height: 60px;
+
+    margin-top: 60px;
+
+    display: flex;
+}
+
+.itinerary-main-title-box {
+    display: flex;
+
+    width: 360px;
+    height: 60px;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-left: 60px;
+
+    color: #8C8C8C;
+
+    font-family: NanumGothic;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.search-box {
+    width: 300px;
+    height: 60px;
+
+    margin-left: 660px;
+
+    display: flex;
+
+    border-radius: 30px;
+    background: #FFF;
+
+    box-shadow: 4px 4px 4px 5px rgba(0, 0, 0, 0.25);
+}
+
+.search-input {
+    width: 240px;
+    height: 60px;
+}
+
+.search-icon {
+    width: 60px;
+    height: 60px;
+
+    background-image: url('assets/search_icon.png');
+    background-position: 50% 50%;
+    background-size: 50%;
+    background-repeat: no-repeat;
+}
+
+.itinerary-create-box {
+    width: 1440px;
+    height: 60px;
+
+    display: flex;
+}
+
+.itinerary-create-button {
+    width: 180px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 1140px;
+
+    color: #000;
+
+    text-align: center;
+    font-family: NanumGothic;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.itinerary-main-contents-box {
+    border-top: #000 solid 1px;
+
+    margin-left: 60px;
+
+    width: 1320px;
+    height: 1500px;
+}

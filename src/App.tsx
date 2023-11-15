@@ -1,5 +1,10 @@
 import React, { useEffect } from 'react';
 import './App.css';
+import ItineraryDetail from './views/Board/Itinerary/Detail';
+import Authentication from './views/Authentication';
+import Header from './layouts/Header';
+import ItineraryBoardWrite from './views/Board/Itinerary/Write';
+import ItineraryMemoAcountBook from './components/MemoAcountBook';
 
 import NoResult from './views/Board/Review/Search';
 import Detail from './views/Board/Review/Detail/Me';
