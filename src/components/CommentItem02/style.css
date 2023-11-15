@@ -1,0 +1,74 @@
+.box {
+    height: 120px;
+    width: 1200px;
+
+    border-bottom: #000 solid 1px;
+}
+
+.box-01-profile-box {
+    width: 1200px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+}
+
+.box-01-profile-image {
+    background-image: url(assets/image\ 954.png);
+
+    width: 45px;
+    height: 45px;
+
+    margin-left: 8px;
+}
+
+.box-01-01 {
+    width: 240px;
+    height: 60px;
+
+    margin-left: 11px;
+
+    display: flex;
+    align-items: center;
+}
+
+.box-01-nickname {
+    color: #000;
+
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.box-01-divider {
+    color: #979797;
+
+    font-size: 20px;
+    font-weight: 400;
+
+    margin-left: 13px;
+}
+
+.box-01-time {
+    color: #979797;
+
+    font-size: 20px;
+    font-weight: 400;
+
+    margin-left: 13px;
+}
+
+.box-01-content-box {
+    width: 1200px;
+    height: 120px;
+
+    display: flex;
+}
+
+.box-01-content {
+    margin-left: 8px;
+
+    color: #000;
+
+    font-size: 24px;
+    font-weight: 400;
+}

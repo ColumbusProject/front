@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { BOARD_DETAIL_PATH } from "../../constants";
-import BoardListItem from "../../types/board-list-item-interface";
+import BoardListItem from "../../types/board-list-item.interface";
 import './style.css';
 
 //          interface: 게시물 리스트 아이템 컴포넌트 Props          //
@@ -27,7 +27,7 @@ export default function BoardItem({boardItem}: Props) {
                 <div className="board-list-item-card-title-box-02">
                     <div className="board-list-item-card-title-box-02-location"></div>
                     <div className="board-list-item-card-title-box-02-text">{location}</div>
-                    <div className="board-list-item-card-title-box-02-profile-image"></div>
+                    <div className="board-list-item-card-title-box-02-profile-image">{writerProfileImage}</div>
                     <div className="board-list-tiem-card-title-box-02-box">
                         <div className="nickname-datetime">{`${writerNickname} | ${writeDatetime}`}</div>
                     </div>

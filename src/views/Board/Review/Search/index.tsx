@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import './style.css';
 import { usePagination } from '../../../../hooks';
-import BoardListItem from '../../../../types/board-list-item-interface';
+import BoardListItem from '../../../../types/board-list-item.interface';
 import { userBoardListMock } from '../../../../mocks';
 
 export default function Search() {
