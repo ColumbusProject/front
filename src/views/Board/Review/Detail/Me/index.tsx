@@ -62,6 +62,8 @@ export default function Detail() {
 
   const [favoriteCount, setFavoriteCount] = useState<number>(0);
 
+  const [showComments, setShowComments] = useState<boolean>(false);
+
   const [showFavorite, setShowFavorite] = useState<boolean>(false);
 
   const [comment, setComment] = useState<string>('');
@@ -127,8 +129,12 @@ export default function Detail() {
     navigator(MAIN_PATH);
   }
 
-  const onUpDownClickHandler = () => {
-    setUpDown(!upDown);
+  const favoriteUpDownClickHandler = () => {
+    setShowFavorite(!showFavorite);
+  };
+
+  const commentUpDownClickHandler = () => {
+    setShowComments(!showComments);
   };
 
 //           function: get comment list response 처리 함수          //
@@ -227,47 +233,51 @@ export default function Detail() {
           <div className='heart-count-box'>
             <div className='heart-count'>{favoriteCount}</div>
           </div>
-          <div className='board-detail-box-04-up-down' onClick={onUpDownClickHandler}></div>
+          <div className='board-detail-box-04-up-down' onClick={favoriteUpDownClickHandler}></div>
           <div className='board-detail-box-04-comment'></div>
           <div className='comment-count-box'>
-              <div className='comment-count'>{`${commentsCount}`}</div>
+              <div className='comment-count'>{commentsCount}</div>
           </div>
-          <div className='board-detail-box-04-up-down' onClick={onUpDownClickHandler}></div>
+          <div className='board-detail-box-04-up-down' onClick={commentUpDownClickHandler}></div>
         </div>
+        {showFavorite && (
         <div className='board-detail-box-05'>
-          <div className='board-detail-box-05-favorite-count-box'>
-            <div className='favorite-count'>{`좋아요 ${favoriteCount}`}</div>
-          </div>
-          <div className='board-detail-box-05-profile-box'>
-            {commentList.map(item => <CommentItem commentItem={item} />)}
-          </div>
+         <div className='board-detail-box-05-favorite-count-box'>
+          <div className='favorite-count'>{`좋아요 ${favoriteCount}`}</div>
+         </div>
+         <div className='board-detail-box-05-profile-box'>
+          {commentList.map(item => <CommentItem commentItem={item} />)}
+         </div>
         </div>
+        )}
+        {showComments && (
         <div className='board-detail-box-06'>
-          <div className='box-01'>
-            <div className='box-01-comment-count-box'>
-              <div className='box-01-comment-count'>{`댓글 ${commentsCount}`}</div>
-            </div>
-            {viewBoardList.map(item => <CommentItem02 commentListItem02={item} />)}
+        <div className='box-01'>
+          <div className='box-01-comment-count-box'>
+            <div className='box-01-comment-count'>{`댓글 ${commentsCount}`}</div>
           </div>
-          <div className='pagination'>
-          <Pagination
-              currentPageNumber={currentPageNumber}
-              setCurrentPageNumber={setCurrentPageNumber}
-              currentSectionNumber={currentSectionNumber}
-              setCurrentSectionNumber={setCurrentSectionNumber}
-              viewPageNumberList={viewPageNumberList}
-              totalSection={totalSection}
-            />
-          </div>
-          <div className='box-02'>
-            <div className='box-02-01'></div>
-            <div className='box-02-02'>
-              <div className='box-02-02-comment-write-box' onClick={onCommentButtonClickHandler}>
-                <div className='box-02-02-comment-write'>{'댓글달기'}</div>
-              </div>
+          {viewBoardList.map(item => <CommentItem02 commentListItem02={item} />)}
+        </div>
+        <div className='pagination'>
+        <Pagination
+            currentPageNumber={currentPageNumber}
+            setCurrentPageNumber={setCurrentPageNumber}
+            currentSectionNumber={currentSectionNumber}
+            setCurrentSectionNumber={setCurrentSectionNumber}
+            viewPageNumberList={viewPageNumberList}
+            totalSection={totalSection}
+          />
+        </div>
+        <div className='box-02'>
+          <div className='box-02-01'></div>
+          <div className='box-02-02'>
+            <div className='box-02-02-comment-write-box' onClick={onCommentButtonClickHandler}>
+              <div className='box-02-02-comment-write'>{'댓글달기'}</div>
             </div>
           </div>
         </div>
+      </div>
+        )}
       </div>
     </div>
   )
