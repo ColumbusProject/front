@@ -157,9 +157,9 @@
 
 .itinerary-card-container {
     width: 1440px;
-    height: 660px;
+    height: 720px;
 
-    margin-top: 120px;
+    margin-top: 60px;
 
     display: flex;
 
@@ -190,16 +190,26 @@
     line-height: normal;
 }
 
-.itinerary-card-box {
-    width: 1140px;
+.itinerary-card-slide-container {
+    width: 1200px;
     height: 100%;
 
-    margin-left: 60px;
+    display: flex;
 
-    /* overflow: hidden; */
+    overflow: hidden;
+
+}
+
+.itinerary-card-box {
+    width: 1080px;
+    height: 600px;
+
+    padding-left: 60px;
+    margin-top: 60px;
 
     display: flex;
-    gap: 120px
+    gap: 120px;
+
 }
 
 .right-arrow-icon {
