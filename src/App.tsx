@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div>
-      <Detail />
+      <ItineraryDetail />
     </div>
   );
 }

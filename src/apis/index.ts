@@ -7,6 +7,7 @@ import DeleteBoardResponseDto from "./dto/response/board/delete-board.response.d
 import PostCommentRequestDto from "./dto/request/auth/board/post-comment.request.dto";
 import PostCommentResponseDto from "./dto/response/board/post-comment.response.dto";
 import GetCommentListResponseDto from "./dto/response/board/get-comment-list.response.dto";
+import { SignUpResponseDto } from "./dto/response/auth";
 
 const GET_BOARD_URL = (boardNumber: string | number) => `${API_DOMAIN}/board/${boardNumber}`
 
@@ -44,6 +45,22 @@ export const signInRequest = async (requestBody: SignInRequestDto) => {
     });
   return result;
 };
+
+// description: sign up request //
+export const signUpRequest = async (requestBody: SignUpRequestDto) => {
+  const result = await axios.post(SIGN_UP_URL(), requestBody)
+    .then(response => {
+      const responseBody: SignUpResponseDto = response.data;
+      const { code } = responseBody;
+      return code;
+    })
+    .catch(error => {
+      const responseBody: ResponseDto = error.response.data;
+      const { code } = responseBody;
+      return code;
+    });
+  return result;
+}
 
 // description: get board request //
 export const getBoardRequest = async (boardNumber: string | number) => {
