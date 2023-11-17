@@ -14,6 +14,7 @@ import { Route, Routes } from 'react-router-dom';
 import Main from './views/Board/Main';
 import { useUserStore } from 'stores';
 import { loginUserMock } from 'mocks';
+import ItineraryAdd from 'components/ItineraryAdd';
 
 function App() {
 
@@ -25,7 +26,7 @@ function App() {
 
   return (
     <div>
-      <ItineraryDetail />
+      <ItineraryMemoAcountBook />
     </div>
   );
 }
