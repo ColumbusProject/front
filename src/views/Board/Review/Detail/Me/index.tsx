@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './style.css';
 import BoardListItem from 'types/board-list-item.interface';
-import { Board, CommentListItem, CommentListItem02 } from 'types';
+import { Board, CommentListItem, CommentListItem02, LoginUser2 } from 'types';
 import { boardMock, commentListMock, commentListMock02 } from 'mocks';
 import dayjs from 'dayjs';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -17,6 +17,7 @@ import Pagination from 'components/Pagination';
 import { usePagination } from 'hooks';
 import PostCommentRequestDto from 'apis/dto/request/auth/board/post-comment.request.dto';
 import GetCommentListResponseDto from 'apis/dto/response/board/get-comment-list.response.dto';
+import axios from 'axios';
 
 
 export default function Detail() {
@@ -39,6 +40,8 @@ export default function Detail() {
   const { boardNumber } = useParams();
 
   const { user } = useUserStore();
+
+  const [loginUserMock, setUser] = useState<LoginUser2[]>([]); 
 
   const [board, setBoard] = useState<Board | null>(null);
 
