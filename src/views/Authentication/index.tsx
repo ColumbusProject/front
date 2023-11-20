@@ -2,7 +2,7 @@ import React, { ChangeEvent, useEffect, useRef, useState } from 'react'
 import './style.css';
 import { useCookies } from 'react-cookie';
 import { SignInRequestDto, SignUpRequestDto } from '../../apis/dto/request/auth';
-import { signInRequest, signUpRequest } from '../../apis';
+import { signInRequest } from '../../apis';
 import { SignInResponseDto } from '../../apis/dto/response/auth';
 import ResponseDto from '../../apis/dto/response';
 import { useNavigate } from 'react-router-dom';
@@ -245,7 +245,7 @@ export default function Authentication() {
         email: email,
         telNumber: telNumber
       };
-      signUpRequest(requestBody).then(signUpResponse);
+      // signUpRequest(requestBody).then(signUpResponse);
     }
 
     //          event handler: id change 처리 함수          //
