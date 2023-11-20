@@ -26,7 +26,8 @@ function App() {
 
   return (
     <div>
-      <ItineraryMemoAcountBook />
+      <Header />
+      <ItineraryBoardWrite />
     </div>
   );
 }
