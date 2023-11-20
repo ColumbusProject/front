@@ -28,7 +28,8 @@ function App() {
 
   return (
     <div>
-      <Search />
+      <Header />
+      <ItineraryBoardWrite />
     </div>
   );
 }

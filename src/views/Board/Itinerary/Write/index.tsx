@@ -8,51 +8,13 @@ declare global {
     }
 }
 
-//          component: 일정 관리 카드          //
-function ItineraryCard({ item, index }: { item: any, index: number }) {
-    return ( 
-        <div className='itinerary-card-wrapper'>
-            <div className='day-count-box'>
-                <div className='day-count-text'>{`DAY ${index + 1}`}</div>
-                <div className='day-text'>{item.date}</div>
-            </div>
-            <div className='itinerary-text-box'>
-                <div className='itinerary-add-text'>{'+ 일정 추가'}</div>
-            </div>
-        </div>
-    )
-}
-
-
-
-//          component: 카카오맵          //
-const { kakao } = window;
-function Kakaomap() {
-    useEffect(() => {
-        const container = document.getElementById('map'); // 지도를 담을 영역의 DOM 레퍼런스
-        const options = {
-            center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표.
-            level: 3
-        };
-        const map = new kakao.maps.Map(container, options); // 지도 생성 및 객체 리턴
-    }, [])
-
-    return (
-        <div id="map" style={{
-            width: '1200px',
-            height: '540px',
-            marginLeft: '120px',
-            marginTop: '60px'
-        }}></div>
-    )
-}
-
 //          component: 게시물 작성 화면          //
 export default function ItineraryBoardWrite() {
 
     //          state: 메모/가계부 표시 상태          //
     const [showMemoAcountBook, setShowMemoAcountBook] = useState<boolean>(false);
-
+    //          state: 일정 추가 카드 표시 상태          //
+    const [showItineraryAdd, setShowItineraryAdd] = useState<boolean>(false);
     //          state: 여행시작일 상태          //
     const [startDate, setStartDate] = useState<string>('');
     //          state: 여행종료일 상태          //
@@ -92,12 +54,12 @@ export default function ItineraryBoardWrite() {
         setCurrentSlide(prev => prev + 1)
     }, [isCheckActiveNextbutton])
 
-    //          effect: 여행시작일 설정 이벤트         //
+    //          event handler: 여행시작일 설정 이벤트         //
     const onStartDateChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
         const { value } = event.target;
         setStartDate(value);
     }
-    //          effect: 여행종료일 설정 이벤트         //
+    //          event handler: 여행종료일 설정 이벤트         //
     const onEndDateChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
         if (!startDate) return;
         const { value } = event.target;
@@ -141,13 +103,169 @@ export default function ItineraryBoardWrite() {
         setSchedules(newSchedules);
     }
 
-    //          effect: 메모/가계부 표시 설정 이벤트         //
+    //          event handler: 메모/가계부 표시 설정 이벤트         //
     const onMemoAcountBookClickHandler = () => {
         setShowMemoAcountBook(!showMemoAcountBook);
     }
 
-    
+    //          event handler: 메모/가계부 표시 설정 이벤트         //
+    const onItineraryAddClickHandler = () => {
+        setShowItineraryAdd(!showItineraryAdd);
+    }
 
+    //          component: 카카오맵          //
+    const { kakao } = window;
+    const Kakaomap = () => {
+        useEffect(() => {
+            const container = document.getElementById('map'); // 지도를 담을 영역의 DOM 레퍼런스
+            const options = {
+                center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표.
+                level: 3
+            };
+            const map = new kakao.maps.Map(container, options); // 지도 생성 및 객체 리턴
+        }, [])
+
+        return (
+            <div id="map" style={{
+                width: '1200px',
+                height: '540px',
+                marginLeft: '120px',
+                marginTop: '60px'
+            }}></div>
+        )
+    }
+
+    //          component: 일정 추가 카드           //
+    const ItineraryAdd = () => {
+
+        return(
+            <div className='itinerary-add-warpper'>
+                <div className='itinerary-add-card'>
+                    <div className='day-select-close-box'>
+                        <div className='day-select-box'>
+                            <select className='day-select'>
+                                {schedules.map((item, index) => <option>{'DAY '}{index + 1}{' ('}{item.date}{')'}</option>)}
+                            </select>
+                        </div>
+                        <div className='close-box' onClick={onItineraryAddClickHandler}></div>
+                    </div>
+                    <div className='location-search-box'>
+                        <input className='loaction-input' placeholder='가고 싶은 장소를 검색해 보세요' />
+                        <div className='search-button'></div>
+                    </div>
+                    <div className='kakao-map-box'></div>
+                    <div className='search-result-box'>
+                        <div className='search-result'></div>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+    //          component: 일정 관리 카드          //
+    const ItineraryCard = ({ item, index }: { item: any, index: number }) => {
+
+        return ( 
+            <div className='itinerary-card-wrapper'>
+                <div className='day-count-box'>
+                    <div className='day-count-text'>{`DAY ${index + 1}`}</div>
+                    <div className='day-text'>{item.date}</div>
+                </div>
+                <div className='itinerary-text-box'>
+                    <div className='itinerary-add-text' onClick={onItineraryAddClickHandler}>{'+ 일정 추가'}</div>
+                </div>
+            </div>
+        )
+    }
+
+    //          component: 메모/가계부 카드          //
+    const ItineraryMemoAcountBook = () => {
+        const [select, setSelect] = useState<string>('memo');
+
+        //          event handler: 메모 메뉴 클릭 이벤트         //
+        const onMemoMenuClickHandler = () => {
+            setSelect('memo');
+        }
+        //          event handler: 가계부 메뉴 클릭 이벤트         //
+        const onAcountBookMenuClickHandler = () => {
+            setSelect('acountbook');
+        }
+
+        return (
+            <div className='memo-acountbook-wrapper'>
+                {select === 'memo' && (
+                        <div className='memo-card'>
+                            <div className='memo-acountbook-close-box' onClick={onMemoAcountBookClickHandler}>
+                                <div className='memo-acountbook-close-icon'></div>
+                            </div>
+                            <div className='memo-acountbook-text-box'>
+                                <div className='memo-acountbook-text'>{'메모/가계부 보기'}</div>
+                            </div>
+                            <div className='memo-acountbook-divide-box'>
+                                <div className='focus-menu'>{'메모'}</div>
+                                <div className='out-focus-menu' onClick={onAcountBookMenuClickHandler}>{'가계부'}</div>
+                            </div>
+                            <div className='memo-text-area-box'>
+                                <textarea className='memo-text-area' />
+                            </div>
+                            <div className='confirm-box'>
+                                <div className='confirm-text'>{'확인'}</div>
+                            </div>
+                        </div>
+                )}
+                {select === 'acountbook' && (
+                        <div className='acountbook-card'>
+                            <div className='memo-acountbook-close-box' onClick={onMemoAcountBookClickHandler}>
+                                <div className='memo-acountbook-close-icon'></div>
+                            </div>
+                            <div className='memo-acountbook-text-box'>
+                                <div className='memo-acountbook-text'>{'메모/가계부 보기'}</div>
+                            </div>
+                            <div className='memo-acountbook-divide-box'>
+                                <div className='out-focus-menu' onClick={onMemoMenuClickHandler}>{'메모'}</div>
+                                <div className='focus-menu'>{'가계부'}</div>
+                            </div>
+                            <div className='acountbook-box'>
+                                <div className='total-cost-text-box'>
+                                    <div className='total-cost-text'>{'여행 총비용'}</div>
+                                </div>
+                                <div className='cost-type-box'>
+                                    <div className='money-box'>
+                                        <div className='type-text'>{'KRW'}</div>
+                                        <div className='cost-text'>{'0'}</div>
+                                    </div>
+                                    <div className='money-box'>
+                                        <div className='type-text'>{'USD'}</div>
+                                        <div className='cost-text'>{'0'}</div>
+                                    </div>
+                                    <div className='money-box'>
+                                        <div className='type-text'>{'EUR'}</div>
+                                        <div className='cost-text'>{'0'}</div>
+                                    </div>
+                                </div>
+                                <div className='itinerary-cost-add-box'>
+                                    <div className='itinerary-cost-text'>{'여행 경비'}</div>
+                                    <div className='itinerary-cost-add-button'>{'추가'}</div>
+                                </div>
+                                <div className='add-cost-input-box'>
+                                    <input className='item-name' />
+                                    <select className='select-cost-type'>
+                                        <option value={"KRW"}>{'KRW'}</option>
+                                        <option value={"USD"}>{'USD'}</option>
+                                        <option value={"EUR"}>{'EUR'}</option>
+                                    </select>
+                                    <input className='cost-input' />
+                                    <div className='delete-button'>{'삭제'}</div>
+                                </div>
+                            </div>
+                            <div className='confirm-box'>
+                                <div className='confirm-text'>{'확인'}</div>
+                            </div>
+                        </div>
+                )}
+            </div>
+        )
+    }
 
     //          render: 게시물 작성 화면 렌더링          //
     return (
@@ -185,6 +303,8 @@ export default function ItineraryBoardWrite() {
                     <div className='cancel-text'>{'취소'}</div>
                 </div>
             </div>
+            { showItineraryAdd && <ItineraryAdd /> }
+            { showMemoAcountBook && <ItineraryMemoAcountBook /> }
         </div>
     )
 }
