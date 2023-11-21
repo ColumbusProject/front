@@ -1,5 +1,5 @@
-import User from "./user.interface";
-import LoginUser from "./login-user.interface";
+import User from "./interface/user.interface";
+import LoginUser from "./interface/login-user.interface";
 
 export type {
   User,

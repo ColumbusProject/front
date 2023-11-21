@@ -7,8 +7,8 @@ export default function Main() {
   
 
 //        render: 메인화면 컴포넌트 렌더링 (이하 상동)  // 
-
-    <div>return
+  return (
+    <div>
      <div className='container'>
          <div className='jb-box'>
            <video muted autoPlay loop>
@@ -35,7 +35,7 @@ export default function Main() {
            </div>
          </div>
        </div>
-
+    
 //    component:  카드 네비게이션         //
       <div className="comment">
          WHERE DO YOU WANT TO GO?
@@ -47,5 +47,5 @@ export default function Main() {
          <div className="text4">TRAVEL TRADE</div>
        </div>
      </div>
-
+  )
  }

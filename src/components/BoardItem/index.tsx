@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { BOARD_DETAIL_PATH } from "../../constants";
-import BoardListItem from "../../types/board-list-item-interface";
+import BoardListItem from "../../types/interface/board-list-item-interface";
 import './style.css';
 
 //          interface: 게시물 리스트 아이템 컴포넌트 Props          //
