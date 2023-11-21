@@ -1,15 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import './style.css';
-import BoardListItem from 'types/board-list-item.interface';
-import { Board, CommentListItem, CommentListItem02, LoginUser2 } from 'types';
 import { boardMock, commentListMock, commentListMock02 } from 'mocks';
 import dayjs from 'dayjs';
 import { useNavigate, useParams } from 'react-router-dom';
-import { AUTH_PATH, BOARD_UPDATE_PATH, MAIN_PATH } from 'constant';
 import GetBoardResponseDto from 'apis/dto/response/board/get-board-response.dto';
-import ResponseDto from 'apis/dto/response';
-import { useUserStore } from 'stores';
-import { deleteBoardRequest, getBoardRequest, getCommentListRequest, postCommentRequest } from 'apis';
 import { useCookies } from 'react-cookie';
 import CommentItem from 'components/CommentItem';
 import CommentItem02 from 'components/CommentItem02';
@@ -18,6 +12,13 @@ import { usePagination } from 'hooks';
 import PostCommentRequestDto from 'apis/dto/request/auth/board/post-comment.request.dto';
 import GetCommentListResponseDto from 'apis/dto/response/board/get-comment-list.response.dto';
 import axios from 'axios';
+import { useUserStore } from 'stores';
+import ResponseDto from 'apis/dto/Response.dto';
+import { MAIN_PATH } from 'constant';
+import { AUTH_PATH } from 'constant';
+import { Board, CommentListItem } from 'types';
+import CommentListItem02 from 'types/interface/comment-list-item02.interface';
+import LoginUser02 from 'types/interface/login-user02.interface';
 
 
 export default function Detail() {
@@ -41,7 +42,7 @@ export default function Detail() {
 
   const { user } = useUserStore();
 
-  const [loginUserMock, setUser] = useState<LoginUser2[]>([]); 
+  const [loginUserMock, setUser] = useState<LoginUser02[]>([]); 
 
   const [board, setBoard] = useState<Board | null>(null);
 

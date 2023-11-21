@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { BOARD_DETAIL_PATH } from "../../constants";
+import { BOARD_DETAIL_PATH } from "../../constant";
 import BoardListItem from "../../types/board-list-item.interface";
 import './style.css';
 
