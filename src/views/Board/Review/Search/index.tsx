@@ -1,18 +1,40 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './style.css';
 import { usePagination } from '../../../../hooks';
-import BoardListItem from '../../../../types/interface/board-list-item-interface';
+import BoardListItem from '../../../../types/board-list-item.interface';
 import { userBoardListMock } from '../../../../mocks';
+import Pagination from 'components/Pagination';
+import { useNavigate, useParams } from 'react-router-dom';
+import ResponseDto from 'apis/dto/response';
+import GetSearchBoardListResponseDto from 'apis/dto/response/board/get-search-board-list-.response.dto';
 
 export default function Search() {
+    //          state: 검색어 path variable 상태          //
+    const {word} = useParams();
 
+    //          state: 페이지네이션 관련 상태          //
     const { currentPageNumber, setCurrentPageNumber, currentSectionNumber, setCurrentSectionNumber,
         viewBoardList, viewPageNumberList, totalSection, setBoardList } = usePagination<BoardListItem>(5);
+    //          state: 검색 결과 개수 상태          //
+    const [count, setCount] = useState<number>(0);
+
+    //          function: 네비게이트 함수          //
+    const navigator = useNavigate();
+    //          function: get search board list response 처리 함수          //
+    const getSearchBoardListResponse = (responseBody: GetSearchBoardListResponseDto | ResponseDto) => {
+        const {code} = responseBody;
+        if (code === 'DBE') alert('데이터베이스 오류입니다.');
+        if (code !== 'SU') return;
+
+        const {searchList}  = responseBody as GetSearchBoardListResponseDto;
+        setBoardList(searchList);
+        setCount(searchList.length);
+    };
     
     // useEffect : 특정 상태가 변경될 때마다 실행되는 코드를 지정하는 함수
-    useEffect(() => {
+    useEffect(()=>{
         setBoardList(userBoardListMock);
-    }, []);
+    },[]);
 
   return (
     <div className='board-noresult-page'>
@@ -31,9 +53,18 @@ export default function Search() {
             </div>
             <div className='divider'></div>
             <div className='board-result-page-box-content-box'>
-                <div className='board-result-page-box-content-box-search-result'>{'"아무거나"검색 결과'}</div>
+                <div className='board-result-page-box-content-box-search-result'><span className='search-title-emphasis'>{word}</span>{'검색 결과'}</div>
                 <div className='board-result-page-box-content-box-no-result'>{'게시글이 존재하지 않습니다.'}</div>
-                <div className='pagination'></div>
+                <div className='pagination'>
+                    <Pagination
+                    currentPageNumber={currentPageNumber}
+                    setCurrentPageNumber={setCurrentPageNumber}
+                    currentSectionNumber={currentPageNumber}
+                    setCurrentSectionNumber={setCurrentSectionNumber}
+                    viewPageNumberList={viewPageNumberList}
+                    totalSection={totalSection}
+                    />
+                </div>
             </div>
         </div>
     </div>

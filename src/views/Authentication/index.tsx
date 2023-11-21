@@ -1,8 +1,13 @@
 import React, { ChangeEvent, useEffect, useRef, useState } from 'react'
 import './style.css';
 import { useCookies } from 'react-cookie';
-import { SignInRequestDto, SignUpRequestDto } from 'apis/dto/request/auth';
-import { SignInResponseDto } from 'apis/dto/response/auth';
+import { SignInRequestDto, SignUpRequestDto } from '../../apis/dto/request/auth';
+import { signInRequest, signUpRequest } from '../../apis';
+import { SignInResponseDto } from '../../apis/dto/response/auth';
+import ResponseDto from '../../apis/dto/response';
+import { useNavigate } from 'react-router-dom';
+import { AUTH_PATH, MAIN_PATH } from '../../constant';
+
 import backgroundVideo from './assets/videoplayback.mp4';
 import InputBox from 'components/InputBox';
 
@@ -231,15 +236,15 @@ export default function Authentication() {
         setEmailErrorMessage('이메일 주소를 입력해주세요');
       }
 
-      // //          function: 회원가입 처리 및 응답 처리          //
-      // const requestBody: SignUpRequestDto = {
-      //   id: id,
-      //   password: password,
-      //   nickname: nickname,
-      //   email: email,
-      //   telNumber: telNumber
-      // };
-      // signUpRequest(requestBody).then(signUpResponse);
+      //          function: 회원가입 처리 및 응답 처리          //
+      const requestBody: SignUpRequestDto = {
+        id: id,
+        password: password,
+        nickname: nickname,
+        email: email,
+        telNumber: telNumber
+      };
+      signUpRequest(requestBody).then(signUpResponse);
     }
 
     //          event handler: id change 처리 함수          //

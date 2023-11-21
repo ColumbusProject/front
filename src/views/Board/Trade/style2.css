@@ -818,6 +818,28 @@ z-index: 3;
         border: none;
       }
 
+      .button3{
+        position: absolute;
+        margin: 120px 60px 60px 60px;
+        width: 480px;
+        height: 120px;
+        flex-direction: column;
+        background-color: #FFF;
+        color: #FF0000;
+        text-align: center;
+        font-family: NanumGothic;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120px;
+        text-indent: 182px;
+        border-radius: 60px;
+        box-shadow: 4px 4px 4px 4px rgba(255, 0, 0, 0.22);
+        border: none;
+
+      }
+    
+
 
     /* .havingaround-button{
       position: absolute;
