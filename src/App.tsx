@@ -14,7 +14,7 @@ import { Route, Routes } from 'react-router-dom';
 import Main from './views/Board/Main';
 import { useUserStore } from 'stores';
 import { loginUserMock } from 'mocks';
-import ItineraryAdd from 'components/ItineraryAdd';
+import Write from 'views/Board/Review/Write';
 
 function App() {
 
@@ -24,8 +24,11 @@ function App() {
     setUser(loginUserMock);
   }, [])
 
+  // 로그인 되어있는 사용자와 게시글을 쓴 사용자를 비교하여 게시글을 쓴 사용자가 본인인지 알 수 있다.
+
   return (
     <div>
+      <Header />
       <ItineraryBoardWrite />
     </div>
   );
