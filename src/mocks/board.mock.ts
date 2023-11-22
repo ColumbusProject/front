@@ -12,7 +12,7 @@ const boardMock: Board = {
     writerProfileImage: null,
     viewCount: 0,
     location: '부산 서면',
-    writerEmail: 'pizz1010@naver.com'
+    writerId: 'thisisuserid'
 };
 
 export default boardMock;

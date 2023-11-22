@@ -133,6 +133,12 @@
     box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.25);
 }
 
+.kakaomap-box {
+    width: 1200px;
+    height: 540px;
+    margin-left: 120px;
+    margin-top: 60px;
+}
 
 
 

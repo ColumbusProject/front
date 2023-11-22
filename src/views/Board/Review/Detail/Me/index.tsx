@@ -106,7 +106,7 @@ export default function Detail() {
     setBoard(board);
 
     if (!user) return;
-    const isWriter = user.email === board.writerEmail;
+    const isWriter = user.userId === board.writerId;
     setWriter(isWriter);
   };
 
@@ -122,7 +122,7 @@ export default function Detail() {
   const onDeleteButtonClickHandler = () => {
     const accessToken = cookies.accessToken;
     if (!boardNumber || !accessToken) return;
-    deleteBoardRequest(boardNumber, accessToken).then(deleteBoardResponse);
+    // deleteBoardRequest(boardNumber, accessToken).then(deleteBoardResponse);
   };
 
   const deleteBoardResponse = (code: string) => {
@@ -184,7 +184,7 @@ const getFavoriteListResponse = (responseBody: GetFavoriteListResponseDto | Resp
   
   setComment('');
   if (!boardNumber)  return;
-  getCommentListRequest(boardNumber).then(getCommentListResponse);
+  // getCommentListRequest(boardNumber).then(getCommentListResponse);
   }
 
   //          event handler: 댓글 작성 버튼 이벤트 처리          //
@@ -200,7 +200,7 @@ const getFavoriteListResponse = (responseBody: GetFavoriteListResponseDto | Resp
       content: comment
     };
 
-    postCommentRequest(requestBody, boardNumber, accessToken).then(postCommentResponse);
+    // postCommentRequest(requestBody, boardNumber, accessToken).then(postCommentResponse);
   }
 
   useEffect(() => {
