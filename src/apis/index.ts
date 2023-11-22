@@ -5,6 +5,8 @@ import DeleteBoardResponseDto from "./dto/response/board/delete-board.response.d
 import GetCommentListResponseDto from "./dto/response/board/get-comment-list.response.dto";
 import PostCommentRequestDto from "./dto/request/board/travelReview/post-comment.request.dto";
 import GetFavoriteListResponseDto from "./dto/response/board/get-favorite-list.response.dto";
+import { SignInRequestDto, SignUpRequestDto } from "./dto/request/auth";
+import { SignInResponseDto, SignUpResponseDto } from "./dto/response/auth";
 
 // description: Authorizaition Header //
 const authorization = (token: string) => { 
@@ -16,6 +18,43 @@ const DOMAIN = 'http://localhost:4000/columbus';
 
 // description: API Domain 주소 //
 const API_DOMAIN = `${DOMAIN}/api`;
+
+// description: sign in API end point //
+const SIGN_IN_URL = () => `${API_DOMAIN}/auth/sign-in`;
+
+// description: sign up API end point //
+const SIGN_UP_URL = () => `${API_DOMAIN}/auth/sign-up`;
+
+// description: sign in request //
+export const signInRequest = async (requestBody: SignInRequestDto) => {
+    const result = await axios.post(SIGN_IN_URL(), requestBody)
+        .then(response => {
+            const responseBody: SignInResponseDto = response.data;
+            return responseBody;
+        })
+        .catch(error => {
+            if (!error.response.data) return null;
+            const responseBody: ResponseDto = error.response.data;
+            return responseBody;
+        })
+    return result;
+}
+
+// description: sign up request //
+export const signUpRequest = async (requestBody: SignUpRequestDto) => {
+    const result = await axios.post(SIGN_UP_URL(), requestBody)
+        .then(response => {
+            const responseBody: SignUpResponseDto = response.data;
+            return responseBody;
+        })
+        .catch(error => {
+            if (!error.response.data) return null;
+            const responseBody: ResponseDto = error.response.data;
+            return responseBody;
+        })
+    return result;
+}
+
 
 // description: delete board API end point //
 const DELETE_BOARD_URL = (boardNumber: string | number) => `${API_DOMAIN}/board/${boardNumber}`;
