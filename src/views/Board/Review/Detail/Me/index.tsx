@@ -14,11 +14,7 @@ import GetCommentListResponseDto from 'apis/dto/response/board/get-comment-list.
 import axios from 'axios';
 import { useUserStore } from 'stores';
 import ResponseDto from 'apis/dto/Response.dto';
-<<<<<<< HEAD
-import { BOARD_UPDATE_PATH, MAIN_PATH } from 'constant';
-=======
 import { BOARD_REVIEW_UPDATE_PATH, MAIN_PATH } from 'constant';
->>>>>>> 6db67ab6b84bfdd2d92dc50ee4fd638a5ca69306
 import { AUTH_PATH } from 'constant';
 import { Board, CommentListItem, FavoriteListItem } from 'types';
 import CommentListItem02 from 'types/interface/comment-list-item02.interface';
@@ -213,12 +209,8 @@ const getFavoriteListResponse = (responseBody: GetFavoriteListResponseDto | Resp
       navigator(MAIN_PATH);
       return;
     }
-<<<<<<< HEAD
-    // getBoardRequest(boardNumber).then(getBoardResponse);
-=======
     getFavoriteListRequest(boardNumber).then(getFavoriteListResponse);
     getCommentListRequest(boardNumber).then(getCommentListResponse);
->>>>>>> 6db67ab6b84bfdd2d92dc50ee4fd638a5ca69306
   }, []);
 
 

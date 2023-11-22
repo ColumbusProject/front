@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import { BoardListItem } from "types";
-=======
 import { BoardListItem } from "types"; 
->>>>>>> 6db67ab6b84bfdd2d92dc50ee4fd638a5ca69306
 
 const userBoardListMock: BoardListItem[] = [
     {

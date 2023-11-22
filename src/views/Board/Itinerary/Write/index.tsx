@@ -9,14 +9,6 @@ declare global {
     }
 }
 
-interface placeType {
-    place_name: string,
-    road_address_name: string,
-    address_name: string,
-    phone: string,
-    place_url: string
-}
-
 //          component: 게시물 작성 화면          //
 export default function ItineraryBoardWrite() {
 
@@ -68,6 +60,7 @@ export default function ItineraryBoardWrite() {
         const { value } = event.target;
         setStartDate(value);
     }
+    
     //          event handler: 여행종료일 설정 이벤트         //
     const onEndDateChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
         if (!startDate) return;
@@ -137,14 +130,10 @@ export default function ItineraryBoardWrite() {
         return (
             <div id="map" style={{
                 width: '1200px',
-                height: '540px',
-                marginLeft: '120px',
-                marginTop: '60px'
+                height: '540px'
             }}></div>
         )
     }
-
-    //          component: 일정 추가 카카오맵          //
 
     //          component: 일정 추가 카드           //
     const ItineraryAdd = () => {
@@ -164,7 +153,7 @@ export default function ItineraryBoardWrite() {
                         <input className='loaction-input' placeholder='가고 싶은 장소를 검색해 보세요' />
                         <div className='search-button'></div>
                     </div>
-                    <div className='kakao-map-box'><LandingPage /></div>
+                    <div className='kakao-map-box'><LandingPage  /></div>
                     <div className='search-result-box'>
                         <div className='search-result'></div>
                     </div>
@@ -299,7 +288,9 @@ export default function ItineraryBoardWrite() {
                         <div className='board-write-notepad-accountbook-text' onClick={onMemoAcountBookClickHandler}>{'메모 / 가계부 보기'}</div>
                     </div>
                 </div>
-                <Kakaomap />
+                <div className='kakaomap-box'>
+                { !showItineraryAdd && <Kakaomap /> }
+                </div>
                 <div className='itinerary-card-container'>
                     <div className='left-arrow-icon' onClick={prevButtonClick}>{'<'}</div>
                     <div className='itinerary-card-slide-container'>
