@@ -9,11 +9,11 @@ import CommentItem from 'components/CommentItem';
 import CommentItem02 from 'components/CommentItem02';
 import Pagination from 'components/Pagination';
 import { usePagination } from 'hooks';
-import PostCommentRequestDto from 'apis/dto/request/auth/board/post-comment.request.dto';
+import PostCommentRequestDto from 'apis/dto/request/board/travelReview/post-comment.request.dto';
 import GetCommentListResponseDto from 'apis/dto/response/board/get-comment-list.response.dto';
 import axios from 'axios';
 import { useUserStore } from 'stores';
-import ResponseDto from 'apis/dto/Response.dto';
+import ResponseDto from 'apis/dto/response';
 import { BOARD_REVIEW_UPDATE_PATH, MAIN_PATH } from 'constant';
 import { AUTH_PATH } from 'constant';
 import { Board, CommentListItem, FavoriteListItem } from 'types';
@@ -98,7 +98,7 @@ export default function Detail() {
     if (code === 'NB') alert('존재하지 않는 게시물입니다.');
     if (code === 'DBE') alert('데이터베이스 오류입니다.');
     if (code !== 'SU') {
-      navigator(MAIN_PATH);
+      navigator(MAIN_PATH());
       return;
     }
 
@@ -128,7 +128,7 @@ export default function Detail() {
   const deleteBoardResponse = (code: string) => {
     if (code === 'VF') alert('잘못된 접근입니다.');
     if (code === 'NU' || code === 'AF') {
-      navigator(AUTH_PATH);
+      navigator(AUTH_PATH());
       return;
     } 
     if (code === 'NB') alert('존재하지 않는 게시물입니다.');
@@ -136,7 +136,7 @@ export default function Detail() {
     if (code === 'DBE') alert('데이터베이스 오류입니다.');
     if (code !== 'SU') return;
 
-    navigator(MAIN_PATH);
+    navigator(MAIN_PATH());
   }
 
   const favoriteUpDownClickHandler = () => {
@@ -206,7 +206,7 @@ const getFavoriteListResponse = (responseBody: GetFavoriteListResponseDto | Resp
   useEffect(() => {
     if (!boardNumber) {
       alert('잘못된 접근입니다.');
-      navigator(MAIN_PATH);
+      navigator(MAIN_PATH());
       return;
     }
     getFavoriteListRequest(boardNumber).then(getFavoriteListResponse);

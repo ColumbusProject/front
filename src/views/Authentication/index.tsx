@@ -1,10 +1,10 @@
 import React, { ChangeEvent, useEffect, useRef, useState } from 'react'
 import './style.css';
 import { useCookies } from 'react-cookie';
-import { SignInRequestDto, SignUpRequestDto } from '../../apis/dto/request/auth';
 
 import backgroundVideo from './assets/videoplayback.mp4';
 import InputBox from 'components/InputBox';
+import { useNavigate } from 'react-router-dom';
 
 //          component: 인증 페이지          //
 export default function Authentication() {
@@ -15,7 +15,7 @@ export default function Authentication() {
   const [cookies, setCookie] = useCookies();
 
   //          function: 네비게이트 함수         //
-  // const navigator = useNavigate();
+  const navigator = useNavigate();
 
   //          component: sign-in 카드 컴포넌트          //
   const SignInCard = () => {

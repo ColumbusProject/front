@@ -1,6 +1,7 @@
 import { AUTH_PATH } from "constant";
+import Footer from "layouts/Footer";
 import Header from "layouts/Header";
-import { useLocation } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 
 //          component: 메인 레이아웃          //
 export default function Container() {
@@ -11,7 +12,9 @@ export default function Container() {
   //          render: 메인 레이아웃 렌더링          //
   return (
     <>
-      { pathname !== AUTH_PATH && <Header /> }
+      {/* <Header /> */}
+      <Outlet />
+      {pathname === '/board' && <Footer />}
     </>
   )
 }
