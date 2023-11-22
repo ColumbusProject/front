@@ -1,4 +1,4 @@
-import CommentListItem02 from 'types/comment-list-item-02.interface';
+import CommentListItem02 from 'types/interface/comment-list-item02.interface';
 import './style.css';
 import dayjs from 'dayjs';
 

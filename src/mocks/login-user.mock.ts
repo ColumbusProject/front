@@ -1,7 +1,7 @@
-import { LoginUser2 } from 'types';
+import { LoginUser } from 'types';
 
-const loginUserMock: LoginUser2 = {
-    email: '2mail@email.com',
+const loginUserMock: LoginUser = {
+    userId: 'thisisuserid',
     nickname: '닉네임',
     profileImage: null
 };

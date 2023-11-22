@@ -1,6 +1,6 @@
-import { CommentListItem02 } from "types";
+import { CommentListItem } from "types";
 
-const commentListMock02: CommentListItem02[] = [
+const commentListMock02: CommentListItem[] = [
     {
         content: '디자인 너무 빡친다.',
         writeDatetime: '3분 전',

@@ -11,6 +11,7 @@ import MyPage from 'views/User/MyPage';
 import LogBook from 'views/User/LogBook';
 import Profile from 'views/User/Profile';
 import Container from 'layouts/Container';
+import Header from 'layouts/Header';
 
 //          component: Application 컴포넌트         //
 function App() {
@@ -28,7 +29,7 @@ function App() {
 
   return (
     <Routes>
-      <Route element={<Container />}>
+      {/* <Route element={<Container />}> */}
         <Route path='/columbus' element={<Main />} />
         <Route path='/auth' element={<></>} />
         <Route path='/user'>
@@ -56,7 +57,7 @@ function App() {
             <Route path=':boardNumber' element={<></>} /> 
           </Route>
         </Route>
-      </Route>
+      {/* </Route> */}
     </Routes>
   );
 }

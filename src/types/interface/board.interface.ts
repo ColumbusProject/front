@@ -8,5 +8,5 @@ export default interface Board {
     writerProfileImage: string | null;
     viewCount: number,
     location: string | null,
-    writerEmail: string,
+    writerId: string,
 }

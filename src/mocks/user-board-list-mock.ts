@@ -1,4 +1,4 @@
-import BoardListItem from "../types/board-list-item.interface";
+import { BoardListItem } from "types";
 
 const userBoardListMock: BoardListItem[] = [
     {

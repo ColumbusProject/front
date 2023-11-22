@@ -14,7 +14,7 @@ import GetCommentListResponseDto from 'apis/dto/response/board/get-comment-list.
 import axios from 'axios';
 import { useUserStore } from 'stores';
 import ResponseDto from 'apis/dto/Response.dto';
-import { MAIN_PATH } from 'constant';
+import { BOARD_UPDATE_PATH, MAIN_PATH } from 'constant';
 import { AUTH_PATH } from 'constant';
 import { Board, CommentListItem } from 'types';
 import CommentListItem02 from 'types/interface/comment-list-item02.interface';
@@ -100,7 +100,7 @@ export default function Detail() {
     setBoard(board);
 
     if (!user) return;
-    const isWriter = user.email === board.writerEmail;
+    const isWriter = user.userId === board.writerId;
     setWriter(isWriter);
   };
 
@@ -116,7 +116,7 @@ export default function Detail() {
   const onDeleteButtonClickHandler = () => {
     const accessToken = cookies.accessToken;
     if (!boardNumber || !accessToken) return;
-    deleteBoardRequest(boardNumber, accessToken).then(deleteBoardResponse);
+    // deleteBoardRequest(boardNumber, accessToken).then(deleteBoardResponse);
   };
 
   const deleteBoardResponse = (code: string) => {
@@ -164,7 +164,7 @@ export default function Detail() {
   
   setComment('');
   if (!boardNumber)  return;
-  getCommentListRequest(boardNumber).then(getCommentListResponse);
+  // getCommentListRequest(boardNumber).then(getCommentListResponse);
   }
 
   //          event handler: 댓글 작성 버튼 이벤트 처리          //
@@ -180,7 +180,7 @@ export default function Detail() {
       content: comment
     };
 
-    postCommentRequest(requestBody, boardNumber, accessToken).then(postCommentResponse);
+    // postCommentRequest(requestBody, boardNumber, accessToken).then(postCommentResponse);
   }
 
   useEffect(() => {
@@ -189,7 +189,7 @@ export default function Detail() {
       navigator(MAIN_PATH);
       return;
     }
-    getBoardRequest(boardNumber).then(getBoardResponse);
+    // getBoardRequest(boardNumber).then(getBoardResponse);
   }, []);
 
 
