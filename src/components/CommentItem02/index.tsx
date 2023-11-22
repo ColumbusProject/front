@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import CommentListItem02 from 'types/interface/comment-list-item02.interface';
+=======
+import CommentListItem02 from 'types/interface/comment-list-item02.interface'; 
+>>>>>>> 6db67ab6b84bfdd2d92dc50ee4fd638a5ca69306
 import './style.css';
 import dayjs from 'dayjs';
 

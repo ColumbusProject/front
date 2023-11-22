@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import './style.css';
 import { usePagination } from '../../../../hooks';
+<<<<<<< HEAD
 import { BoardListItem } from 'types';
+=======
+import { BoardListItem } from 'types'; 
+>>>>>>> 6db67ab6b84bfdd2d92dc50ee4fd638a5ca69306
 import { userBoardListMock } from '../../../../mocks';
 import Pagination from 'components/Pagination';
 import { useNavigate, useParams } from 'react-router-dom';

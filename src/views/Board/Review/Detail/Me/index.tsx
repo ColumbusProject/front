@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './style.css';
-import { boardMock, commentListMock, commentListMock02 } from 'mocks';
+import { boardMock, commentListMock} from 'mocks';
 import dayjs from 'dayjs';
 import { useNavigate, useParams } from 'react-router-dom';
 import GetBoardResponseDto from 'apis/dto/response/board/get-board-response.dto';
@@ -14,11 +14,17 @@ import GetCommentListResponseDto from 'apis/dto/response/board/get-comment-list.
 import axios from 'axios';
 import { useUserStore } from 'stores';
 import ResponseDto from 'apis/dto/Response.dto';
+<<<<<<< HEAD
 import { BOARD_UPDATE_PATH, MAIN_PATH } from 'constant';
+=======
+import { BOARD_REVIEW_UPDATE_PATH, MAIN_PATH } from 'constant';
+>>>>>>> 6db67ab6b84bfdd2d92dc50ee4fd638a5ca69306
 import { AUTH_PATH } from 'constant';
-import { Board, CommentListItem } from 'types';
+import { Board, CommentListItem, FavoriteListItem } from 'types';
 import CommentListItem02 from 'types/interface/comment-list-item02.interface';
 import LoginUser02 from 'types/interface/login-user02.interface';
+import { deleteBoardRequest, getCommentListRequest, getFavoriteListRequest, postCommentRequest } from 'apis';
+import GetFavoriteListResponseDto from 'apis/dto/response/board/get-favorite-list.response.dto';
 
 
 export default function Detail() {
@@ -35,7 +41,7 @@ export default function Detail() {
   } = usePagination<CommentListItem02>(3);
 
   useEffect(() => {
-    setBoardList(commentListMock02);
+    setBoardList(commentListMock);
   }, []);
 
   const { boardNumber } = useParams();
@@ -71,6 +77,10 @@ export default function Detail() {
   const [showFavorite, setShowFavorite] = useState<boolean>(false);
 
   const [comment, setComment] = useState<string>('');
+
+  const [favoriteList, setFavoriteList] = useState<FavoriteListItem[]>([]);
+
+  const [isFavorite, setFavorite] = useState<boolean>(false);
 
   useEffect(() => {
     setBoard(boardMock);
@@ -110,7 +120,7 @@ export default function Detail() {
 
   const onUpdateButtonClickHandler = () => {
     if (!boardNumber) return;
-    navigator(BOARD_UPDATE_PATH(boardNumber));
+    navigator(BOARD_REVIEW_UPDATE_PATH(boardNumber));
   };
 
   const onDeleteButtonClickHandler = () => {
@@ -140,6 +150,20 @@ export default function Detail() {
   const commentUpDownClickHandler = () => {
     setShowComments(!showComments);
   };
+
+//           function: get favorite list response 처리 함수          //
+const getFavoriteListResponse = (responseBody: GetFavoriteListResponseDto | ResponseDto) => {
+  const {code} = responseBody;
+  if (code === 'NB') alert('존재하지 않는 게시물입니다.');
+  if (code === 'DBE') alert('데이터베이스 오류입니다.');
+  if (code === 'SU') return;
+
+  const {favoriteList} = responseBody as GetFavoriteListResponseDto;
+  setFavoriteList(favoriteList);
+
+  const isFavorite = favoriteList.findIndex(item => item.userId === user?.userId) ! == -1;
+  setFavorite(isFavorite);
+}
 
 //           function: get comment list response 처리 함수          //
   const getCommentListResponse = (responseBody: GetCommentListResponseDto | ResponseDto) => {
@@ -189,7 +213,12 @@ export default function Detail() {
       navigator(MAIN_PATH);
       return;
     }
+<<<<<<< HEAD
     // getBoardRequest(boardNumber).then(getBoardResponse);
+=======
+    getFavoriteListRequest(boardNumber).then(getFavoriteListResponse);
+    getCommentListRequest(boardNumber).then(getCommentListResponse);
+>>>>>>> 6db67ab6b84bfdd2d92dc50ee4fd638a5ca69306
   }, []);
 
 

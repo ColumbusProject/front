@@ -1,6 +1,11 @@
 import { useNavigate } from "react-router-dom";
+<<<<<<< HEAD
 import { BOARD_DETAIL_PATH } from "../../constant";
 import { BoardListItem } from "types";
+=======
+import { BOARD_REVIEW_DETAIL_PATH } from "../../constant";
+import { BoardListItem } from "types"; 
+>>>>>>> 6db67ab6b84bfdd2d92dc50ee4fd638a5ca69306
 import './style.css';
 
 //          interface: 게시물 리스트 아이템 컴포넌트 Props          //
@@ -15,7 +20,7 @@ export default function BoardItem({boardItem}: Props) {
     const navigator = useNavigate();
 
     const onCardClickHandler = () => {
-        navigator(BOARD_DETAIL_PATH(boardNumber));
+        navigator(BOARD_REVIEW_DETAIL_PATH(boardNumber));
     }
 
     return (
