@@ -1,9 +1,9 @@
 import axios from "axios";
 import PostCommentResponseDto from "./dto/response/board/post-comment.response.dto";
-import ResponseDto from "./dto/Response.dto";
+import ResponseDto from "./dto/response";
 import DeleteBoardResponseDto from "./dto/response/board/delete-board.response.dto";
 import GetCommentListResponseDto from "./dto/response/board/get-comment-list.response.dto";
-import PostCommentRequestDto from "./dto/request/auth/board/post-comment.request.dto";
+import PostCommentRequestDto from "./dto/request/board/travelReview/post-comment.request.dto";
 import GetFavoriteListResponseDto from "./dto/response/board/get-favorite-list.response.dto";
 
 // description: Authorizaition Header //
@@ -12,10 +12,10 @@ const authorization = (token: string) => {
 };
 
 // description: Domain URL //
-const DOMAIN = 'http://localhost:4000';
+const DOMAIN = 'http://localhost:4000/columbus';
 
 // description: API Domain 주소 //
-const API_DOMAIN = `${DOMAIN}/api/v1`;
+const API_DOMAIN = `${DOMAIN}/api`;
 
 // description: delete board API end point //
 const DELETE_BOARD_URL = (boardNumber: string | number) => `${API_DOMAIN}/board/${boardNumber}`;

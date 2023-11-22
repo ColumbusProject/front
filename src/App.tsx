@@ -11,6 +11,8 @@ import MyPage from 'views/User/MyPage';
 import LogBook from 'views/User/LogBook';
 import Profile from 'views/User/Profile';
 import Container from 'layouts/Container';
+import { AUTH_PATH, BOARD_PATH, MAIN_PATH, MY_LOGBOOK_PATH, MY_PAGE_PATH, PROFILE_PATH, USER_PATH } from 'constant';
+import Authentication from 'views/Authentication';
 
 //          component: Application 컴포넌트         //
 function App() {
@@ -29,33 +31,36 @@ function App() {
   return (
     <Routes>
       <Route element={<Container />}>
-        <Route path='/columbus' element={<Main />} />
-        <Route path='/auth' element={<></>} />
-        <Route path='/user'>
-          <Route path='my-page' element={<MyPage />}/>
-          <Route path='my-logbook' element={<LogBook />} />
-          <Route path='profile' element={<Profile />} />
+        <Route path={MAIN_PATH()}>
+          <Route index element={<Main />} />
+          <Route path={AUTH_PATH()} element={<Authentication />} />
+          <Route path={USER_PATH()}>
+            <Route path={MY_PAGE_PATH(':userId')} element={<MyPage />}/>
+            <Route path={MY_LOGBOOK_PATH(':userId')} element={<LogBook />} />
+            <Route path={PROFILE_PATH(':userId')} element={<Profile />} />
+          </Route>
+          <Route path={BOARD_PATH()}>
+            <Route path='itinerary'>
+              <Route path='search-list/:searchWord' element={<></>} />
+              <Route path='write' element={<ItineraryBoardWrite />} />
+              <Route path='update/:boardNumber' element={<></>} />
+              <Route path=':boardNumber' element={<ItineraryDetail />} />
+            </Route>
+            <Route path='review'>
+              <Route path='search-list/:searchWord' element={<Search />} />
+              <Route path='write' element={<Write />} />
+              <Route path='update/:boardNumber' element={<></>} />
+              <Route path=':boardNumber' element={<Detail/>} /> 
+            </Route>
+            <Route path='store'>
+              <Route path='search-list/:searchWord' element={<></>} />
+              <Route path='write' element={<></>} />
+              <Route path='update/:boardNumber' element={<></>} />
+              <Route path=':boardNumber' element={<></>} /> 
+            </Route>
+          </Route>
         </Route>
-        <Route path='/board'>
-          <Route path='itinerary'>
-            <Route path='search-list/:searchWord' element={<></>} />
-            <Route path='write' element={<ItineraryBoardWrite />} />
-            <Route path='update/:boardNumber' element={<></>} />
-            <Route path=':boardNumber' element={<ItineraryDetail />} />
-          </Route>
-          <Route path='review'>
-            <Route path='search-list/:searchWord' element={<Search />} />
-            <Route path='write' element={<Write />} />
-            <Route path='update/:boardNumber' element={<></>} />
-            <Route path=':boardNumber' element={<Detail/>} /> 
-          </Route>
-          <Route path='store'>
-            <Route path='search-list/:searchWord' element={<></>} />
-            <Route path='write' element={<></>} />
-            <Route path='update/:boardNumber' element={<></>} />
-            <Route path=':boardNumber' element={<></>} /> 
-          </Route>
-        </Route>
+        <Route path='*' element={<h1>404 Not Found</h1>} />
       </Route>
     </Routes>
   );
