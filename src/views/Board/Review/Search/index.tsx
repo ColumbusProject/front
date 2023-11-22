@@ -5,7 +5,7 @@ import BoardListItem from '../../../../types/board-list-item.interface';
 import { userBoardListMock } from '../../../../mocks';
 import Pagination from 'components/Pagination';
 import { useNavigate, useParams } from 'react-router-dom';
-import ResponseDto from 'apis/dto/Response.dto';
+import ResponseDto from 'apis/dto/response/response.dto';
 import GetSearchBoardListResponseDto from 'apis/dto/response/board/get-search-board-list-.response.dto';
 
 export default function Search() {
