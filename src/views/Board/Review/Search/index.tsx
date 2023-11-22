@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import './style.css';
 import { usePagination } from '../../../../hooks';
-import BoardListItem from '../../../../types/board-list-item.interface';
+import { BoardListItem } from 'types'; 
 import { userBoardListMock } from '../../../../mocks';
 import Pagination from 'components/Pagination';
 import { useNavigate, useParams } from 'react-router-dom';
-import ResponseDto from 'apis/dto/response/response.dto';
+import ResponseDto from 'apis/dto/response';
 import GetSearchBoardListResponseDto from 'apis/dto/response/board/get-search-board-list-.response.dto';
 
 export default function Search() {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './style.css';
-import BoardListItem from '../../../types/board-list-item.interface';
+import { BoardListItem } from 'types';
 import { userBoardListMock } from '../../../mocks';
 import BoardItem from '../../../components/BoardItem';
 import { usePagination } from '../../../hooks';

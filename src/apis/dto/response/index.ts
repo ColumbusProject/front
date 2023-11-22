@@ -1,3 +1,6 @@
-import ResponseDto from "./response.dto";
+import { ResponseCode } from "types/enum";
 
-export type { ResponseDto };
+export default interface ResponseDto {
+  code: ResponseCode;
+  message: string;
+};
