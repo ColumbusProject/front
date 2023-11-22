@@ -1,6 +1,5 @@
 import React from 'react'
-import Title from '../1. Title/Title'
-
+import Title from '../Title/Title'
 
 
 

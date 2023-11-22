@@ -37,7 +37,7 @@
   }
 }
 
-/* .password_icon {
+.password_icon {
   display: flex;
   align-items: center;
 
@@ -46,6 +46,5 @@
   left: 444px;
   top: 315px;
 
-  background: url(views/Authentication/assets/password_icon.png);
-
-} */
+  background-image: url(views/Authentication/assets/password_icon.png);
+}
