@@ -12,7 +12,7 @@
     display: grid;
     grid-template-columns: 6fr 12fr 6fr;
 
-    background-color: #1178C6;
+    background-color: #1178c6;
 
 }
 
@@ -34,6 +34,8 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
+    cursor: pointer;
 }
 
 .navigate-box {
@@ -50,11 +52,14 @@
 
     text-align: center;
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: NanumGothic;
+    font-family: Montserrat;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
+    cursor: pointer;
+    
 }
 
 .profile-menu-box {

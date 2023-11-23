@@ -4,18 +4,23 @@ import ItineraryDetail from './views/Board/Itinerary/Detail';
 import ItineraryBoardWrite from './views/Board/Itinerary/Write';
 import Detail from './views/Board/Review/Detail/Me';
 import Search from './views/Board/Review/Search';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import Main from 'views/Main';
 import Write from 'views/Board/Review/Write';
 import MyPage from 'views/User/MyPage';
 import LogBook from 'views/User/LogBook';
-import Profile from 'views/User/Profile';
 import Container from 'layouts/Container';
-import { AUTH_PATH, BOARD_PATH, MAIN_PATH, MY_LOGBOOK_PATH, MY_PAGE_PATH, PROFILE_PATH, USER_PATH } from 'constant';
+import { AUTH_PATH, BOARD_ITINERARY_MAIN_PATH, BOARD_PATH, BOARD_REVIEW_DETAIL_PATH, BOARD_REVIEW_MAIN_PATH, BOARD_REVIEW_UPDATE_PATH, BOARD_TRADE_MAIN_PATH, MAIN_PATH, MY_LOGBOOK_PATH, MY_PAGE_PATH, PROFILE_PATH, USER_PATH } from 'constant';
 import Authentication from 'views/Authentication';
+import ItineraryMain from 'views/Board/Itinerary/Main';
+import ReviewMain from 'views/Board/Review/Main';
 
 //          component: Application 컴포넌트         //
 function App() {
+  
+  const { pathname } = useLocation();
+
+  const navigator = useNavigate();
 
   //          render: Application 컴포넌트 렌더링         //
   // description: 메인 화면 : '/columbus' - Main //
@@ -26,7 +31,11 @@ function App() {
   // description: 게시물 수정하기 : '/board/*/update/:boardNumber' - BoardUpdate //
   // description: 유저 마이페이지 : '/user/my-page' - MyPage //
   // description: 유저 항해 일지 : '/user/my-logbook' - LogBook //
-  // description: 유저 프로필 수정 : '/user/profile' - Profile //
+
+  useEffect(() => {
+    if (pathname === "/") navigator(MAIN_PATH());
+    
+  }, [pathname]);
 
   return (
     <Routes>
@@ -37,22 +46,24 @@ function App() {
           <Route path={USER_PATH()}>
             <Route path={MY_PAGE_PATH(':userId')} element={<MyPage />}/>
             <Route path={MY_LOGBOOK_PATH(':userId')} element={<LogBook />} />
-            <Route path={PROFILE_PATH(':userId')} element={<Profile />} />
           </Route>
           <Route path={BOARD_PATH()}>
-            <Route path='itinerary'>
+            <Route path={BOARD_ITINERARY_MAIN_PATH()}>
+              <Route index element={<ItineraryMain />} />
               <Route path='search-list/:searchWord' element={<></>} />
               <Route path='write' element={<ItineraryBoardWrite />} />
               <Route path='update/:boardNumber' element={<></>} />
               <Route path=':boardNumber' element={<ItineraryDetail />} />
             </Route>
-            <Route path='review'>
+            <Route path={BOARD_REVIEW_MAIN_PATH()}>
+              <Route index element={<ReviewMain />} />
               <Route path='search-list/:searchWord' element={<Search />} />
               <Route path='write' element={<Write />} />
-              <Route path='update/:boardNumber' element={<></>} />
-              <Route path=':boardNumber' element={<Detail/>} /> 
+              <Route path={BOARD_REVIEW_UPDATE_PATH(':boardNumber')} element={<></>} />
+              <Route path={BOARD_REVIEW_DETAIL_PATH(':boardNumber')} element={<Detail/>} /> 
             </Route>
-            <Route path='store'>
+            <Route path={BOARD_TRADE_MAIN_PATH()}>
+              <Route index element={<></>} />
               <Route path='search-list/:searchWord' element={<></>} />
               <Route path='write' element={<></>} />
               <Route path='update/:boardNumber' element={<></>} />

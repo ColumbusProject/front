@@ -7,9 +7,9 @@ export interface propsType {
   
 const LandingPage = ():JSX.Element => {
 // 입력 폼 변화 감지하여 입력 값 관리
-const [Value, setValue] = useState("");
+const [value, setValue] = useState("");
 // 제출한 검색어 관리
-const [Keyword, setKeyword] = useState("");
+const [keyword, setKeyword] = useState("");
 
 // 입력 폼 변화 감지하여 입력 값을 state에 담아주는 함수
 const keywordChange = (e: { preventDefault: () => void; target: { value: string }; }) => {
@@ -20,12 +20,12 @@ const keywordChange = (e: { preventDefault: () => void; target: { value: string 
 // 제출한 검색어 state에 담아주는 함수
 const submitKeyword = (e: { preventDefault: () => void; }) => {
 e.preventDefault();
-setKeyword(Value);
+setKeyword(value);
 }
 
 // 검색어를 입력하지 않고 검색 버튼을 눌렀을 경우
 const valueChecker = () => {
-if (Value === "") {
+if (value === "") {
     alert ("검색어를 입력해주세요.")
 }
 }
@@ -44,7 +44,7 @@ return (
         </form>
     </div>
     {/* 제출한 검색어 넘기기 */}
-    <Map searchKeyword={ Keyword }/>
+    <Map searchKeyword={ keyword }/>
     </div>
 </div>
 )
