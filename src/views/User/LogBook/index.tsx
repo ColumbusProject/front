@@ -13,9 +13,15 @@ export default function LogBook() {
   return (
     <div>
       <video className='my-logbook-background-video' muted autoPlay loop>
-      <source src={backgroundVideo}></source>
+        <source src={backgroundVideo}></source>
       </video>
-      {}
+      <div>
+        <div>
+          {/* { view == 'itinerary' && }
+          { view == 'review' && }
+          { view == 'trade' && } */}
+        </div>
+      </div>
     </div>
   )
   

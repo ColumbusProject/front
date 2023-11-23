@@ -10,7 +10,7 @@ import Write from 'views/Board/Review/Write';
 import MyPage from 'views/User/MyPage';
 import LogBook from 'views/User/LogBook';
 import Container from 'layouts/Container';
-import { AUTH_PATH, BOARD_PATH, MAIN_PATH, MY_LOGBOOK_PATH, MY_PAGE_PATH, PROFILE_PATH, USER_PATH } from 'constant';
+import { AUTH_PATH, BOARD_ITINERARY_MAIN_PATH, BOARD_PATH, BOARD_REVIEW_DETAIL_PATH, BOARD_REVIEW_MAIN_PATH, BOARD_REVIEW_UPDATE_PATH, BOARD_TRADE_MAIN_PATH, MAIN_PATH, MY_LOGBOOK_PATH, MY_PAGE_PATH, PROFILE_PATH, USER_PATH } from 'constant';
 import Authentication from 'views/Authentication';
 import ItineraryMain from 'views/Board/Itinerary/Main';
 import ReviewMain from 'views/Board/Review/Main';
@@ -48,21 +48,21 @@ function App() {
             <Route path={MY_LOGBOOK_PATH(':userId')} element={<LogBook />} />
           </Route>
           <Route path={BOARD_PATH()}>
-            <Route path='itinerary'>
+            <Route path={BOARD_ITINERARY_MAIN_PATH()}>
               <Route index element={<ItineraryMain />} />
               <Route path='search-list/:searchWord' element={<></>} />
               <Route path='write' element={<ItineraryBoardWrite />} />
               <Route path='update/:boardNumber' element={<></>} />
               <Route path=':boardNumber' element={<ItineraryDetail />} />
             </Route>
-            <Route path='review'>
+            <Route path={BOARD_REVIEW_MAIN_PATH()}>
               <Route index element={<ReviewMain />} />
               <Route path='search-list/:searchWord' element={<Search />} />
               <Route path='write' element={<Write />} />
-              <Route path='update/:boardNumber' element={<></>} />
-              <Route path=':boardNumber' element={<Detail/>} /> 
+              <Route path={BOARD_REVIEW_UPDATE_PATH(':boardNumber')} element={<></>} />
+              <Route path={BOARD_REVIEW_DETAIL_PATH(':boardNumber')} element={<Detail/>} /> 
             </Route>
-            <Route path='store'>
+            <Route path={BOARD_TRADE_MAIN_PATH()}>
               <Route index element={<></>} />
               <Route path='search-list/:searchWord' element={<></>} />
               <Route path='write' element={<></>} />
