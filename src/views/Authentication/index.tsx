@@ -1,16 +1,10 @@
 import React, { ChangeEvent, useEffect, useRef, useState } from 'react'
 import './style.css';
 import { useCookies } from 'react-cookie';
-import { SignInRequestDto, SignUpRequestDto } from '../../apis/dto/request/auth';
-import { signInRequest } from '../../apis';
-import { SignInResponseDto } from '../../apis/dto/response/auth';
-import ResponseDto from '../../apis/dto/response';
-import { useNavigate } from 'react-router-dom';
-import { AUTH_PATH, MAIN_PATH } from '../../constant';
 
 import backgroundVideo from './assets/videoplayback.mp4';
-import InputBox from '../../components/InputBox';
-import { error } from 'console';
+import InputBox from 'components/InputBox';
+import { useNavigate } from 'react-router-dom';
 
 //          component: 인증 페이지          //
 export default function Authentication() {
@@ -21,7 +15,7 @@ export default function Authentication() {
   const [cookies, setCookie] = useCookies();
 
   //          function: 네비게이트 함수         //
-  // const navigator = useNavigate();
+  const navigator = useNavigate();
 
   //          component: sign-in 카드 컴포넌트          //
   const SignInCard = () => {
@@ -36,28 +30,28 @@ export default function Authentication() {
     //          state: 로그인 에러 상태         //
     const [error, setError] = useState<boolean>(false);
 
-    //          function: sign in response 처리 함수          //
-    const signInResponse = (responseBody: SignInResponseDto | ResponseDto) => {
-      const { code } = responseBody;
-      if (code === 'VF') alert('모두 입력해주세요.');
-      if (code === 'SF') setError(true);
-      if (code === 'DBE') alert('데이터베이스 오류입니다.');
-      if (code !== 'SU') return;
+    // //          function: sign in response 처리 함수          //
+    // const signInResponse = (responseBody: SignInResponseDto | ResponseDto) => {
+    //   const { code } = responseBody;
+    //   if (code === 'VF') alert('모두 입력해주세요.');
+    //   if (code === 'SF') setError(true);
+    //   if (code === 'DBE') alert('데이터베이스 오류입니다.');
+    //   if (code !== 'SU') return;
 
-      const { token, expirationTime } = responseBody as SignInResponseDto;
+    //   const { token, expirationTime } = responseBody as SignInResponseDto;
 
-      const now = new Date().getTime();
-      const expires = new Date(now + expirationTime * 3600);
+    //   const now = new Date().getTime();
+    //   const expires = new Date(now + expirationTime * 3600);
 
-      // setCookie('accessToken', token, { expires, path: MAIN_PATH });
-      // navigator(MAIN_PATH);
-    }
+    //   // setCookie('accessToken', token, { expires, path: MAIN_PATH });
+    //   // navigator(MAIN_PATH);
+    // }
 
-    //          event handler: 로그인 버튼 클릭 이벤트 처리         //
-    const onSignInButtonClick = () => {
-      const requestBody: SignInRequestDto = {id, password};
-      signInRequest(requestBody).then(signInResponse);
-    }
+    // //          event handler: 로그인 버튼 클릭 이벤트 처리         //
+    // const onSignInButtonClick = () => {
+    //   const requestBody: SignInRequestDto = {id, password};
+    //   signInRequest(requestBody).then(signInResponse);
+    // }
 
     //          event handler: emphasis(회원가입) 버튼 클릭 이벤트 처리         //
     const onClickEmphasis = () => {
@@ -81,7 +75,7 @@ export default function Authentication() {
           </div>
           <div className='sign-in-bottom-box'>
             {error && <div className='sign-in-error-message'>{'아이디 또는 비밀번호가 일치하지 않습니다.'}</div>}
-            <div className='sign-in-button-box' onClick={onSignInButtonClick} >
+            <div className='sign-in-button-box' >
               <div className='sign-in-text'>{'로그인'}</div>
             </div>
           </div>
@@ -237,14 +231,14 @@ export default function Authentication() {
         setEmailErrorMessage('이메일 주소를 입력해주세요');
       }
 
-      //          function: 회원가입 처리 및 응답 처리          //
-      const requestBody: SignUpRequestDto = {
-        id: id,
-        password: password,
-        nickname: nickname,
-        email: email,
-        telNumber: telNumber
-      };
+      // //          function: 회원가입 처리 및 응답 처리          //
+      // const requestBody: SignUpRequestDto = {
+      //   id: id,
+      //   password: password,
+      //   nickname: nickname,
+      //   email: email,
+      //   telNumber: telNumber
+      // };
       // signUpRequest(requestBody).then(signUpResponse);
     }
 

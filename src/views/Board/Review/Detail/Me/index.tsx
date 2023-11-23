@@ -1,23 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import './style.css';
-import BoardListItem from 'types/board-list-item.interface';
-import { Board, CommentListItem, CommentListItem02, LoginUser2 } from 'types';
-import { boardMock, commentListMock, commentListMock02 } from 'mocks';
+import { boardMock, commentListMock} from 'mocks';
 import dayjs from 'dayjs';
 import { useNavigate, useParams } from 'react-router-dom';
-import { AUTH_PATH, BOARD_UPDATE_PATH, MAIN_PATH } from 'constant';
 import GetBoardResponseDto from 'apis/dto/response/board/get-board-response.dto';
-import ResponseDto from 'apis/dto/response';
-import { useUserStore } from 'stores';
-import { deleteBoardRequest, getBoardRequest, getCommentListRequest, postCommentRequest } from 'apis';
 import { useCookies } from 'react-cookie';
 import CommentItem from 'components/CommentItem';
 import CommentItem02 from 'components/CommentItem02';
 import Pagination from 'components/Pagination';
 import { usePagination } from 'hooks';
-import PostCommentRequestDto from 'apis/dto/request/auth/board/post-comment.request.dto';
+import PostCommentRequestDto from 'apis/dto/request/board/travelReview/post-comment.request.dto';
 import GetCommentListResponseDto from 'apis/dto/response/board/get-comment-list.response.dto';
 import axios from 'axios';
+import { useUserStore } from 'stores';
+import ResponseDto from 'apis/dto/response';
+import { BOARD_REVIEW_UPDATE_PATH, MAIN_PATH } from 'constant';
+import { AUTH_PATH } from 'constant';
+import { Board, CommentListItem, FavoriteListItem } from 'types';
+import CommentListItem02 from 'types/interface/comment-list-item02.interface';
+import LoginUser02 from 'types/interface/login-user02.interface';
+import { deleteBoardRequest, getCommentListRequest, getFavoriteListRequest, postCommentRequest } from 'apis';
+import GetFavoriteListResponseDto from 'apis/dto/response/board/get-favorite-list.response.dto';
 
 
 export default function Detail() {
@@ -34,14 +37,14 @@ export default function Detail() {
   } = usePagination<CommentListItem02>(3);
 
   useEffect(() => {
-    setBoardList(commentListMock02);
+    setBoardList(commentListMock);
   }, []);
 
   const { boardNumber } = useParams();
 
   const { user } = useUserStore();
 
-  const [loginUserMock, setUser] = useState<LoginUser2[]>([]); 
+  const [loginUserMock, setUser] = useState<LoginUser02[]>([]); 
 
   const [board, setBoard] = useState<Board | null>(null);
 
@@ -71,6 +74,10 @@ export default function Detail() {
 
   const [comment, setComment] = useState<string>('');
 
+  const [favoriteList, setFavoriteList] = useState<FavoriteListItem[]>([]);
+
+  const [isFavorite, setFavorite] = useState<boolean>(false);
+
   useEffect(() => {
     setBoard(boardMock);
   }, []);
@@ -91,7 +98,7 @@ export default function Detail() {
     if (code === 'NB') alert('존재하지 않는 게시물입니다.');
     if (code === 'DBE') alert('데이터베이스 오류입니다.');
     if (code !== 'SU') {
-      navigator(MAIN_PATH);
+      navigator(MAIN_PATH());
       return;
     }
 
@@ -99,7 +106,7 @@ export default function Detail() {
     setBoard(board);
 
     if (!user) return;
-    const isWriter = user.email === board.writerEmail;
+    const isWriter = user.userId === board.writerId;
     setWriter(isWriter);
   };
 
@@ -109,19 +116,19 @@ export default function Detail() {
 
   const onUpdateButtonClickHandler = () => {
     if (!boardNumber) return;
-    navigator(BOARD_UPDATE_PATH(boardNumber));
+    navigator(BOARD_REVIEW_UPDATE_PATH(boardNumber));
   };
 
   const onDeleteButtonClickHandler = () => {
     const accessToken = cookies.accessToken;
     if (!boardNumber || !accessToken) return;
-    deleteBoardRequest(boardNumber, accessToken).then(deleteBoardResponse);
+    // deleteBoardRequest(boardNumber, accessToken).then(deleteBoardResponse);
   };
 
   const deleteBoardResponse = (code: string) => {
     if (code === 'VF') alert('잘못된 접근입니다.');
     if (code === 'NU' || code === 'AF') {
-      navigator(AUTH_PATH);
+      navigator(AUTH_PATH());
       return;
     } 
     if (code === 'NB') alert('존재하지 않는 게시물입니다.');
@@ -129,7 +136,7 @@ export default function Detail() {
     if (code === 'DBE') alert('데이터베이스 오류입니다.');
     if (code !== 'SU') return;
 
-    navigator(MAIN_PATH);
+    navigator(MAIN_PATH());
   }
 
   const favoriteUpDownClickHandler = () => {
@@ -139,6 +146,20 @@ export default function Detail() {
   const commentUpDownClickHandler = () => {
     setShowComments(!showComments);
   };
+
+//           function: get favorite list response 처리 함수          //
+const getFavoriteListResponse = (responseBody: GetFavoriteListResponseDto | ResponseDto) => {
+  const {code} = responseBody;
+  if (code === 'NB') alert('존재하지 않는 게시물입니다.');
+  if (code === 'DBE') alert('데이터베이스 오류입니다.');
+  if (code === 'SU') return;
+
+  const {favoriteList} = responseBody as GetFavoriteListResponseDto;
+  setFavoriteList(favoriteList);
+
+  const isFavorite = favoriteList.findIndex(item => item.userId === user?.userId) ! == -1;
+  setFavorite(isFavorite);
+}
 
 //           function: get comment list response 처리 함수          //
   const getCommentListResponse = (responseBody: GetCommentListResponseDto | ResponseDto) => {
@@ -163,7 +184,7 @@ export default function Detail() {
   
   setComment('');
   if (!boardNumber)  return;
-  getCommentListRequest(boardNumber).then(getCommentListResponse);
+  // getCommentListRequest(boardNumber).then(getCommentListResponse);
   }
 
   //          event handler: 댓글 작성 버튼 이벤트 처리          //
@@ -179,16 +200,17 @@ export default function Detail() {
       content: comment
     };
 
-    postCommentRequest(requestBody, boardNumber, accessToken).then(postCommentResponse);
+    // postCommentRequest(requestBody, boardNumber, accessToken).then(postCommentResponse);
   }
 
   useEffect(() => {
     if (!boardNumber) {
       alert('잘못된 접근입니다.');
-      navigator(MAIN_PATH);
+      navigator(MAIN_PATH());
       return;
     }
-    getBoardRequest(boardNumber).then(getBoardResponse);
+    getFavoriteListRequest(boardNumber).then(getFavoriteListResponse);
+    getCommentListRequest(boardNumber).then(getCommentListResponse);
   }, []);
 
 

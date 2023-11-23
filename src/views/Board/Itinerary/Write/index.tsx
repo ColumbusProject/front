@@ -1,6 +1,7 @@
 import './style.css';
 import { useState, useRef, useEffect, ChangeEvent, useCallback } from 'react';
 import dayjs from 'dayjs';
+import LandingPage from 'components/KakaoMapAPI';
 
 declare global {
     interface Window {
@@ -59,6 +60,7 @@ export default function ItineraryBoardWrite() {
         const { value } = event.target;
         setStartDate(value);
     }
+    
     //          event handler: 여행종료일 설정 이벤트         //
     const onEndDateChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
         if (!startDate) return;
@@ -129,9 +131,7 @@ export default function ItineraryBoardWrite() {
         return (
             <div id="map" style={{
                 width: '1200px',
-                height: '540px',
-                marginLeft: '120px',
-                marginTop: '60px'
+                height: '540px'
             }}></div>
         )
     }
@@ -154,7 +154,7 @@ export default function ItineraryBoardWrite() {
                         <input className='loaction-input' placeholder='가고 싶은 장소를 검색해 보세요' />
                         <div className='search-button'></div>
                     </div>
-                    <div className='kakao-map-box'></div>
+                    <div className='kakao-map-box'><LandingPage  /></div>
                     <div className='search-result-box'>
                         <div className='search-result'></div>
                     </div>
@@ -289,7 +289,9 @@ export default function ItineraryBoardWrite() {
                         <div className='board-write-notepad-accountbook-text' onClick={onMemoAcountBookClickHandler}>{'메모 / 가계부 보기'}</div>
                     </div>
                 </div>
-                <Kakaomap />
+                <div className='kakaomap-box'>
+                { !showItineraryAdd && <Kakaomap /> }
+                </div>
                 <div className='itinerary-card-container'>
                     <div className='left-arrow-icon' onClick={prevButtonClick}>{'<'}</div>
                     <div className='itinerary-card-slide-container'>
