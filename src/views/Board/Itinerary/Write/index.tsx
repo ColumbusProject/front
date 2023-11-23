@@ -26,6 +26,8 @@ export default function ItineraryBoardWrite() {
     //          state: 일정카드 표시 슬라이드 페이지 길이 상태          //
     const [slideLength, setSlideLength] = useState(0);
 
+    const [selectedList, setSelectedList] = useState<string[]>([]);
+
     // description: 참고 https://velog.io/@poiu0329/React-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0feat.-styled-components //
 
     //          effect: 일정 카드 슬라이드 이펙트           //
@@ -112,6 +114,12 @@ export default function ItineraryBoardWrite() {
     //          event handler: 메모/가계부 표시 설정 이벤트         //
     const onItineraryAddClickHandler = () => {
         setShowItineraryAdd(!showItineraryAdd);
+    }
+
+    const onSelectClickHandler = (place: string) => {
+        const newSelectedList = selectedList.map(item => item);
+        newSelectedList.push(place)
+        setSelectedList(newSelectedList);
     }
 
     //          component: 카카오맵          //
@@ -287,8 +295,9 @@ export default function ItineraryBoardWrite() {
                       ${places.phone}
                     </span>
                   </a>
+                  <button onclick='onSelectClickHandler(${places.place_name})'>선택</button>
                 </div>
-                `
+                `;
       
             el.innerHTML = itemStr;
             el.className = 'item';
@@ -428,6 +437,7 @@ export default function ItineraryBoardWrite() {
                         <input className='loaction-input' onChange={ keywordChange } placeholder='가고 싶은 장소를 검색해 보세요' />
                         <div className='search-button' onClick={ onSetKeywordClickHandler }></div>
                     </div>
+                    {selectedList.map(item => item)}
                     <div className='kakao-map-box'><Map searchKeyword={ keyword }  /></div>
                     <div className='search-result-box'>
                         <div className='search-result'></div>
