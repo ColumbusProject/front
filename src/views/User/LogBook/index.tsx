@@ -9,6 +9,37 @@ export default function LogBook() {
   //          state: 화면 상태          //
   const [view, setView] = useState<'itinerary' | 'review' | 'trade'>('itinerary');
 
+  //          component: itinerary 카드 컴포넌트         //
+  const ItineraryCard = () => {
+
+    //          render: itinerary 카드 컴포넌트 렌더링          //
+    return (
+      <></>
+    )
+
+  }
+
+  //          component: review 카드 컴포넌트         //
+  const ReviewCard = () => {
+
+    //          render: review 카드 컴포넌트 렌더링          //
+    return (
+      <></>
+    )
+
+  }
+
+  //          component: trade 카드 컴포넌트          //
+  const TradeCard = () => {
+
+    //          render: trade 카드 컴포넌트 렌더링          //
+    return (
+      <></>
+    )
+
+  }
+
+
   //          render: 나의 항해 일지 컴포넌트 렌더링          //
   return (
     <div>
@@ -17,9 +48,9 @@ export default function LogBook() {
       </video>
       <div>
         <div>
-          {/* { view == 'itinerary' && }
-          { view == 'review' && }
-          { view == 'trade' && } */}
+          {/* { view == 'itinerary' && <ItineraryCard /> }
+          { view == 'review' && <ReviewCard /> }
+          { view == 'trade' && <TradeCard /> } */}
         </div>
       </div>
     </div>
