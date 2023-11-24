@@ -9,6 +9,8 @@ export default function LogBook() {
   //          state: 화면 상태          //
   const [view, setView] = useState<'itinerary' | 'review' | 'trade'>('itinerary');
 
+  //          state: 유저 상태          //
+
   //          component: itinerary 카드 컴포넌트         //
   const ItineraryCard = () => {
 

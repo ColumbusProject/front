@@ -27,9 +27,8 @@ export default function Main() {
                <div className="hamburger-icon"></div>
              </div>
              <div className="dropdown-content">
-               <p className=''><span className="inline-link">로그인</span></p>
-             </div>
-             <div className="dropdown-content">
+               <div><span className="inline-link">로그인</span></div>              
+               <div><span className="divider"></span></div>
                <div><span className="inline-link">회원가입</span></div>
              </div>
            </div>
