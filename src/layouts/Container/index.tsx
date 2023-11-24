@@ -14,6 +14,7 @@ export default function Container() {
     <>
       <Header />
       <Outlet />
+      <Footer />
     </>
   )
 }
