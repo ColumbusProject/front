@@ -5,7 +5,10 @@ import ItineraryBoardWrite from './views/Board/Itinerary/Write';
 import Detail from './views/Board/Review/Detail/Me';
 import Search from './views/Board/Review/Search';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
-import Main from 'views/Main';
+
+
+import Landingpage from 'components/Main/Landingpage';
+
 import Write from 'views/Board/Review/Write';
 import MyPage from 'views/User/MyPage';
 import LogBook from 'views/User/LogBook';
@@ -41,7 +44,7 @@ function App() {
     <Routes>
       <Route element={<Container />}>
         <Route path={MAIN_PATH()}>
-          <Route index element={<Main />} />
+          <Route index element={<Landingpage />} />
           <Route path={AUTH_PATH()} element={<Authentication />} />
           <Route path={USER_PATH()}>
             <Route path={MY_PAGE_PATH(':userId')} element={<MyPage />}/>
