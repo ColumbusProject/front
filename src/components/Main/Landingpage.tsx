@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import './style.css';
+import './Landingpage.css';
 // player 설치 명령어: npm i react-player;
 
-//            component:  메인화면 비디오 컴포넌트(비디오가 안떠서 비디오 라이브러리 찾는 중입니다.ㅠㅠ)        //
+//            component:  메인화면 비디오 컴포넌트      //
 export default function Main() {       
   
 
-//        render: 메인화면 컴포넌트 렌더링 (이하 상동)  // 
+//             render: 메인화면 컴포넌트 렌더링  // 
   return (
     <div>
      <div className='container'>
@@ -17,8 +17,6 @@ export default function Main() {
            </video>
          </div>
        </div>
-
-//  component:  드롭다운 메뉴 menue (똑디 안떠서 라이브러리 찾는 중입니다.ㅠㅠ)          */
        <div className='top-navigation'>
          <div className='navigation'>
            <div className="jb-text">Columbus</div>
@@ -35,9 +33,9 @@ export default function Main() {
          </div>
        </div>
     
-//    component:  카드 네비게이션         //
+
       <div className="comment">
-         WHERE DO YOU WANT TO GO?
+         Come live out your ideal vacation with us
        </div>
        <div className="parent">
          <div className="text1">MY TRIP</div>
