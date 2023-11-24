@@ -90,6 +90,7 @@ export default function ItineraryBoardWrite() {
         //     return;
         // }
 
+        // todo: 날짜 변경시 날짜 표시 오류 수정
         const different = gap - schedules.length;
         if (different > 0) {
             newSchedules = schedules.map(item => item);
