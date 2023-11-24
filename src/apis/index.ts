@@ -7,6 +7,7 @@ import PostCommentRequestDto from "./dto/request/board/travelReview/post-comment
 import GetFavoriteListResponseDto from "./dto/response/board/get-favorite-list.response.dto";
 import { SignInRequestDto, SignUpRequestDto } from "./dto/request/auth";
 import { SignInResponseDto, SignUpResponseDto } from "./dto/response/auth";
+import { GetSignInUserResponseDto } from "./dto/response/user";
 
 // description: Authorizaition Header //
 const authorization = (token: string) => { 
@@ -38,6 +39,24 @@ export const signInRequest = async (requestBody: SignInRequestDto) => {
             return responseBody;
         })
     return result;
+}
+
+// description: sign in user API end point //
+const GET_SIGN_IN_USER_URL = () => `${API_DOMAIN}/user`;
+
+// description: sign in user request //
+export const getSignInUserRequest = async (accessToken: string) => {
+    const result = await axios.get(GET_SIGN_IN_USER_URL(), authorization(accessToken))
+        .then(response => {
+            const responseBody: GetSignInUserResponseDto = response.data;
+            return responseBody;
+        })
+        .catch(error => {
+            if (!error.response) return null;
+            const responseBody: ResponseDto = error.response.data;
+            return responseBody;
+        });
+    return result
 }
 
 // description: sign up request //
