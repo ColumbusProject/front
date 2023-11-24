@@ -16,7 +16,7 @@
   width: 240px;
   height: 60px;
 
-  font-family: ONE-Mobile-POP;
+  font-family: JeonjuCraftGoR;
   font-size: 34px;
   text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   color: #FFF;
@@ -48,7 +48,7 @@
   align-items: center;
   justify-content: center;
 
-  font-family: ONE-Mobile-POP;
+  font-family: JeonjuCraftGoR;
   font-size: 25px;
 
   border: none;
@@ -56,7 +56,7 @@
 
 .input::placeholder {
   opacity: 0.85;
-  font-family: ONE-Mobile-POP;
+  font-family: JeonjuCraftGoR;
   text-align: center;
 }
 
@@ -74,7 +74,7 @@
   right: -280px;
 
   font-size: 20px;
-  font-family: ONE-Mobile-POP;
+  font-family: JeonjuCraftGoR;
   color: #FF1F00;
   opacity: 0.85;
 }
@@ -89,7 +89,7 @@
   right: -280px;
 
   font-size: 20px;
-  font-family: ONE-Mobile-POP;
+  font-family: JeonjuCraftGoR;
   color: #60ff3d;
   opacity: 0.85;
 }

@@ -59,7 +59,15 @@
     line-height: normal;
 
     cursor: pointer;
-    
+
+}
+
+.navigate-box div:active,
+.navigate-box div:hover {
+
+    font-weight: 700;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    animation-play-state: running;
 }
 
 .profile-menu-box {
