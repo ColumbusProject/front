@@ -6,7 +6,7 @@ import './Landingpage.css';
 export default function Main() {       
   
 
-//        render: 메인화면 컴포넌트 렌더링 (이하 상동)  // 
+//             render: 메인화면 컴포넌트 렌더링  // 
   return (
     <div>
      <div className='container'>
