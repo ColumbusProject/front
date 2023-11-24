@@ -38,7 +38,7 @@
 
     text-align: center;
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: ONE-Mobile-POP;
+    font-family: JeonjuCraftGoR;
     font-size: 96px;
     font-style: normal;
     font-weight: 400;
@@ -80,7 +80,7 @@
 
     margin-left: 20px;
 
-    font-family: ONE-Mobile-POP;
+    font-family: JeonjuCraftGoR;
     font-size: 30px;
     
     border: none;
@@ -89,7 +89,7 @@
 
 .sign-in-page-id-input::placeholder {
     opacity: 0.85;
-    font-family: ONE-Mobile-POP;
+    font-family: JeonjuCraftGoR;
 }
 
 .sign-in-page-id-input:focus {
@@ -131,7 +131,7 @@
 
 .sign-in-page-password-input::placeholder {
     opacity: 0.85;
-    font-family: ONE-Mobile-POP;
+    font-family: JeonjuCraftGoR;
 }
 
 .sign-in-page-password-input:focus {
@@ -153,7 +153,7 @@
     align-items: center;
 
     font-size: 20px;
-    font-family: ONE-Mobile-POP;
+    font-family: JeonjuCraftGoR;
     color: #FF1F00;
     opacity: 0.85;
 
@@ -183,7 +183,7 @@
 }
 
 .sign-in-text {
-    font-family: ONE-Mobile-POP;
+    font-family: JeonjuCraftGoR;
     font-size: 48px;
     font-style: normal;
     font-weight: 400;
@@ -207,7 +207,7 @@
 
     text-align: center;
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: ONE-Mobile-POP;
+    font-family: JeonjuCraftGoR;
     font-size: 20px;
     font-style: normal;
     font-weight: 300;
@@ -218,7 +218,7 @@
 
 .signUp-emphasis {
     color: #000;
-    font-family: ONE-Mobile-POP;
+    font-family: JeonjuCraftGoR;
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
@@ -262,7 +262,7 @@
     flex-direction: column;
     align-items: center;
 
-    font-family: ONE-Mobile-POP;
+    font-family: JeonjuCraftGoR;
     font-size: 64px;
     font-style: normal;
     line-height: normal;
@@ -299,7 +299,7 @@
 
 .sign-up-button-text {
     font-size: 30px;
-    font-family: ONE-Mobile-POP;
+    font-family: JeonjuCraftGoR;
 }
 
 .sign-up-page-sign-in {
@@ -313,7 +313,7 @@
 
     text-align: center;
     text-shadow: 4px 4px 4px rgba(208, 208, 208, 0.25);
-    font-family: ONE-Mobile-POP;
+    font-family: JeonjuCraftGoR;
     font-size: 20px;
     font-style: normal;
     font-weight: 300;
@@ -324,7 +324,7 @@
 
 .signIn-emphasis {
     color: rgb(255, 255, 255);
-    font-family: ONE-Mobile-POP;
+    font-family: JeonjuCraftGoR;
     font-size: 20px;
     font-style: normal;
     font-weight: 700;

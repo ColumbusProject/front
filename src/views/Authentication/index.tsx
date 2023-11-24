@@ -66,6 +66,20 @@ export default function Authentication() {
       onSignInButtonClick();
     }
 
+    //          event handler: 아이디 변경 이벤트 처리          //
+    const onUserIdChangeHanlder = (event: ChangeEvent<HTMLInputElement>) => {
+      setError(false);
+      const {value} = event.target;
+      setUserId(value);
+    }
+
+    //          event handler: 아이디 변경 이벤트 처리          //
+    const onPasswordChangeHanlder = (event: ChangeEvent<HTMLInputElement>) => {
+      setError(false);
+      const {value} = event.target;
+      setPassword(value);
+    }
+
     //          event handler: 로그인 버튼 클릭 이벤트 처리         //
     const onSignInButtonClick = () => {
 
@@ -93,11 +107,11 @@ export default function Authentication() {
         <div className='sign-in-page-login-container'>
           <div className='sign-in-page-id-box'>
             <div className='sign-in-page-id-icon'></div>
-            <input className='sign-in-page-id-input' ref={userIdRef} placeholder='아이디를 입력해주세요' onKeyDown={onUserIdKeyDownHandler} />
+            <input className='sign-in-page-id-input' ref={userIdRef} placeholder='아이디를 입력해주세요' onChange={onUserIdChangeHanlder} onKeyDown={onUserIdKeyDownHandler} />
           </div>
           <div className='sign-in-page-password-box'>
             <div className='sign-in-page-password-icon'></div>
-            <input className='sign-in-page-password-input' ref={passwordRef} type='password' placeholder='비밀번호를 입력해주세요' onKeyDown={onPasswordKeyDownHandler} />
+            <input className='sign-in-page-password-input' ref={passwordRef} type='password' placeholder='비밀번호를 입력해주세요' onChange={onPasswordChangeHanlder} onKeyDown={onPasswordKeyDownHandler} />
           </div>
         </div>
         <div className='sign-in-bottom-box'>
