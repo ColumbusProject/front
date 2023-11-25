@@ -1,0 +1,254 @@
+import React from 'react';
+import './realstyle.css';
+import { BrowserRouter as  Router, Route } from 'react-router-dom'
+
+
+<!-- 네비게이션 바 -->
+     <nav class="navbar">
+        <div class="navbar__logo">Columbus</div>
+            <div class="menu"><a href="">나의 항해일지</a></div>
+            <div class="menu"><a href="">여행일정</a></div>
+            <div class="menu"><a href="">여행후기</a></div>
+            <div class="menu"><a href="">자유거래</a></div>
+        
+
+<!-- 햄버거 -->
+<div class='top-navigation'>
+     <div class='navigation'>
+       <div class="jb-text">Columbus</div>
+       <div class="dropdown">
+         <div class="icon-button">
+           <div class="hamburger-icon"></div>
+         </div>
+         <div class="dropdown-content">
+           <p class=''><span class="inline-link">로그인</span></p>
+         </div>
+         <div class="dropdown-content">
+           <div><span class="inline-link">회원가입</span></div>
+         </div>
+       </div>
+     </div>
+   </div>
+     
+    </nav>
+
+<!-- 검색바 -->
+
+<!-- const Parent = () => {
+  return (
+    <div class="parent">
+      <div>
+        <div>
+          자유 거래 게시판
+        </div>
+      
+      <div>
+        <ul>
+          <li>
+            검색바
+          </li>
+          <li>
+            돋보기
+          </li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  )
+}
+-->
+
+<!-- 검색바 -->
+<div class="parent">
+  <div>
+    <div class="test1">자유 거래 게시판
+    </div>
+
+    <div>
+      <input class="test2">
+      <button class="search-btn"></button>
+    </div>
+  </div>
+</div>
+
+
+<!-- 아이템 등록 버튼 -->
+<div class="parent2">
+  <button class="item-enroll">아이템 등록</button>
+</div>
+
+<!-- 가로선 -->
+<div class="divider"></div>
+
+<!-- 아이템 카드들  -->
+
+<div class="container">
+
+  <div class="cards">
+    <div class="card">
+      <div class="minicard">
+        <button class="bookmark"></button>
+      </div>
+      <div class="title">title 1</div>
+      <div class="content">소진공주 소진공주 소진공주 소진공주 소진공주 소진공주 최고의 미모 최고의 미모 최고의 미모
+        최고의 미모 최고의 미모 최고의 미모
+      </div>
+    </div>
+    <div class="card">
+      <div class="minicard">
+        <button class="bookmark"></button>
+      </div>
+      <div class="title">title 1</div>
+      <div class="content">소진공주 소진공주 소진공주 소진공주 소진공주 소진공주 최고의 미모 최고의 미모 최고의 미모
+        최고의 미모 최고의 미모 최고의 미모
+      </div>
+    </div>
+    <div class="card">
+      <div class="minicard">
+        <button class="bookmark"></button>
+      </div>
+      <div class="title">title 1</div>
+      <div class="content">소진공주 소진공주 소진공주 소진공주 소진공주 소진공주 최고의 미모 최고의 미모 최고의 미모
+        최고의 미모 최고의 미모 최고의 미모
+      </div>
+    </div>
+    <div class="card">
+      <div class="minicard">
+        <button class="bookmark"></button>
+      </div>
+      <div class="title">title 1</div>
+      <div class="content">소진공주 소진공주 소진공주 소진공주 소진공주 소진공주 최고의 미모 최고의 미모 최고의 미모
+        최고의 미모 최고의 미모 최고의 미모
+      </div>
+    </div>
+    <div class="card">
+      <div class="minicard">
+        <button class="bookmark"></button>
+      </div>
+      <div class="title">title 1</div>
+      <div class="content">소진공주 소진공주 소진공주 소진공주 소진공주 소진공주 최고의 미모 최고의 미모 최고의 미모
+        최고의 미모 최고의 미모 최고의 미모
+      </div>
+    </div>
+    <div class="card">
+      <div class="minicard">
+        <button class="bookmark"></button>
+      </div>
+      <div class="title">title 1</div>
+      <div class="content">소진공주 소진공주 소진공주 소진공주 소진공주 소진공주 최고의 미모 최고의 미모 최고의 미모
+        최고의 미모 최고의 미모 최고의 미모
+      </div>
+    </div>
+    <div class="card">
+      <div class="minicard">
+        <button class="bookmark"></button>
+      </div>
+      <div class="title">title 1</div>
+      <div class="content">소진공주 소진공주 소진공주 소진공주 소진공주 소진공주 최고의 미모 최고의 미모 최고의 미모
+        최고의 미모 최고의 미모 최고의 미모
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="minicard">
+        <button class="bookmark"></button>
+      </div>
+      <div class="title">title 1</div>
+      <div class="content">소진공주 소진공주 소진공주 소진공주 소진공주 소진공주 최고의 미모 최고의 미모 최고의 미모
+        최고의 미모 최고의 미모 최고의 미모
+      </div>
+    </div>
+    <div class="card">
+      <div class="minicard">
+        <button class="bookmark"></button>
+      </div>
+      <div class="title">title 1</div>
+      <div class="content">소진공주 소진공주 소진공주 소진공주 소진공주 소진공주 최고의 미모 최고의 미모 최고의 미모
+        최고의 미모 최고의 미모 최고의 미모
+      </div>
+    </div>
+
+
+
+
+    <!--아이템 등록 페이지  -->
+    <div class="item-container">
+        <button class="close"></button>
+          <div class= "item-title">제목을 입력해주세요</div>
+
+          <div class="trade-location">거래 위치 추가
+          <button class="add-location"></button>
+          </div>
+
+          <div class="row-box1">
+            <div class= "name">품명</div>
+            <div class= "dollar">수량</div>
+            
+          </div>
+
+          <div class="row-box2">
+            <div class= "quantity">금액</div>
+            <div class= "price">화폐 종류</div>
+          </div>
+
+            <div class="productimage-container1">
+              <div class="productimage1">
+                <div class="text5">
+                  상품 이미지 추가
+                  1 / 4
+                </div>
+              </div>
+
+              <div class="productimage2">
+                <div class="text6">
+                  상품 이미지 추가
+                  2 / 4
+                </div>
+              </div>
+            </div>
+
+
+            <div class="item-explain">
+              내용을 입력해주세요.</div>
+
+            <div class="productimage-container2">
+              <div class="productimage3">
+                <div class="text7">
+                  상품 이미지 추가
+                  3 / 4
+                </div>
+              </div>
+
+              <div class="productimage4">
+                <div class="text8">
+                  상품 이미지 추가
+                  4 / 4
+                </div>
+              </div>
+            </div>
+
+              <!-- <div class="hashtag-container"> -->
+                <div class="hashtag">해시 태그 추가</div>
+
+                <div class="enroll">등록</div>
+       
+
+
+
+
+
+        
+    
+      </div> 
+
+
+<!-- 페이지네이션 -->
+<!-- 리액트 라이브러리로 구현 예정 -->
+
+
+<!-- 게시물 작성 box -->
+
+
+
+</body>
+</html>
