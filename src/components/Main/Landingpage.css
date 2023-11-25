@@ -18,11 +18,13 @@
   
     bottom: 20%;
     background: none;
+
   }
   
   .navigation {
-    width: 100%;
     display: flex;
+
+    justify-content: space-between;
     align-items: center;
   }
   
@@ -36,6 +38,48 @@
     font-weight: 400;
     line-height: normal;
   }
+
+  .profile-menu-box {
+    background-color: #FFF;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile-icon {
+      width: 30px;
+      height: 30px;
+
+      background-image: url('asset/profile_icon.png');
+      background-size: 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.25));
+
+
+      cursor: pointer;
+  }
+
+  .nickname-text {
+      width: 180px;
+      height: 60px;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      color: #FFF;
+
+      text-align: center;
+      text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+      font-family: NanumGothic;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+  }
+
   
   .icon-button {
     width: 24px;
@@ -72,12 +116,16 @@
     border-bottom:1px solid #888;
     padding: 12px 20px;
     display: block;
+
+    cursor: pointer;
   }
 
   .inline-link2{
     color: black;
     padding: 12px 20px;
     display: block;
+
+    cursor: pointer;
   }
   
   .inline-box:hover {background-color: #f1f1f1}
