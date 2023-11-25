@@ -42,6 +42,9 @@ export default function Landingpage() {
          <div className="text3">TRAVEL REVIEW</div>
          <div className="text4">TRAVEL TRADE</div>
        </div>
-     </div>
+     <Footer/>
+      </div>
   )
  }
+
+ 
