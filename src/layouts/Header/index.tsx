@@ -16,6 +16,9 @@ export default function Header() {
     //          state: 유저 닉네임 상태          //
     const [nickname, setNickname] = useState<string>('');
 
+    //          state: url 상태          //
+    const [boardState, setBoardState] =useState<string>('');
+
     //          event handler: 로고 클릭 이벤트 처리          //
     const onLogoClick = () => {
         navigateor(MAIN_PATH());
@@ -37,6 +40,7 @@ export default function Header() {
     const onMyTradeClick = () => {
         navigateor(BOARD_TRADE_MAIN_PATH());
     }
+
     //                  render: 헤더 컴포넌트 렌더링                    //
     return (
         <div className='header'>
@@ -45,10 +49,10 @@ export default function Header() {
                     <div className='columbus-text'>{'Columbus'}</div>
                 </div>
                 <div className='navigate-box'>
-                    <div onClick={onMyLogbookClick}>{'나의 항해일지'}</div>
-                    <div onClick={onItineraryClick}>{'여행 일정'}</div>
-                    <div onClick={onMyReviewClick}>{'여행 후기'}</div>
-                    <div onClick={onMyTradeClick}>{'자유 거래'}</div>
+                    <div className={boardState === 'My-Logbook' ? 'active' : ''} onClick={() => {onMyLogbookClick(); setBoardState('My-Logbook')}}>{'나의 항해일지'}</div>
+                    <div className={boardState === 'Itinerary' ? 'active' : ''} onClick={() => {onItineraryClick(); setBoardState('Itinerary')}}>{'여행 일정'}</div>
+                    <div className={boardState === 'Review' ? 'active' : ''} onClick={() => {onMyReviewClick(); setBoardState('Review')}}>{'여행 후기'}</div>
+                    <div className={boardState === 'Trade' ? 'active' : ''} onClick={() => {onMyTradeClick(); setBoardState('Trade')}}>{'자유 거래'}</div>
                 </div>
                 <div className='profile-menu-box'>
                     <div className='profile-icon' onClick={onProfileIconClick}></div>
