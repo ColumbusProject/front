@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import './style.css';
 import { BOARD_ITINERARY_MAIN_PATH, BOARD_REVIEW_MAIN_PATH, BOARD_TRADE_MAIN_PATH, MAIN_PATH, MY_LOGBOOK_PATH, MY_PAGE_PATH, USER_PATH } from 'constant';
 import { useUserStore } from 'stores';
-import { clickOptions } from '@testing-library/user-event/dist/click';
 
 //          component: 헤더 컴포넌트          //
 export default function Header() {
