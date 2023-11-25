@@ -74,7 +74,6 @@ export const signUpRequest = async (requestBody: SignUpRequestDto) => {
     return result;
 }
 
-
 // description: delete board API end point //
 const DELETE_BOARD_URL = (boardNumber: string | number) => `${API_DOMAIN}/board/${boardNumber}`;
 // description: get comment list API end point //

@@ -1,11 +1,6 @@
-
 /* 배경화면 비디오*/
-/* .ReactPlayer{
-  pointer-events: none;
-  }
-  
   .jb-box {
-    width: 100%;
+    width: 1440px;
     height: 780px;
   }
   
@@ -17,19 +12,17 @@
   
   /* 메뉴 드롭다운 */
   .top-navigation {
+    position: relative;
     padding: 60px 120px 0px;
     width: 1440px;
-    width: calc(100% - 240px);
   
-    position: fixed;
-    top: 0px;
+    bottom: 20%;
     background: none;
   }
   
   .navigation {
     width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
   }
   
