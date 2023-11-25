@@ -122,7 +122,7 @@
        
   .text1 {
     background-image: url(asset/japan.jpeg);
-    border-radius:3%;
+    border-radius: 12px;
     display: flex;
     width: 300px;
     height: 600px;
@@ -138,11 +138,13 @@
     font-weight: 400;
     line-height: normal;
     margin: 0px 0px 0px 60px; 
+
+    cursor: pointer;
   }
 
   .text2 {
     background-image: url(asset/moldiv.jpg);
-    border-radius:3%;
+    border-radius: 12px;
     display: flex;
     width: 300px;
     height: 600px;
@@ -158,11 +160,13 @@
     font-weight: 400;
     line-height: normal;
     margin: 0px 40px 60px 40px; 
+
+    cursor: pointer;
   }
   
   .text3 {
     background-image: url(asset/spain.jpg);
-    border-radius:3%;
+    border-radius: 12px;
     display: flex;
     width: 300px;
     height: 600px;
@@ -178,11 +182,13 @@
     font-weight: 400;
     line-height: normal;
     margin: 0px 40px 60px 0px; 
+
+    cursor: pointer;
   }
   
   .text4 {
     background-image: url(asset/swiss.jpg);
-    border-radius:3%;
+    border-radius:12px;
     display: flex;
     width: 300px;
     height: 600px;
@@ -198,5 +204,7 @@
     font-weight: 400;
     line-height: normal;
     margin: 0px 60px 60px 0px; 
+
+    cursor: pointer;
   }
   }

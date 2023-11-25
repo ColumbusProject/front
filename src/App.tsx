@@ -78,7 +78,7 @@ function App() {
       <Route path={MAIN_PATH()}>
         <Route index element={<Landingpage />} />
         <Route path={AUTH_PATH()} element={<Authentication />} />
-        <Route path={USER_PATH()}>
+        <Route path={USER_PATH()} element={<Container />}>
           <Route path={MY_PAGE_PATH(':userId')} element={<MyPage />}/>
           <Route path={MY_LOGBOOK_PATH(':userId')} element={<LogBook />} />
         </Route>
