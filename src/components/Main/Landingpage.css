@@ -218,7 +218,7 @@
   }
   
   .text4 {
-    background-image: url(asset/swiss.jpg);
+    background-image: url('asset/swiss.jpeg');
     border-radius:12px;
     display: flex;
     width: 300px;
