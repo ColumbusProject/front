@@ -4,10 +4,10 @@ import backgroundVideo from 'components/Main/asset/videoplayback.mp4';
 import Footer from 'layouts/Footer';
 // player 설치 명령어: npm i react-player;
 
-//            component:  메인화면 비디오 컴포넌트      //
-export default function Main() {       
+//          component:  메인화면 비디오 컴포넌트          //
+export default function Landingpage() {       
 
-//             render: 메인화면 컴포넌트 렌더링  // 
+//          render: 메인화면 컴포넌트 렌더링          // 
   return (
     <div>
      {/* <div className='container'> */}

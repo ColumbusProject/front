@@ -2,7 +2,7 @@ import React, { ChangeEvent, useEffect, useRef, useState, KeyboardEvent } from '
 import './style.css';
 import { useCookies } from 'react-cookie';
 
-import backgroundVideo from './assets/videoplayback.mp4';
+import backgroundVideo from 'assets/videoplayback.mp4';
 import InputBox from 'components/InputBox-Signup';
 import { useNavigate } from 'react-router-dom';
 import { SignInResponseDto, SignUpResponseDto } from 'apis/dto/response/auth';
