@@ -3,6 +3,7 @@ import './Landingpage.css';
 import backgroundVideo from 'assets/videoplayback.mp4';
 import { AUTH_PATH, MAIN_PATH, MY_PAGE_PATH } from 'constant';
 import { useNavigate } from 'react-router-dom';
+import Footer from 'layouts/Footer';
 // player 설치 명령어: npm i react-player;
 
 //          component:  메인화면 컴포넌트          //
@@ -12,7 +13,7 @@ export default function Landingpage() {
   const navigator = useNavigate();
 
   //          state: 로그인 상태          //
-  const [isLogin, setLogin] = useState<boolean>(false);
+  const [isLogin, setLogin] = useState<boolean>(true);
 
   //          state: 닉네임 상태          //
   const [nickname, setNickname] = useState<string>('')
@@ -100,6 +101,7 @@ export default function Landingpage() {
          <div className="text3">TRAVEL REVIEW</div>
          <div className="text4">TRAVEL TRADE</div>
        </div>
+       <Footer />
      </div>
     )
   }
