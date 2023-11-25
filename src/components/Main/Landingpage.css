@@ -1,23 +1,29 @@
 /* 배경화면 비디오*/
+.body {
+  margin: 0,0,0,0;
+}
+
   .jb-box {
     width: 1440px;
     height: 780px;
   }
   
   .jb-video {
+    margin: 0%;
     object-fit: cover;
     width: 1440px;
     height: 780px;
-  } */
+  } 
   
   /* 메뉴 드롭다운 */
   .top-navigation {
+    display: flex;
     position: relative;
     padding: 60px 120px 0px;
-    width: 1440px;
+    width: 400px;
   
     bottom: 20%;
-    background: none;
+    background-color: transparent;
   }
   
   .navigation {
@@ -27,6 +33,9 @@
   }
   
   .jb-text {
+    position: relative;
+    top: 60px;
+    left:120px;
     color: #FFF;
     text-align: center;
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
@@ -34,7 +43,9 @@
     font-size: 40px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
+    background-color: transparent;
+    width: 400px;
+    height: 10px;
   }
   
   .icon-button {
@@ -44,8 +55,13 @@
   }
 
   .dropdown {
+    display: flex;
     position: relative;
+    left: 1278px;
+    top: 70px;
     display: inline-block;
+    background-color: transparent;
+    z-index: 1;
   }
   
   .dropdown-content {
@@ -119,10 +135,15 @@
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+      width: 1440px;
+      justify-content: center;
        
   .text1 {
     background-image: url(asset/japan.jpeg);
     border-radius:3%;
+    background-size: 120%;
+    background-position:10,0,10,0;
+
     display: flex;
     width: 300px;
     height: 600px;
@@ -141,7 +162,9 @@
   }
 
   .text2 {
-    background-image: url(asset/moldiv.jpg);
+    background-image: url(asset/paris.jpeg);
+    background-size: 110%;
+    
     border-radius:3%;
     display: flex;
     width: 300px;
@@ -161,7 +184,10 @@
   }
   
   .text3 {
-    background-image: url(asset/spain.jpg);
+    background-image: url(asset/timesquire2.jpeg);
+    background-size: 135%;
+    /* background-repeat: no-repeat; */
+    background-position:10px;
     border-radius:3%;
     display: flex;
     width: 300px;
@@ -197,6 +223,6 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin: 0px 60px 60px 0px; 
+
   }
   }

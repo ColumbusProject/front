@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Landingpage.css';
 import backgroundVideo from 'components/Main/asset/videoplayback.mp4';
+import Footer from 'layouts/Footer';
 // player 설치 명령어: npm i react-player;
 
 //            component:  메인화면 비디오 컴포넌트      //
@@ -9,10 +10,13 @@ export default function Main() {
 //             render: 메인화면 컴포넌트 렌더링  // 
   return (
     <div>
-     <div className='container'>
-      <div className='top-navigation'>
-          <div className='navigation'>
-            <div className="jb-text">Columbus</div>
+     {/* <div className='container'> */}
+      {/* <div className='top-navigation'> */}
+          {/* <div className='navigation'> */}
+          {/* </div> */}
+        {/* </div> */}
+        <div className='jb-box'>
+        <div className="jb-text">Columbus</div>
             <div className="dropdown">
               <div className="icon-button">
                 <div className="hamburger-icon"></div>
@@ -22,17 +26,12 @@ export default function Main() {
                 <div><span className="inline-link2">회원가입</span></div>
               </div>
             </div>
-          </div>
-        </div>
-        <div className='jb-box'>
          <video className='jb-video' muted autoPlay loop>
           <source src={backgroundVideo}></source>
           <strong>Your browser does not support the video tag.</strong>
          </video>
         </div>
-      </div>
-    
-
+      {/* </div> */}
       <div className="comment">
          Come live out your ideal vacation with us
        </div>
@@ -42,6 +41,9 @@ export default function Main() {
          <div className="text3">TRAVEL REVIEW</div>
          <div className="text4">TRAVEL TRADE</div>
        </div>
-     </div>
+     <Footer/>
+      </div>
   )
  }
+
+ 
