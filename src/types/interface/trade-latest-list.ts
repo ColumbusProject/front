@@ -7,6 +7,5 @@ export default interface TradeLatestList {
     location: string;
     currencyType: string;
     viewCount: number;
-    price: string;
-
+    price: number;
 }
