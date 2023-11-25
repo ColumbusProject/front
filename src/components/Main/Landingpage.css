@@ -140,10 +140,11 @@
        
   .text1 {
     background-image: url(asset/japan.jpeg);
-    border-radius:3%;
+
+    border-radius: 12px;
     background-size: 120%;
     background-position:10,0,10,0;
-
+    
     display: flex;
     width: 300px;
     height: 600px;
@@ -159,13 +160,15 @@
     font-weight: 400;
     line-height: normal;
     margin: 0px 0px 0px 60px; 
+
+    cursor: pointer;
   }
 
   .text2 {
     background-image: url(asset/paris.jpeg);
     background-size: 110%;
     
-    border-radius:3%;
+    border-radius: 12px;
     display: flex;
     width: 300px;
     height: 600px;
@@ -181,6 +184,8 @@
     font-weight: 400;
     line-height: normal;
     margin: 0px 40px 60px 40px; 
+
+    cursor: pointer;
   }
   
   .text3 {
@@ -188,7 +193,8 @@
     background-size: 135%;
     /* background-repeat: no-repeat; */
     background-position:10px;
-    border-radius:3%;
+    border-radius: 12px;
+    
     display: flex;
     width: 300px;
     height: 600px;
@@ -204,11 +210,13 @@
     font-weight: 400;
     line-height: normal;
     margin: 0px 40px 60px 0px; 
+
+    cursor: pointer;
   }
   
   .text4 {
     background-image: url(asset/swiss.jpg);
-    border-radius:3%;
+    border-radius:12px;
     display: flex;
     width: 300px;
     height: 600px;
@@ -224,5 +232,6 @@
     font-weight: 400;
     line-height: normal;
 
+    cursor: pointer;
   }
   }

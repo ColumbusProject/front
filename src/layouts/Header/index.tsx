@@ -13,6 +13,9 @@ export default function Header() {
     //          state: 유저 전역 상태          //
     const {setUser, resetUser} = useUserStore();
 
+    //          state: 로그인 상태          //
+    const [isLogin, setLogin] = useState<boolean>(false);
+
     //          state: 유저 닉네임 상태          //
     const [nickname, setNickname] = useState<string>('');
 
@@ -40,6 +43,7 @@ export default function Header() {
     const onMyTradeClick = () => {
         navigateor(BOARD_TRADE_MAIN_PATH());
     }
+
 
     //                  render: 헤더 컴포넌트 렌더링                    //
     return (
