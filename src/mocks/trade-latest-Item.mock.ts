@@ -2,28 +2,39 @@ import { TradeLatestList } from "types";
 
 
 const tradeLatestList: TradeLatestList[] = [
-    {
+    {   
+        boardCount:"No.1",
         boardNumber: 1,
         tradeImage: '{blanket.jpg}',
-        title: '훔친 비치 타올 팝니다.',
-        currencyType : "KRW",
-        itemType: "비치타올",
+        title: '무릎담요 같이 생긴 비치타올 판매합니다.',
+        itemType: '판매용',
+        currencyType : 'KRW',
         price : 3000,
-        location : "부산 서면역 근처",
-        viewCount: 0,
+        country: '대한민국',
+	    state : '부산광역시',
+		city: '부산진구',
+	    address: '서전로',
+        code: 19,
+        viewCount: '조회수',
+		viewNumber: 0,
         writeDatetime: '2023. 08. 24', 
     },
 
     {
         boardNumber: 2,
         tradeImage:'{swimming suit.jpg}',
-        title: "수영복 무료 나눔.",
-        currencyType : "USD",
-        itemType: "수영복",
-        price: 9.5,
-        location: "부산 서면역 근처",
-        viewCount: 999,
-        writeDatetime: '2023. 08. 24',
+        title: '수영복 무료 나눔.',
+        itemType: '무료나눔',
+        currencyType : 'KRW',
+        price : 3000,
+        country: '대한민국',
+        state : '부산광역시',
+        city: '부산진구',
+        address: '서전로',
+        code: 19,
+        viewCount: '조회수',
+        viewNumber: 9,
+        writeDatetime: '2023.07.31.',
     },
 
 ];
