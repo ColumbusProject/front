@@ -53,14 +53,16 @@ export default function ReviewMain() {
                     {viewBoardList.map(item => <BoardItem boardItem={item} />)}
                 </div>
                 <div className='board-main-box-container-02-02'>
-                    <Pagination
-                        currentPageNumber={currentPageNumber}
-                        setCurrentPageNumber={setCurrentPageNumber}
-                        currentSectionNumber={currentSectionNumber}
-                        setCurrentSectionNumber={setCurrentSectionNumber}
-                        viewPageNumberList={viewPageNumberList}
-                        totalSection={totalSection}
-                    />
+                    <div className='board-main-box-container-02-02-pagination-box'>
+                        <Pagination
+                            currentPageNumber={currentPageNumber}
+                            setCurrentPageNumber={setCurrentPageNumber}
+                            currentSectionNumber={currentSectionNumber}
+                            setCurrentSectionNumber={setCurrentSectionNumber}
+                            viewPageNumberList={viewPageNumberList}
+                            totalSection={totalSection}
+                        />
+                    </div> 
                 </div>
             </div>
         </div>
