@@ -21,6 +21,7 @@ import { GetSignInUserResponseDto } from 'apis/dto/response/user';
 import ResponseDto from 'apis/dto/response';
 import { User } from 'types';
 import TradeLatestList from 'components/TradeListItem/TradeLatestList';
+import Cards from 'components/Trade(willbefinal)/cards';
 
 //          component: Application 컴포넌트         //
 function App() {
@@ -96,7 +97,7 @@ function App() {
             <Route path={BOARD_REVIEW_DETAIL_PATH(':boardNumber')} element={<Detail/>} /> 
           </Route>
           <Route path={BOARD_TRADE_MAIN_PATH()}>
-            <Route index element={<TradeLatestList/>} />
+            <Route index element={<Cards/>} />
             <Route path='search-list/:searchWord' element={<></>} />
             <Route path='write' element={<></>} />
             <Route path='update/:boardNumber' element={<></>} />
