@@ -21,6 +21,7 @@ const tradeLatestList: TradeLatestList[] = [
     },
 
     {
+        boardCount: "No.2",
         boardNumber: 2,
         tradeImage:'{swimming suit.jpg}',
         title: '수영복 무료 나눔.',
