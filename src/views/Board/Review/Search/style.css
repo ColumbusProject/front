@@ -1,6 +1,8 @@
 .board-noresult-page {
     height: 1800px;
     width: 1440px;
+
+    margin: auto;
 }
 
 .board-result-page-box {
@@ -141,9 +143,4 @@
 
     margin-top: 60px;
     margin-left: 60px;
-}
-
-.pagination {
-    margin-left: 480px;
-    margin-top: 1140px;
 }

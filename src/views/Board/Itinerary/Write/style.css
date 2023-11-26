@@ -2,6 +2,10 @@
 .board-write-wrapper {
     width: 1440px;
     height: 1800px;
+
+    position: relative;
+
+    margin: auto;
 }
 
 .board-write-title-input {

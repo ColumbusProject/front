@@ -240,7 +240,7 @@ const getFavoriteListResponse = (responseBody: GetFavoriteListResponseDto | Resp
             )}
           </div>
         </div>
-        <div className='divider'></div>
+        <div className='divider-02'></div>
         <div className='board-detail-box-02'>
           <div className='board-detail-location-icon'></div>
           <div className='board-detail-location-name'>{board?.location}</div>
@@ -277,31 +277,31 @@ const getFavoriteListResponse = (responseBody: GetFavoriteListResponseDto | Resp
         )}
         {showComments && (
         <div className='board-detail-box-06'>
-        <div className='box-01'>
-          <div className='box-01-comment-count-box'>
-            <div className='box-01-comment-count'>{`댓글 ${commentsCount}`}</div>
+          <div className='box-01'>
+            <div className='box-01-comment-count-box'>
+              <div className='box-01-comment-count'>{`댓글 ${commentsCount}`}</div>
+            </div>
+            {viewBoardList.map(item => <CommentItem02 commentListItem02={item} />)}
           </div>
-          {viewBoardList.map(item => <CommentItem02 commentListItem02={item} />)}
-        </div>
-        <div className='pagination'>
-        <Pagination
-            currentPageNumber={currentPageNumber}
-            setCurrentPageNumber={setCurrentPageNumber}
-            currentSectionNumber={currentSectionNumber}
-            setCurrentSectionNumber={setCurrentSectionNumber}
-            viewPageNumberList={viewPageNumberList}
-            totalSection={totalSection}
-          />
-        </div>
-        <div className='box-02'>
-          <div className='box-02-01'></div>
-          <div className='box-02-02'>
-            <div className='box-02-02-comment-write-box' onClick={onCommentButtonClickHandler}>
-              <div className='box-02-02-comment-write'>{'댓글달기'}</div>
+          <div className='pagination'>
+          <Pagination
+              currentPageNumber={currentPageNumber}
+              setCurrentPageNumber={setCurrentPageNumber}
+              currentSectionNumber={currentSectionNumber}
+              setCurrentSectionNumber={setCurrentSectionNumber}
+              viewPageNumberList={viewPageNumberList}
+              totalSection={totalSection}
+            />
+          </div>
+          <div className='box-02'>
+            <textarea className='box-02-01' />
+            <div className='box-02-02'>
+              <div className='box-02-02-comment-write-box' onClick={onCommentButtonClickHandler}>
+                <div className='box-02-02-comment-write'>{'댓글달기'}</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
         )}
       </div>
     </div>
