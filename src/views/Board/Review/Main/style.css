@@ -1,15 +1,16 @@
 .board-main-box {
-    height: 1700px;
+    height: 1860px;
     width: 1440px;
 
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
 .board-main-box-container {
     width: 1320px;
     height: 1580px;
+
+    margin-top: 60px;
 }
 
 .board-main-box-container-01 {
@@ -116,4 +117,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.board-main-box-container-02-02-pagination-box {
+    height: 60px;
 }
