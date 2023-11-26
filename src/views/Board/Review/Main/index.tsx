@@ -5,8 +5,18 @@ import { userBoardListMock } from '../../../../mocks';
 import BoardItem from '../../../../components/BoardItem';
 import { usePagination } from '../../../../hooks';
 import Pagination from '../../../../components/Pagination';
+import { useNavigate } from 'react-router-dom';
+import { BOARD_REVIEW_WRITE_PATH } from 'constant';
 
 export default function ReviewMain() {
+
+    //          function: 네이게이트 함수          //
+    const navigator = useNavigate();
+
+    //          event handler: 여행 후기 글쓰기 클릭 이벤트 처리 함수          //
+    const onReviewWriteClick = () => {
+        navigator(BOARD_REVIEW_WRITE_PATH());
+    }
 
  const {
     currentPageNumber, 
@@ -34,7 +44,7 @@ export default function ReviewMain() {
                     </div>
                 </div>
                 <div className='board-main-box-container-01-02'>
-                    <div className='board-write'>{'여행 후기 글쓰기'}</div>
+                    <div className='board-write' onClick={onReviewWriteClick}>{'여행 후기 글쓰기'}</div>
                 </div>
             </div>
             <div className='board-main-box-divider'></div>

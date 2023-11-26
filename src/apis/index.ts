@@ -75,13 +75,13 @@ export const signUpRequest = async (requestBody: SignUpRequestDto) => {
 }
 
 // description: delete board API end point //
-const DELETE_BOARD_URL = (boardNumber: string | number) => `${API_DOMAIN}/board/${boardNumber}`;
+const DELETE_BOARD_URL = (boardNumber: string | number) => `${API_DOMAIN}/board/review/${boardNumber}`;
 // description: get comment list API end point //
-const GET_COMMENT_LIST_URL = (boardNumber: string | number) => `${API_DOMAIN}/board/${boardNumber}/comment-list`;
+const GET_COMMENT_LIST_URL = (boardNumber: string | number) => `${API_DOMAIN}/board/review/${boardNumber}/comment-list`;
 // description: post comment API end point //
-const POST_COMMENT_URL = (boardNumber: string | number) => `${API_DOMAIN}/board/${boardNumber}/comment`;
+const POST_COMMENT_URL = (boardNumber: string | number) => `${API_DOMAIN}/board/review/${boardNumber}/comment`;
 // description: get favorite list API end point //
-const GET_FAVORITE_LIST_URL = (boardNumber: string | number) => `${API_DOMAIN}/board/${boardNumber}/favorite-list`;
+const GET_FAVORITE_LIST_URL = (boardNumber: string | number) => `${API_DOMAIN}/board/review/${boardNumber}/favorite-list`;
 
 
 // description: delete board request //
