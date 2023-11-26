@@ -4,7 +4,7 @@ export default interface TradeListItem {
     title: string;
     itemType: string;
     tradeImage: string;
-    writeDateTime: string;
+    writeDatetime: string;
     location: string;
     currencyType: string;
     viewCount: number;
