@@ -1,14 +1,19 @@
 export default interface TradeListItem {
     
+    boardCount: string;
     boardNumber: number;
     title: string;
     itemType: string;
     tradeImage: string;
     writeDatetime: string;
-    location: string;
+    country:string;
+    state: string;
+    city: string;
+    address: string;
+    code: string;
     currencyType: string;
-    viewCount: number;
     price: number;
-    bookMark: string;
+    viewCount: string;
+    viewNumber:number;
 
 }

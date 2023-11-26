@@ -5,10 +5,7 @@ import ItineraryBoardWrite from './views/Board/Itinerary/Write';
 import Detail from './views/Board/Review/Detail/Me';
 import Search from './views/Board/Review/Search';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
-
-
 import Landingpage from 'components/Main/Landingpage';
-
 import Write from 'views/Board/Review/Write';
 import MyPage from 'views/User/MyPage';
 import LogBook from 'views/User/LogBook';
@@ -23,6 +20,7 @@ import { getSignInUserRequest } from 'apis';
 import { GetSignInUserResponseDto } from 'apis/dto/response/user';
 import ResponseDto from 'apis/dto/response';
 import { User } from 'types';
+import TradeLatestList from 'components/TradeListItem/TradeLatestList';
 
 //          component: Application 컴포넌트         //
 function App() {
@@ -98,7 +96,7 @@ function App() {
             <Route path={BOARD_REVIEW_DETAIL_PATH(':boardNumber')} element={<Detail/>} /> 
           </Route>
           <Route path={BOARD_TRADE_MAIN_PATH()}>
-            <Route index element={<></>} />
+            <Route index element={<TradeLatestList/>} />
             <Route path='search-list/:searchWord' element={<></>} />
             <Route path='write' element={<></>} />
             <Route path='update/:boardNumber' element={<></>} />
