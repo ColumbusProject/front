@@ -13,5 +13,6 @@ export const BOARD_ITINERARY_WRITE_PATH = () => 'write';
 export const BOARD_REVIEW_MAIN_PATH = () => 'review';
 export const BOARD_REVIEW_DETAIL_PATH = (boardNumber: number | string) => `detail/${boardNumber}`;
 export const BOARD_REVIEW_UPDATE_PATH = (boardNumber: number | string) => `update/${boardNumber}`;
+export const BOARD_REVIEW_WRITE_PATH = () => 'write';
 
 export const BOARD_TRADE_MAIN_PATH = () => 'trade';
