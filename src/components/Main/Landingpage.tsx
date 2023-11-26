@@ -95,6 +95,7 @@ export default function Landingpage() {
       <div className="comment">
          Come live out your ideal vacation with us
        </div>
+       
        <div className="parent">
          <div className="text1">MY TRIP</div>
          <div className="text2">ITINERARY</div>
