@@ -186,7 +186,7 @@ export default function ItineraryBoardWrite() {
         // gotoPage(page);
       }
 
-      // component: 검색 결과 아이템 컴포넌트  //
+      // component: 지도 검색 결과 아이템 컴포넌트  //
       const SearchResultItem = ({index, place}: {index: number, place: PlaceType}) => {
 
         return (
