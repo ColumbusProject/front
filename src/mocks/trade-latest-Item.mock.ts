@@ -5,7 +5,7 @@ const tradeLatestList: TradeLatestList[] = [
     {   
         boardCount:"No.1",
         boardNumber: 1,
-        tradeImage: '{blanket.jpg}',
+        tradeImage: 'https://m.livin.co.kr/web/product/extra/big/202107/a35050ad7c6bb70ef8dee32b54945814.jpg',
         title: '무릎담요 같이 생긴 비치타올 판매합니다.',
         itemType: '판매용',
         currencyType : 'KRW',
@@ -21,8 +21,9 @@ const tradeLatestList: TradeLatestList[] = [
     },
 
     {
+        boardCount:"No.2",
         boardNumber: 2,
-        tradeImage:'{swimming suit.jpg}',
+        tradeImage:'https://m.swim.co.kr/file_data/ganaswim20/2022/11/08/f6e6af07302d93116346f9109be0b128.jpg',
         title: '수영복 무료 나눔.',
         itemType: '무료나눔',
         currencyType : 'KRW',

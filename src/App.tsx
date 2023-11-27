@@ -20,7 +20,7 @@ import { getSignInUserRequest } from 'apis';
 import { GetSignInUserResponseDto } from 'apis/dto/response/user';
 import ResponseDto from 'apis/dto/response';
 import { User } from 'types';
-import TradeLatestList from 'components/TradeListItem/TradeLatestList';
+import TradeLatestList from 'components/Trade/TradeLatestList';
 
 //          component: Application 컴포넌트         //
 function App() {
