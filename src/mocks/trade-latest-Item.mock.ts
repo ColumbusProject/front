@@ -21,7 +21,7 @@ const tradeLatestList: TradeLatestList[] = [
     },
 
     {
-        boardCount:"No.2",
+        boardCount: "No.2",
         boardNumber: 2,
         tradeImage:'https://m.swim.co.kr/file_data/ganaswim20/2022/11/08/f6e6af07302d93116346f9109be0b128.jpg',
         title: '수영복 무료 나눔.',
