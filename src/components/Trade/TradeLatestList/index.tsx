@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { TradeListItem } from "types";
 
 //          interface: Props          //
@@ -14,7 +15,18 @@ const Card = (props: Props) => {
   const { state, city, address, code} = props;
   const { currencyType, price, viewCount, viewNumber } = props;
 
-  //          event handler: 북마크 클릭 이벤트 처리          //
+ //           function: 네비게이트 함수          //
+  const navigator = useNavigate();
+
+
+  //          event handler: 게시물 아이템 클릭 이벤트 처리 함수       // 
+    const onClickHandler = () => {
+        navigator(boardNumber);
+    }
+ 
+  
+
+  //          event handler: 북마크 클릭 이벤트 처리 함수         //
   const onBookMarkClick = () => {
 
   }
@@ -22,7 +34,7 @@ const Card = (props: Props) => {
   //          render: Card 상자 렌더링          //
   return (
 
-    <div className="cards">
+    <div className="cards" onClick={onClickHandler}>
       <div className="card">
         <div className="imagecard">{tradeImage} </div>
         <div className="bookmark"></div>
