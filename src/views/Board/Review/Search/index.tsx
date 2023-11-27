@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { ChangeEvent, KeyboardEvent, useEffect, useState } from 'react'
 import './style.css';
 import { usePagination } from '../../../../hooks';
 import { BoardListItem } from 'types'; 
@@ -7,10 +7,11 @@ import Pagination from 'components/Pagination';
 import { useNavigate, useParams } from 'react-router-dom';
 import ResponseDto from 'apis/dto/response';
 import GetSearchBoardListResponseDto from 'apis/dto/response/board/get-search-board-list-.response.dto';
+import { BOARD_REVIEW_SEARCH_PATH } from 'constant';
 
 export default function Search() {
     //          state: 검색어 path variable 상태          //
-    const {word} = useParams();
+    const {searchWord} = useParams();
 
     //          state: 페이지네이션 관련 상태          //
     const { currentPageNumber, setCurrentPageNumber, currentSectionNumber, setCurrentSectionNumber,
@@ -36,6 +37,8 @@ export default function Search() {
         setBoardList(userBoardListMock);
     },[]);
 
+    
+
   return (
     <div className='board-noresult-page'>
         <div className='board-result-page-box'>
@@ -53,7 +56,7 @@ export default function Search() {
             </div>
             <div className='divider'></div>
             <div className='board-result-page-box-content-box'>
-                <div className='board-result-page-box-content-box-search-result'><span className='search-title-emphasis'>{word}</span>{'검색 결과'}</div>
+                <div className='board-result-page-box-content-box-search-result'><span className='search-title-emphasis'>"{searchWord}" </span>{'검색 결과'}</div>
                 <div className='board-result-page-box-content-box-no-result'>{'게시글이 존재하지 않습니다.'}</div>
                 <div className='pagination'>
                     <Pagination

@@ -74,6 +74,9 @@ export const signUpRequest = async (requestBody: SignUpRequestDto) => {
     return result;
 }
 
+// description: post write API end point //
+const BOARD_REVIEW_WRITE_PATH = () => `${API_DOMAIN}/board/review/write`;
+
 // description: delete board API end point //
 const DELETE_BOARD_URL = (boardNumber: string | number) => `${API_DOMAIN}/board/review/${boardNumber}`;
 // description: get comment list API end point //
