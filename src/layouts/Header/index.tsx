@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import './style.css';
 import { AUTH_PATH, BOARD_ITINERARY_MAIN_PATH, BOARD_REVIEW_MAIN_PATH, BOARD_TRADE_MAIN_PATH, MAIN_PATH, MY_LOGBOOK_PATH, MY_PAGE_PATH, USER_PATH } from 'constant';
 import { useLoginUserStore } from 'stores';
+import { useCookies } from 'react-cookie';
 
-//          component: 보드 헤더 컴포넌트          //
+//          component: 헤더 컴포넌트          //
 export default function Header() {
 
     //          function: 네비게이트 함수          //
@@ -14,8 +15,10 @@ export default function Header() {
     const { loginUser, setLoginUser, resetLoginUser } = useLoginUserStore();
     //          state: 로그인 상태          //
     const [ isLogin, setLogin ] = useState<boolean>(true);
-    //          state: userId, nickname variable 상태          //
-    const { userId, nickname } = useParams();
+    //          state: userId path variable 상태          //
+    const { userId } = useParams();
+    //          state: cookie 상태          //
+    const [cookies, setCookie] = useCookies();
     //          state: url 상태          //
     const [ boardState, setBoardState ] =useState<string>('');
 
@@ -43,6 +46,7 @@ export default function Header() {
     const onLogOutClick = () => {
       if (userId === loginUser?.userId)
       resetLoginUser();
+      setCookie('accessToken', '', {path: MAIN_PATH(), expires: new Date()});
       navigateor(MAIN_PATH());
     }
     //          event handler: 헤더 div 클릭 이벤트 처리          //
@@ -60,6 +64,13 @@ export default function Header() {
     const onMyTradeClick = () => {
         navigateor(BOARD_TRADE_MAIN_PATH());
     }
+
+    //          Effect: 로그인 처리         //
+    useEffect(() => {
+      const isLogin = loginUser !== null;
+      setLogin(isLogin);
+    }, [loginUser]);
+
     //                  render: 헤더 컴포넌트 렌더링                    //
     return (
         <div className='header'>
@@ -76,23 +87,24 @@ export default function Header() {
               {isLogin && (
               <div className='profile-menu-box2'>
                 <div className='profile-icon' onClick={onProfileIconClick}></div>
-                <div className='nickname-text'>{'nickname'}</div>
+                <div className='nickname-text'>{loginUser?.nickname}</div>
               </div>
               )}
               <div className="dropdown">
                 <div className="icon-button">
                   <div className="hamburger2-icon"></div>
                 </div>
-                {isLogin && (
+                {isLogin ? (
                 <div className="dropdown-content">
                   <div><span className="inline-link3" onClick={onMypageClick}>마이페이지</span></div>              
                   <div><span className="inline-link4" onClick={onLogOutClick}>로그아웃</span></div>
                 </div>
-                )}
+                ): (
                 <div className="dropdown-content">
                   <div><span className="inline-link3" onClick={onSignInClick}>로그인</span></div>              
                   <div><span className="inline-link4">회원가입</span></div>
                 </div>
+                )}
               </div>
             </div>
         </div>

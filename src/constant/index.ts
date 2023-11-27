@@ -4,7 +4,7 @@ export const AUTH_PATH = () => 'auth';
 export const USER_PATH = () => 'user';
 
 export const MY_PAGE_PATH = (userId: string) => `my-page/${userId}`;
-export const MY_LOGBOOK_PATH = (userId: string) => `my-logbook/${userId}`;
+export const MY_LOGBOOK_PATH = (userId: string) => `my-logbook/${userId}`
 export const PROFILE_PATH = (userId: string) => `profile/${userId}`;
 
 export const BOARD_ITINERARY_MAIN_PATH = () => 'itinerary';
