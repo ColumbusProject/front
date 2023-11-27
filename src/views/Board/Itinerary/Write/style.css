@@ -400,7 +400,7 @@
     height: 2048px;
 
     position: absolute;
-    top: 0;
+    top: -120px;
     left: 0;
 
     z-index: 1;
@@ -518,7 +518,7 @@
     height: 2048px;
 
     position: absolute;
-    top: 0;
+    top: -120px;
     left: 0;
 
     z-index: 1;
@@ -866,4 +866,15 @@
     line-height: normal;
 
     background: #D9D9D9;
+}
+
+
+
+
+
+.info-divider {
+    width: 960px;
+    height: 120px;
+
+    border-bottom: #000 solid 1px;
 }
