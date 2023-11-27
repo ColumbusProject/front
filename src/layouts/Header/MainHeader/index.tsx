@@ -64,8 +64,7 @@ import { useLoginUserStore } from "stores";
           </div>
           ):(
           <div className="dropdown-content">
-            <div><span className="inline-link1" onClick={onSignInClick}>로그인</span></div>              
-            <div><span className="inline-link2">회원가입</span></div>
+            <div><span className="inline-link1" onClick={onSignInClick}>로그인</span></div>
           </div>
           )}
         </div>

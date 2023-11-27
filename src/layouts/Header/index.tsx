@@ -99,10 +99,9 @@ export default function Header() {
                   <div><span className="inline-link3" onClick={onMypageClick}>마이페이지</span></div>              
                   <div><span className="inline-link4" onClick={onLogOutClick}>로그아웃</span></div>
                 </div>
-                ): (
+                ):(
                 <div className="dropdown-content">
-                  <div><span className="inline-link3" onClick={onSignInClick}>로그인</span></div>              
-                  <div><span className="inline-link4">회원가입</span></div>
+                  <div><span className="inline-link3" onClick={onSignInClick}>로그인</span></div>
                 </div>
                 )}
               </div>
