@@ -5,7 +5,7 @@ import { tradeLatestList } from "mocks";
 function Test() {
     return (
         <>
-        {tradeLatestList.map(tradeLatestList => <TradeLatestList tradeLatestList={tradeLatestList}/>)}
+        {/* {tradeLatestList.map(tradeLatestList => <TradeLatestList tradeLatestList={tradeLatestList}/>)} */}
         </>
     );
 }

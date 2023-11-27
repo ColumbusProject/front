@@ -1,5 +1,5 @@
 import React from "react"
-import './style3.css';
+// import './style3.css';
 import { TradeListItem } from "types";
 
 
