@@ -870,11 +870,88 @@
 
 
 
+.scroll-wrapper {
+    display: flex;
+}
 
+#places-list {
+    margin: 0 0 0 0;
+}
 
 .info-divider {
     width: 960px;
     height: 120px;
 
+    display: flex;
+
     border-bottom: #000 solid 1px;
+}
+
+.info-item {
+    width: 840px;
+    height: 60px;
+
+    text-decoration-line: none;
+}
+
+.place-name {
+    display: flex;
+    width: 840px;
+    height: 60px;
+    flex-direction: column;
+    justify-content: center;
+
+    color: #000;
+
+    font-family: NanumGothic;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.address-name {
+    display: flex;
+    width: 840px;
+    height: 60px;
+    flex-direction: column;
+    justify-content: center;
+
+    color: #000;
+
+    font-family: NanumGothic;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.place-select-button-box {
+    width: 120px;
+    height: 120px;
+
+    display: flex;
+    align-items: center;
+}
+
+.place-select-button {
+    display: flex;
+    width: 120px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+
+    color: #FFF;
+
+    text-align: center;
+    font-family: NanumGothic;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    border: none;
+
+    border-radius: 5px;
+    background: #1178C6;
 }

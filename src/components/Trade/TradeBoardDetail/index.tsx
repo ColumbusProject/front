@@ -1,5 +1,5 @@
 import React from 'react'
-import TradeBoardDetail from './TradeBoardDetail.css';
+// import TradeBoardDetail from './TradeBoardDetail.css';
 
 
 //           compoonent: 게시글 상세보기(타인) R 컴포넌트         //

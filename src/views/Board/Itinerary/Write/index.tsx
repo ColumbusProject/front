@@ -192,8 +192,8 @@ export default function ItineraryBoardWrite() {
         return (
           <div className="info-divider">
                 <span className={`marker marker_${index+1}`}>{/*index+1*/}</span>
-                <a href={place.place_url}>
-                  <h5 className="info-item place-name">{place.place_name}</h5>
+                <a className='info-item' href={place.place_url}>
+                  <div className="place-name">{place.place_name}</div>
                   {/* {
                     place.road_address_name 
                     ? 
@@ -209,10 +209,12 @@ export default function ItineraryBoardWrite() {
                           {place.address_name}
                       </span>
                   } */}
-                  <span className="info-item address-name">{place.address_name}</span>
+                  <span className="address-name">{place.address_name}</span>
                   {/* <span className="info-item tel">{place.phone}</span> */}
                 </a>
-                <button onClick={() => onSelectClickHandler(place.place_name)}>선택</button>
+                <div className='place-select-button-box'>
+                  <button className='place-select-button' onClick={() => onSelectClickHandler(place.place_name)}>선택</button>
+                </div>  
           </div>
         )
 
@@ -235,7 +237,7 @@ export default function ItineraryBoardWrite() {
           if (status === kakao.maps.services.Status.OK) {
             setResultPlaces(data);
             displayPlaces(data);
-            displayPagination(pagination);
+            // displayPagination(pagination);
           } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
             alert('검색 결과가 존재하지 않습니다.');
             return;
@@ -333,7 +335,7 @@ export default function ItineraryBoardWrite() {
                 {resultPlaces.map((item, index) => <SearchResultItem index={index} place ={item} />)}
               </div>
             </div>
-            <div id="pagination">
+            {/* <div id="pagination">
               {pageList.map((page) => (
                 <a 
                   href='#' 
@@ -343,7 +345,7 @@ export default function ItineraryBoardWrite() {
                 </a>
               ))}
               
-            </div>
+            </div> */}
           </div>
         </div>
       )
