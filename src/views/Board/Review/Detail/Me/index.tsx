@@ -232,15 +232,15 @@ const getFavoriteListResponse = (responseBody: GetFavoriteListResponseDto | Resp
               <div className='board-detail-box-01-more' onClick={onMoreButtonClickHandler}></div>
             )}
             {showMore && (
-            <div className='more-box'>
+            <div className='board-detail-more-box'>
               <div className='more-update-button' onClick={onUpdateButtonClickHandler}>{'수정'}</div>
-              <div className='divider-01'></div>
+              <div className='divider-me-1'></div>
               <div className='more-delete-button' onClick={onDeleteButtonClickHandler}>{'삭제'}</div>
             </div>
             )}
           </div>
         </div>
-        <div className='divider'></div>
+        <div className='divider-me'></div>
         <div className='board-detail-box-02'>
           <div className='board-detail-location-icon'></div>
           <div className='board-detail-location-name'>{board?.location}</div>
@@ -261,7 +261,7 @@ const getFavoriteListResponse = (responseBody: GetFavoriteListResponseDto | Resp
           <div className='board-detail-box-04-up-down' onClick={favoriteUpDownClickHandler}></div>
           <div className='board-detail-box-04-comment'></div>
           <div className='comment-count-box'>
-              <div className='comment-count'>{commentsCount}</div>
+              <div className='comment-count1'>{commentsCount}</div>
           </div>
           <div className='board-detail-box-04-up-down' onClick={commentUpDownClickHandler}></div>
         </div>
