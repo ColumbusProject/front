@@ -10,7 +10,7 @@ interface UserStore {
 const useUserStore = create<UserStore>(set => ({
     user: null,
     setUser: (user: LoginUser | null) => {set((state) => ({ ...state, user }))},
-    resetUser: () => set(state => ({ ...StaticRange, user: null }))
+    resetUser: () => set(state => ({ ...state, user: null }))
 }));
 
 export default useUserStore;

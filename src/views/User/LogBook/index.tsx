@@ -41,7 +41,6 @@ export default function LogBook() {
 
   }
 
-
   //          render: 나의 항해 일지 컴포넌트 렌더링          //
   return (
     <div>

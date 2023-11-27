@@ -5,10 +5,7 @@ import ItineraryBoardWrite from './views/Board/Itinerary/Write';
 import Detail from './views/Board/Review/Detail/Me';
 import Search from './views/Board/Review/Search';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
-
-
 import Landingpage from 'components/Main/Landingpage';
-
 import Write from 'views/Board/Review/Write';
 import MyPage from 'views/User/MyPage';
 import LogBook from 'views/User/LogBook';
@@ -18,21 +15,22 @@ import Authentication from 'views/Authentication';
 import ItineraryMain from 'views/Board/Itinerary/Main';
 import ReviewMain from 'views/Board/Review/Main';
 import { useCookies } from 'react-cookie';
-import { useUserStore } from 'stores';
+import { useLoginUserStore, useUserStore } from 'stores';
 import { getSignInUserRequest } from 'apis';
 import { GetSignInUserResponseDto } from 'apis/dto/response/user';
 import ResponseDto from 'apis/dto/response';
 import { User } from 'types';
+import TradeLatestList from 'components/Trade/TradeLatestList';
+import Cards from 'components/Trade(willbefinal)/cards';
 
 //          component: Application 컴포넌트         //
 function App() {
   
   const { pathname } = useLocation();
-
   const navigator = useNavigate();
 
   //          state: 로그인 유저 전역 상태          //
-  const { setUser, resetUser } = useUserStore();
+  const { setLoginUser, resetLoginUser } = useLoginUserStore();
   //          state: cookie 상태          //
   const [cookies, setCookie] = useCookies();
 
@@ -41,17 +39,17 @@ function App() {
     if (!responseBody) return;
     const { code } = responseBody;
     if (code === 'AF' || code === 'NU' || code === 'DBE') {
-      resetUser();
+      resetLoginUser();
       return;
     }
     const loginUser: User = { ...(responseBody as GetSignInUserResponseDto) };
-    setUser(loginUser);
+    setLoginUser(loginUser);
   }
 
   //          effect: accessToken cookie 값이 변경될 때 마다 실행할 함수          //
   useEffect(() => {
     if (!cookies.accessToken) {
-      resetUser();
+      resetLoginUser();
       return;
     }
     getSignInUserRequest(cookies.accessToken).then(getSignInUserResponse);
@@ -78,7 +76,7 @@ function App() {
       <Route path={MAIN_PATH()}>
         <Route index element={<Landingpage />} />
         <Route path={AUTH_PATH()} element={<Authentication />} />
-        <Route path={USER_PATH()} element={<Container />}>
+        <Route path={USER_PATH()} >
           <Route path={MY_PAGE_PATH(':userId')} element={<MyPage />}/>
           <Route path={MY_LOGBOOK_PATH(':userId')} element={<LogBook />} />
         </Route>
@@ -98,7 +96,7 @@ function App() {
             <Route path={BOARD_REVIEW_DETAIL_PATH(':boardNumber')} element={<Detail/>} /> 
           </Route>
           <Route path={BOARD_TRADE_MAIN_PATH()}>
-            <Route index element={<></>} />
+            <Route index element={<Cards/>} />
             <Route path='search-list/:searchWord' element={<></>} />
             <Route path='write' element={<></>} />
             <Route path='update/:boardNumber' element={<></>} />

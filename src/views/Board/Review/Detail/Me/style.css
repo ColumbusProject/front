@@ -2,6 +2,8 @@
     min-height: 1800px;
     width: 1440px;
 
+    margin: auto;
+
     display: flex;
     justify-content: center;
     margin-left: auto;
@@ -18,6 +20,8 @@
 .board-detail-box-01 {
     height: 60px;
     width: 1320px;
+
+    margin-left: 60px;
 
     display: flex;
 }
@@ -374,12 +378,14 @@
 
 .board-detail-box-06 {
     width: 1200px;
+    height: 600px;
 
     margin-left: 60px;
 }
 
 .box-01 {
     width: 1200px;
+    height: 450px;
 }
 
 .box-01-comment-count-box {
@@ -409,8 +415,6 @@
 }
 
 .box-02 {
-    position: absolute;
-
     width: 1200px;
     height: 240px;
 
@@ -420,15 +424,14 @@
 }
 
 .box-02-01 {
-    position: absolute;
 
     width: 1172px;
     height: 165px;
 
-    background: #F2F2F2;
-
-    margin-left: 15px;
     margin-top: 15px;
+    margin-left: 14px;
+
+    background: #F2F2F2;
 }
 
 .box-02-02 {
@@ -437,10 +440,6 @@
 
     display: flex;
     align-items: center;
-    justify-content: end;
-    position: absolute;
-
-    margin-top: 180px;
 }
 
 .box-02-02-comment-write-box {
@@ -450,6 +449,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    margin-left: 1059px;
+    margin-bottom: 7px;
 
     border-radius: 30px;
     background: #000;

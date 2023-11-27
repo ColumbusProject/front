@@ -1,0 +1,347 @@
+  /* Trade Main page/
+
+  /* .cards{
+    background-color: aqua;
+    margin: auto;
+    padding: 55px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+  } */
+
+  .card {
+    background-color: white;
+    box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.25);
+    border:1px solid#d0dfff;
+    border-radius: 5px;
+    width: 370px;
+    height: 492px;
+
+  }
+
+  .imagecard {
+    position: absolute;
+    background-image: url('./asset/blacket.jpg');
+    background-size: 100% 100%;
+    border: 1px solid #C0C0C0;
+    width: 360px;
+    height: 360px;
+    z-index: 1;
+    margin: 6px 5px 0px 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* gap: 60px; */    
+  }
+
+  /* 북마크 */
+  .bookmark{
+    position: absolute;
+   background-image: url(asset/bookmark_b.jpg);
+   width: 30px;
+   height: 30px;
+   margin: 15px 15px 447px 325px;
+   z-index: 2;
+   border: none; 
+  }
+
+  .info-card{
+    background-color: none;
+    position: fixed;
+    margin-top: 366px;
+    width: 371px;
+    height: 125px;
+    flex-shrink: 0;
+    z-index: 1;
+  } 
+
+  .title{
+    display: flex;
+    margin-top: 375px;
+    margin-left: 15px;
+    width: 400px;
+    height: 23px;
+    flex-direction: column;
+    justify-content: center;
+    color: #000;
+    font-family: NanumGothic;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+  }
+
+  .boardcount{
+    position: absolute;
+    margin-left: 310px;
+    width: 30px;
+    height: 15px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #A3A3A3;
+    text-align: center;
+    font-family: NanumGothic;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+  }
+
+  .boardnumber{
+    position: absolute;
+    margin-left: 330px;
+    width: 20px;
+    height: 15px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #A3A3A3;
+    text-align: center;
+    font-family: NanumGothic;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+  }
+
+  .itemtype{
+    display: flex;
+    margin-top: 8px;
+    margin-left: 15px;
+    width: 60px;
+    height: 15px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #000;
+    font-family: NanumGothic;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .price-container{
+    display: flex;
+    margin-top:5px;
+    margin-left: 15px;
+    width: 300px;
+    height: 15px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #000;
+    font-family: NanumGothic;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+  }
+  .currencytype{
+    position: absolute;
+    width: 40px;
+    height: 15px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #000;
+    font-family: NanumGothic;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .price{
+    position:absolute;
+    flex-direction: row;
+    margin-left: 40px;
+    width: 40px;
+    height: 15px;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #000;
+    font-family: NanumGothic;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+    .address-container{
+    position:absolute;
+    margin-top:5px;
+    margin-left: 15px;
+    width: 300px;
+    height: 15px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #000;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+  }
+
+  .country {
+    position: absolute;
+    width: 62px;
+    height: 15px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #000;
+    font-family: NanumGothic;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .state{
+    position: absolute;
+    margin-left: 52px;
+    width: 62px;
+    height: 15px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #000;
+    font-family: NanumGothic;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+  }
+
+  .city{
+    position: absolute;
+    margin-left:115px;
+    width: 50px;
+    height: 15px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #000;
+    font-family: NanumGothic;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .address{
+    position: absolute;
+    margin-left: 168px;
+    width: 45px;
+    height: 15px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #000;
+    font-family: NanumGothic;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+ 
+  }
+
+  .code{
+    position:absolute;
+    margin-left: 205px;
+    width: 30px;
+    height: 15px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #000;
+    font-family: NanumGothic;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .mapicon{
+    position: absolute;
+    margin-left: 220px;
+    background-image: url(./asset/location.jpg);
+    background-size: 100%,100%;
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+  }
+
+  .viewcount-container{
+    margin-left: 15px;
+    margin-top: 30px;
+    position: absolute;
+    width: 200px;
+    height: 15px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #A3A3A3;
+    text-align: center;
+    font-family: NanumGothic;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+  }
+
+  .viewcount{
+    position: absolute;
+    width: 40px;
+    height: 15px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #A3A3A3;
+    text-align: center;
+    font-family: NanumGothic;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .viewnumber{
+    position: absolute;
+    margin-left: 40px;
+    width: 20px;
+    height: 15px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #A3A3A3;
+    text-align: center;
+    font-family: NanumGothic;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .writedatetime {
+    position: absolute;
+    margin-left: 269px;
+    width: 73px;
+    height: 20px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #A3A3A3;
+    text-align: center;
+    font-family: NanumGothic;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+  } 

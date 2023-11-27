@@ -2,6 +2,8 @@
     height: 1860px;
     width: 1440px;
 
+    margin: auto;
+
     display: flex;
     justify-content: center;
     margin-left: auto;

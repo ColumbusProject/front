@@ -1,79 +1,33 @@
-import React, { Component, useState } from 'react';
+import React from 'react';
 import './Landingpage.css';
 import backgroundVideo from 'assets/videoplayback.mp4';
-import { AUTH_PATH, MAIN_PATH, MY_PAGE_PATH } from 'constant';
-import { useNavigate } from 'react-router-dom';
 import Footer from 'layouts/Footer';
-// player 설치 명령어: npm i react-player;
+import MainHeader from 'layouts/Header/MainHeader';
+import { useNavigate } from 'react-router-dom';
+import { BOARD_ITINERARY_MAIN_PATH, BOARD_REVIEW_MAIN_PATH, BOARD_TRADE_MAIN_PATH, MY_LOGBOOK_PATH } from 'constant';
+import ItineraryMain from 'views/Board/Itinerary/Main';
 
 //          component:  메인화면 컴포넌트          //
 export default function Landingpage() {
 
-  //          function: 네비게이트 함수         //
+  //          function: navigator 함수          //
   const navigator = useNavigate();
 
-  //          state: 로그인 상태          //
-  const [isLogin, setLogin] = useState<boolean>(true);
+  //          event handler: 네비게이션 클릭 이벤트 처리          //
+  const onMyTripClick = () => {
+    navigator(MY_LOGBOOK_PATH('userId'));
+  }
 
-  //          state: 닉네임 상태          //
-  const [nickname, setNickname] = useState<string>('')
-  
-  //          component: 메인 헤더 컴포넌트         //
-  const MainHeader = () => {
+  const onItineraryClick = () => {
+    navigator(`board/itinerary`);
+  }
 
-    //          event handler: 로그인 버튼 클릭 이벤트 처리         //
-    const onSignInClick = () => {
-      navigator(AUTH_PATH())
-    }
+  const onReviewClick = () => {
+    navigator(BOARD_REVIEW_MAIN_PATH());
+  }
 
-    //          event handler: 마이페이지 버튼 클릭 이벤트 처리         //
-    const onMypageClick = () => {
-      navigator(MY_PAGE_PATH('userId'))
-    }
-
-    //          event handler: 로그아웃 버튼 클릭 이벤트 처리         //
-    const onLogOutClick = () => {
-      setLogin(false);
-      navigator(MAIN_PATH());
-    }
-
-  
-    //          render: 회원 유저 헤더 렌더링         //
-    if (isLogin)
-    return (
-      <div className='navigation'>
-        <div className="jb-text">Columbus</div>
-        <div className='profile-menu-box'>
-          <div className='profile-icon'></div>
-          <div className='nickname-text'>{'닉네임'}</div>
-          <div className="dropdown">
-            <div className="icon-button">
-              <div className="hamburger-icon"></div>
-            </div>
-            <div className="dropdown-content">
-              <div><span className="inline-link1" onClick={onMypageClick}>마이페이지</span></div>              
-              <div><span className="inline-link2" onClick={onLogOutClick}>로그아웃</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-    
-    //          render: 비회원 유저 헤더 렌더링         //
-    return (
-      <div className='navigation'>
-        <div className="jb-text">Columbus</div>
-        <div className="dropdown">
-          <div className="icon-button">
-            <div className="hamburger-icon"></div>
-          </div>
-          <div className="dropdown-content">
-            <div><span className="inline-link1" onClick={onSignInClick}>로그인</span></div>              
-            <div><span className="inline-link2">회원가입</span></div>
-          </div>
-        </div>
-      </div>
-    )
+  const onTradeClick = () => {
+    navigator(BOARD_TRADE_MAIN_PATH());
   }
 
   //          render: 메인화면 컴포넌트 렌더링          // 
@@ -93,16 +47,15 @@ export default function Landingpage() {
       </div>
       {/* bottom component */}
       <div className="comment">
-         Come live out your ideal vacation with us
-       </div>
-       
-       <div className="parent">
-         <div className="text1">MY TRIP</div>
-         <div className="text2">ITINERARY</div>
-         <div className="text3">TRAVEL REVIEW</div>
-         <div className="text4">TRAVEL TRADE</div>
-       </div>
-       <Footer />
+        Come live out your ideal vacation with us
+      </div>
+      <div className="parent">
+        <div className="text1" onClick={onMyTripClick}>MY TRIP</div>
+        <div className="text2" onClick={onItineraryClick}>ITINERARY</div>
+        <div className="text3" onClick={onReviewClick}>TRAVEL REVIEW</div>
+        <div className="text4" onClick={onTradeClick}>TRAVEL TRADE</div>
+      </div>
+      <Footer />
      </div>
     )
   }
