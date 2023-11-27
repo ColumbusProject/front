@@ -3,9 +3,32 @@ import './Landingpage.css';
 import backgroundVideo from 'assets/videoplayback.mp4';
 import Footer from 'layouts/Footer';
 import MainHeader from 'layouts/Header/MainHeader';
+import { useNavigate } from 'react-router-dom';
+import { BOARD_ITINERARY_MAIN_PATH, BOARD_REVIEW_MAIN_PATH, BOARD_TRADE_MAIN_PATH, MY_LOGBOOK_PATH } from 'constant';
+import ItineraryMain from 'views/Board/Itinerary/Main';
 
 //          component:  메인화면 컴포넌트          //
 export default function Landingpage() {
+
+  //          function: navigator 함수          //
+  const navigator = useNavigate();
+
+  //          event handler: 네비게이션 클릭 이벤트 처리          //
+  const onMyTripClick = () => {
+    navigator(MY_LOGBOOK_PATH('userId'));
+  }
+
+  const onItineraryClick = () => {
+    navigator(`board/itinerary`);
+  }
+
+  const onReviewClick = () => {
+    navigator(BOARD_REVIEW_MAIN_PATH());
+  }
+
+  const onTradeClick = () => {
+    navigator(BOARD_TRADE_MAIN_PATH());
+  }
 
   //          render: 메인화면 컴포넌트 렌더링          // 
   return (
@@ -27,10 +50,10 @@ export default function Landingpage() {
         Come live out your ideal vacation with us
       </div>
       <div className="parent">
-        <div className="text1">MY TRIP</div>
-        <div className="text2">ITINERARY</div>
-        <div className="text3">TRAVEL REVIEW</div>
-        <div className="text4">TRAVEL TRADE</div>
+        <div className="text1" onClick={onMyTripClick}>MY TRIP</div>
+        <div className="text2" onClick={onItineraryClick}>ITINERARY</div>
+        <div className="text3" onClick={onReviewClick}>TRAVEL REVIEW</div>
+        <div className="text4" onClick={onTradeClick}>TRAVEL TRADE</div>
       </div>
       <Footer />
      </div>
