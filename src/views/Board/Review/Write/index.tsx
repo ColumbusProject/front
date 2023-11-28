@@ -1,6 +1,6 @@
 import React, { useState, useRef, ChangeEvent, useEffect } from 'react'
 import './style.css';
-import { useBoardStore, useLoginUserStore } from 'stores';
+import { useBoardStore, useLoginUserStore, useUserStore } from 'stores';
 import { useNavigate } from 'react-router-dom';
 import { AUTH_PATH, MAIN_PATH, MY_PAGE_PATH } from 'constant';
 import { useCookies } from 'react-cookie';
@@ -39,11 +39,11 @@ export default function Write() {
 
   //          function: postReviewBoardResponse 처리 함수          //
   const postReviewBoardResponse = (responseBody: PostReviewBoardResponseDto | ResponseDto | null) => {
-    if(!responseBody) return;
+    if (!responseBody) return;
     const { code } = responseBody;
     if (code === 'DBE') alert('데이터베이스 오류입니다.');
     if (code === 'AF' || code === 'NU') navigator(AUTH_PATH());
-    if (code === 'VF') alert('제목과 내용, 장소는 필수입니다.');
+    if (code === 'VF') alert('제목과 내용과 장소는 필수입니다.');
     if (code !== 'SU') return;
 
     resetBoard();
@@ -54,16 +54,16 @@ export default function Write() {
 
   //          event handler: 제목 변경 이벤트 처리          //
   const onTitleChangeHandler = (event: ChangeEvent<HTMLTextAreaElement>) => {
-    const title = event.target.value;
-    setTitle(title);
+    const { value } = event.target;
+    setTitle(value);
     if (!titleRef.current) return;
     titleRef.current.style.height = 'auto';
     titleRef.current.style.height = `${titleRef.current.scrollHeight}px`;
   }
   //          event handler: 내용 변경 이벤트 처리          //
   const onContentsChangeHandler = (event: ChangeEvent<HTMLTextAreaElement>) => {
-    const contents = event.target.value;
-    setContents(contents);
+    const { value } = event.target;
+    setContents(value);
     if (!contentsTextAreaRef.current) return;
     contentsTextAreaRef.current.style.height = 'auto';
     contentsTextAreaRef.current.style.height = `${contentsTextAreaRef.current.scrollHeight}px`;
@@ -86,8 +86,8 @@ export default function Write() {
   }
   //          event handler: 장소 변경 이벤트 처리          //
   const onLocationChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
-    const location = event.target.value;
-    setLocation(location);
+    const { value } = event.target;
+    setLocation(value);
     if (!locationRef.current) return;
     locationRef.current.style.width = `80px`;
     locationRef.current.style.width = `${locationRef.current.scrollWidth}px`;
@@ -159,7 +159,7 @@ export default function Write() {
                 {show &&
                   <div className='board-write-page-location-box-container'>
                     <div className='board-write-page-location-icon'></div>
-                    <input ref={locationRef} className='board-write-page-location-text' type='text' value={location} onChange={onLocationChangeHandler} />
+                    <input ref={locationRef} className='board-write-page-location-text' value={location} type='text' onChange={onLocationChangeHandler} />
                     {/* <div className='board-write-page-location-close'></div> */}
                   </div>
                 }
