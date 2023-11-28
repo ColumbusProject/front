@@ -2,7 +2,12 @@ import React, { useState, useRef, ChangeEvent, useEffect } from 'react'
 import './style.css';
 import { useBoardStore, useLoginUserStore } from 'stores';
 import { useNavigate } from 'react-router-dom';
-import { MAIN_PATH } from 'constant';
+import { AUTH_PATH, MAIN_PATH, MY_PAGE_PATH } from 'constant';
+import { useCookies } from 'react-cookie';
+import { fileUploadRequest, postReviewBoardRequest } from 'apis';
+import { PostReviewBoardRequestDto } from 'apis/dto/request/board/travelReview';
+import { PostReviewBoardResponseDto } from 'apis/dto/response/board/travelReview';
+import ResponseDto from 'apis/dto/response';
 
 export default function Write() {
   const [show, setShow] = useState<boolean>(false);
@@ -26,8 +31,26 @@ export default function Write() {
   //          state: 로그인 유저 상태          //
   const { loginUser } = useLoginUserStore();
 
+  //          state: cookie 상태          //
+  const [cookies, setCookie] = useCookies();
+
   //          function: 네비게이트 함수           //
   const navigator = useNavigate();
+
+  //          function: postReviewBoardResponse 처리 함수          //
+  const postReviewBoardResponse = (responseBody: PostReviewBoardResponseDto | ResponseDto | null) => {
+    if(!responseBody) return;
+    const { code } = responseBody;
+    if (code === 'DBE') alert('데이터베이스 오류입니다.');
+    if (code === 'AF' || code === 'NU') navigator(AUTH_PATH());
+    if (code === 'VF') alert('제목과 내용, 장소는 필수입니다.');
+    if (code !== 'SU') return;
+
+    resetBoard();
+    if (!loginUser) return;
+    const { userId } = loginUser;
+    navigator(MY_PAGE_PATH(userId));
+  }
 
   //          event handler: 제목 변경 이벤트 처리          //
   const onTitleChangeHandler = (event: ChangeEvent<HTMLTextAreaElement>) => {
@@ -94,13 +117,30 @@ export default function Write() {
   };
 
   //          event handler: 저장 버튼 클릭 이벤트 처리 함수          //
-  const saveButtonClickHandler = () => {
+  const saveButtonClickHandler = async () => {
+    const accessToken = cookies.accessToken;
+    if (!accessToken) return;
 
+    const boardImageList: string[] = [];
+
+    for (const file of images) {
+      const data = new FormData();
+      data.append('file', file);
+
+      const url = await fileUploadRequest(data);
+      if (url) boardImageList.push(url);
+    }
+
+    const requestBody: PostReviewBoardRequestDto = {
+      title, contents, boardImageList, location
+    }
+    postReviewBoardRequest(requestBody, accessToken).then(postReviewBoardResponse);
   }
 
   //          effect: 마운트 시 실행할 함수          //
   useEffect(() => {
-    if (!loginUser) {
+    const accessToken = cookies.accessToken;
+    if (!accessToken) {
       navigator(MAIN_PATH());
       return;
     }

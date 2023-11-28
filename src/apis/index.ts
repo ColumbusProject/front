@@ -9,6 +9,8 @@ import { SignInRequestDto, SignUpRequestDto } from "./dto/request/auth";
 import { SignInResponseDto, SignUpResponseDto } from "./dto/response/auth";
 import { GetSignInUserResponseDto } from "./dto/response/user";
 import { error } from "console";
+import { PostReviewBoardRequestDto } from "./dto/request/board/travelReview";
+import { PostReviewBoardResponseDto } from "./dto/response/board/travelReview";
 
 // description: Authorizaition Header //
 const authorization = (token: string) => { 
@@ -42,6 +44,24 @@ export const signInRequest = async (requestBody: SignInRequestDto) => {
     return result;
 }
 
+// description: post review board API end point //
+const POST_REVIEW_BOARD_URL = () => `${API_DOMAIN}/board/review/write`;
+
+// description: post review board request //
+export const postReviewBoardRequest = async (requestBody: PostReviewBoardRequestDto, accessToken: string) => {
+    const result = await axios.post(POST_REVIEW_BOARD_URL(), requestBody, authorization(accessToken))
+        .then(response => {
+            const responseBody: PostReviewBoardResponseDto = response.data;
+            return responseBody;
+        })
+        .catch(error => {
+            if (!error.response) return null;
+            const responseBody: ResponseDto = error.response.data;
+            return responseBody;
+        })
+    return result;
+} 
+
 // description: sign in user API end point //
 const GET_SIGN_IN_USER_URL = () => `${API_DOMAIN}/user`;
 
@@ -57,7 +77,7 @@ export const getSignInUserRequest = async (accessToken: string) => {
             const responseBody: ResponseDto = error.response.data;
             return responseBody;
         });
-    return result
+    return result;
 }
 
 // description: FILE_DOMAIN URL //
