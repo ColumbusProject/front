@@ -113,7 +113,6 @@ export default function Write() {
   //          event handler: 장소 버튼 클릭 이벤트 처리          //
   const onButtonClickHandler = () => {
     setShow(!show);
-    console.log(show);
   };
 
   //          event handler: 저장 버튼 클릭 이벤트 처리 함수          //
@@ -130,6 +129,7 @@ export default function Write() {
       const url = await fileUploadRequest(data);
       if (url) boardImageList.push(url);
     }
+    
 
     const requestBody: PostReviewBoardRequestDto = {
       title, contents, boardImageList, location
