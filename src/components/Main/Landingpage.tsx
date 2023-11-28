@@ -23,11 +23,11 @@ export default function Landingpage() {
   }
 
   const onReviewClick = () => {
-    navigator(BOARD_REVIEW_MAIN_PATH());
+    navigator(`board/review`);
   }
 
   const onTradeClick = () => {
-    navigator(BOARD_TRADE_MAIN_PATH());
+    navigator(`board/trade`);
   }
 
   //          render: 메인화면 컴포넌트 렌더링          // 

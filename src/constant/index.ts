@@ -1,6 +1,6 @@
 export const MAIN_PATH = () => '/columbus';
 export const BOARD_PATH = () => 'board';
-export const AUTH_PATH = () => 'auth';
+export const AUTH_PATH = () => '/columbus/auth';
 export const USER_PATH = () => 'user';
 
 export const MY_PAGE_PATH = (userId: string) => `my-page/${userId}`;

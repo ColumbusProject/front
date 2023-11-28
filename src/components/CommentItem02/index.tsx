@@ -1,14 +1,14 @@
-import CommentListItem02 from 'types/interface/comment-list-item02.interface'; 
+import CommentListItem from 'types/interface/comment-list-item.interface'; 
 import './style.css';
 import dayjs from 'dayjs';
 
 interface Props {
-  commentListItem02: CommentListItem02;
+  commentListItem: CommentListItem;
 }
 
-export default function CommentItem02({commentListItem02}: Props) {
+export default function CommentItem({commentListItem}: Props) {
 
-  const {profileImage, nickname, writeDatetime, content} = commentListItem02;
+  const {profileImage, nickname, writeDatetime, content} = commentListItem;
 
   //          function: 작성일 경과시간 함수          //
   const getElapsedTime = () => {
