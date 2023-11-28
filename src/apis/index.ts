@@ -8,6 +8,7 @@ import GetFavoriteListResponseDto from "./dto/response/board/get-favorite-list.r
 import { SignInRequestDto, SignUpRequestDto } from "./dto/request/auth";
 import { SignInResponseDto, SignUpResponseDto } from "./dto/response/auth";
 import { GetSignInUserResponseDto } from "./dto/response/user";
+import { error } from "console";
 
 // description: Authorizaition Header //
 const authorization = (token: string) => { 
@@ -57,6 +58,27 @@ export const getSignInUserRequest = async (accessToken: string) => {
             return responseBody;
         });
     return result
+}
+
+// description: FILE_DOMAIN URL //
+const FILE_DOMAIN = `${DOMAIN}/file`;
+
+// description: FILE_UPLOAD URL //
+const FILE_UPLOAD_URL = () => `${FILE_DOMAIN}/upload`;
+
+const multiPartFormData = { headers: {'Content-Type': 'multipart/form-data'} };
+
+// description: file upload request //
+export const fileUploadRequest = async (data: FormData) => {
+    const result = await axios.post(FILE_UPLOAD_URL(), data, multiPartFormData)
+        .then(response => {
+            const responseBody: string = response.data;
+            return responseBody;
+        })
+        .catch(error => {
+            return null;
+        })
+    return result;
 }
 
 // description: sign up request //
