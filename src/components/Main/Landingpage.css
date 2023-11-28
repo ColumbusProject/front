@@ -1,5 +1,6 @@
 /* 배경화면 비디오*/
 body {
+  margin: 0 0 0 0;
   right: 50%;
 }
 .container {
@@ -16,7 +17,8 @@ margin: auto;
 }
 
 .jb-video {
-  margin-top: -1.4%;
+  
+  margin-top: -60px;
   object-fit: cover;
   width: 1440px;
   height: 780px;

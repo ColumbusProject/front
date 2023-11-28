@@ -17,8 +17,7 @@ import ResponseDto from 'apis/dto/response';
 import { BOARD_REVIEW_UPDATE_PATH, MAIN_PATH } from 'constant';
 import { AUTH_PATH } from 'constant';
 import { Board, CommentListItem, FavoriteListItem } from 'types';
-import CommentListItem02 from 'types/interface/comment-list-item02.interface';
-import LoginUser02 from 'types/interface/login-user02.interface';
+import LoginUser from 'types/interface/login-user.interface';
 import { deleteBoardRequest, getCommentListRequest, getFavoriteListRequest, postCommentRequest } from 'apis';
 import GetFavoriteListResponseDto from 'apis/dto/response/board/get-favorite-list.response.dto';
 
@@ -34,7 +33,7 @@ export default function Detail() {
     viewPageNumberList,
     totalSection,
     setBoardList,
-  } = usePagination<CommentListItem02>(3);
+  } = usePagination<CommentListItem>(3);
 
   useEffect(() => {
     setBoardList(commentListMock);
@@ -44,7 +43,7 @@ export default function Detail() {
 
   const { user } = useUserStore();
 
-  const [loginUserMock, setUser] = useState<LoginUser02[]>([]); 
+  const [loginUserMock, setUser] = useState<LoginUser[]>([]); 
 
   const [board, setBoard] = useState<Board | null>(null);
 
@@ -58,7 +57,7 @@ export default function Detail() {
 
   const [commentList, setCommentList] = useState<CommentListItem[]>([]);
 
-  const [commentList02, setCommentList02] = useState<CommentListItem02[]>([]);
+  const [commentList02, setCommentList02] = useState<CommentListItem[]>([]);
 
   const navigator = useNavigate();
 
@@ -281,7 +280,7 @@ const getFavoriteListResponse = (responseBody: GetFavoriteListResponseDto | Resp
             <div className='box-01-comment-count-box'>
               <div className='box-01-comment-count'>{`댓글 ${commentsCount}`}</div>
             </div>
-            {viewBoardList.map(item => <CommentItem02 commentListItem02={item} />)}
+            {viewBoardList.map(item => <CommentItem02 commentListItem={item} />)}
           </div>
           <div className='pagination'>
           <Pagination
