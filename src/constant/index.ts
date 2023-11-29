@@ -7,6 +7,7 @@ export const PROFILE_PATH = (userId: string) => `user/profile/${userId}`;
 
 export const BOARD_ITINERARY_MAIN_PATH = () => 'board/itinerary';
 export const BOARD_ITINERARY_WRITE_PATH = () => 'write';
+export const BOARD_ITINERARY_DETAIL_PATH = (boardNumber: number | string) => `detail/${boardNumber}`;
 
 export const BOARD_REVIEW_MAIN_PATH = () => 'board/review';
 export const BOARD_REVIEW_DETAIL_PATH = (boardNumber: number | string) => `detail/${boardNumber}`;
