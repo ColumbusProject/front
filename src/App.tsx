@@ -10,7 +10,7 @@ import Write from 'views/Board/Review/Write';
 import MyPage from 'views/User/MyPage';
 import LogBook from 'views/User/LogBook';
 import Container from 'layouts/Container';
-import { AUTH_PATH, BOARD_ITINERARY_MAIN_PATH, BOARD_PATH, BOARD_REVIEW_DETAIL_PATH, BOARD_REVIEW_MAIN_PATH, BOARD_REVIEW_UPDATE_PATH, BOARD_TRADE_MAIN_PATH, MAIN_PATH, MY_LOGBOOK_PATH, MY_PAGE_PATH, USER_PATH } from 'constant';
+import { AUTH_PATH, BOARD_ITINERARY_MAIN_PATH, BOARD_REVIEW_DETAIL_PATH, BOARD_REVIEW_MAIN_PATH, BOARD_REVIEW_UPDATE_PATH, BOARD_REVIEW_WRITE_PATH, BOARD_TRADE_MAIN_PATH, MAIN_PATH, MY_LOGBOOK_PATH, MY_PAGE_PATH } from 'constant';
 import Authentication from 'views/Authentication';
 import ItineraryMain from 'views/Board/Itinerary/Main';
 import ReviewMain from 'views/Board/Review/Main';
@@ -75,11 +75,9 @@ function App() {
       <Route path={MAIN_PATH()}>
         <Route index element={<Landingpage />} />
         <Route path={AUTH_PATH()} element={<Authentication />} />
-        <Route path={USER_PATH()} >
-          <Route path={MY_PAGE_PATH(':userId')} element={<MyPage />}/>
-          <Route path={MY_LOGBOOK_PATH(':userId')} element={<LogBook />} />
-        </Route>
-        <Route path={BOARD_PATH()} element={<Container />}>
+        <Route path={MY_PAGE_PATH(':userId')} element={<MyPage />}/>
+        <Route path={MY_LOGBOOK_PATH(':userId')} element={<LogBook />} />
+        <Route element={<Container />}>
           <Route path={BOARD_ITINERARY_MAIN_PATH()}>
             <Route index element={<ItineraryMain />} />
             <Route path='search-list/:searchWord' element={<></>} />
@@ -90,7 +88,7 @@ function App() {
           <Route path={BOARD_REVIEW_MAIN_PATH()}>
             <Route index element={<ReviewMain />} />
             <Route path='search-list/:searchWord' element={<Search />} />
-            <Route path='write' element={<Write />} />
+            <Route path={BOARD_REVIEW_WRITE_PATH()} element={<Write />} />
             <Route path={BOARD_REVIEW_UPDATE_PATH(':boardNumber')} element={<></>} />
             <Route path={BOARD_REVIEW_DETAIL_PATH(':boardNumber')} element={<Detail/>} /> 
           </Route>

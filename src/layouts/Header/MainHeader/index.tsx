@@ -30,11 +30,18 @@ import { useLoginUserStore } from "stores";
       const { userId } = loginUser;
       navigator(`user/my-page/${userId}`);
     }
+    //          event handler: 프로필아이콘 클릭 이벤트 처리          //
+    const onProfileIconClick = () => {
+      if (!loginUser) return;
+      const { userId } = loginUser;
+      navigator(`user/my-page/${userId}`);
+  }
     //          event handler: 로그아웃 버튼 클릭 이벤트 처리         //
     const onLogOutClick = () => {
       if (userId === loginUser?.userId)
       resetLoginUser();
       setCookie('accessToken', '', {path: MAIN_PATH(), expires: new Date()});
+      alert('로그아웃 되었습니다');
       navigator(MAIN_PATH());
     }
     //          Effect: 로그인 처리         //
@@ -49,7 +56,7 @@ import { useLoginUserStore } from "stores";
         <div className="jb-text">{'Columbus'}</div>
         {isLogin && (
         <div className='profile-menu-box'>
-          <div className='profile-icon'></div>
+          <div className='profile-icon' onClick={onProfileIconClick}></div>
           <div className='nickname-text'>{loginUser?.nickname}</div>
         </div>
         )}
