@@ -1,6 +1,6 @@
-import { User } from "types";
+import { LoginUser } from "types";
 import ResponseDto from "..";
 
-export default interface GetSignInUserResponseDto extends ResponseDto, User {
+export default interface GetSignInUserResponseDto extends ResponseDto, LoginUser {
 
 }
