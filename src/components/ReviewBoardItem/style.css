@@ -65,10 +65,12 @@
 }
 
 .board-list-item-card-title-box-02-profile-image {
-    background-image: url(assets/image\ 953.png);
 
     display: flex;
     align-items: center;
+
+    background-position: 50% 50%;
+    background-size: 100%;
 
     width: 45px;
     height: 45px;
@@ -149,7 +151,13 @@
 }
 
 .board-list-item-card-content-box-content-image {
-    background-image: url(assets/image\ 960.png);
+    
+    border-radius: 15px;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+
+    background-repeat: no-repeat;
 
     width: 120px;
     height: 120px;
