@@ -1,14 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import { BOARD_REVIEW_DETAIL_PATH } from "../../constant";
-import { BoardListItem } from "types"; 
+import { ReviewBoardListItem } from "types"; 
+import defaultProfileImage from "assets/default-profile-image.png";
 import './style.css';
 
 //          interface: 게시물 리스트 아이템 컴포넌트 Props          //
 interface Props {
-    boardItem: BoardListItem
+    boardItem: ReviewBoardListItem
 }
 
-export default function BoardItem({boardItem}: Props) {
+export default function ReviewBoardItem({boardItem}: Props) {
     const {boardNumber, title, content, boardTitleImage, favoriteCount, commentCount, viewCount, writeDatetime, writerNickname,
     writerProfileImage, location} = boardItem;
 
@@ -27,7 +28,7 @@ export default function BoardItem({boardItem}: Props) {
                 <div className="board-list-item-card-title-box-02">
                     <div className="board-list-item-card-title-box-02-location"></div>
                     <div className="board-list-item-card-title-box-02-text">{location}</div>
-                    <div className="board-list-item-card-title-box-02-profile-image">{writerProfileImage}</div>
+                    <div className="board-list-item-card-title-box-02-profile-image" style={{backgroundImage: `url(${writerProfileImage ? writerProfileImage : defaultProfileImage})`}}></div>
                     <div className="board-list-tiem-card-title-box-02-box">
                         <div className="nickname-datetime">{`${writerNickname} | ${writeDatetime}`}</div>
                     </div>
@@ -38,7 +39,7 @@ export default function BoardItem({boardItem}: Props) {
             <div className="divider"></div>
             <div className="board-list-item-card-content-box">
                 <div className="board-list-item-card-content-box-content">{content}</div>
-                <div className="board-list-item-card-content-box-content-image"></div>
+                <div className="board-list-item-card-content-box-content-image" style={{backgroundImage: `url(${boardTitleImage})`}}></div>
             </div>
         </div>
     )

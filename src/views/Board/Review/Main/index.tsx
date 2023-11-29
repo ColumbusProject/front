@@ -1,8 +1,8 @@
 import React, { ChangeEvent, KeyboardEvent, useEffect, useState } from 'react'
 import './style.css';
-import { BoardListItem } from 'types';
-import { userBoardListMock } from '../../../../mocks';
-import BoardItem from '../../../../components/BoardItem';
+import { ReviewBoardListItem } from 'types';
+import { reviewBoardListMock } from '../../../../mocks';
+import ReviewBoardItem from '../../../../components/ReviewBoardItem';
 import { usePagination } from '../../../../hooks';
 import Pagination from '../../../../components/Pagination';
 import { useNavigate } from 'react-router-dom';
@@ -27,10 +27,10 @@ export default function ReviewMain() {
         viewPageNumberList,
         totalSection,
         setBoardList,
-        } = usePagination<BoardListItem>(5);
+        } = usePagination<ReviewBoardListItem>(5);
 
     useEffect(() => {
-        setBoardList(userBoardListMock);
+        setBoardList(reviewBoardListMock);
     }, []);
 
  //          component: 검색 컴포넌트          //
@@ -86,7 +86,7 @@ return (
             <div className='board-main-box-divider'></div>
             <div className='board-main-box-container-02'>
                 <div className='board-main-box-container-02-01'>
-                    {viewBoardList.map(item => <BoardItem boardItem={item} />)}
+                    {viewBoardList.map(item => <ReviewBoardItem boardItem={item} />)}
                 </div>
                 <div className='board-main-box-container-02-02'>
                     <div className='board-main-box-container-02-02-pagination-box'>

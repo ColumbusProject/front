@@ -1,8 +1,8 @@
 import React, { ChangeEvent, KeyboardEvent, useEffect, useState } from 'react'
 import './style.css';
 import { usePagination } from '../../../../hooks';
-import { BoardListItem } from 'types'; 
-import { userBoardListMock } from '../../../../mocks';
+import { ReviewBoardListItem } from 'types'; 
+import { reviewBoardListMock } from '../../../../mocks';
 import Pagination from 'components/Pagination';
 import { useNavigate, useParams } from 'react-router-dom';
 import ResponseDto from 'apis/dto/response';
@@ -15,7 +15,7 @@ export default function Search() {
 
     //          state: 페이지네이션 관련 상태          //
     const { currentPageNumber, setCurrentPageNumber, currentSectionNumber, setCurrentSectionNumber,
-        viewBoardList, viewPageNumberList, totalSection, setBoardList } = usePagination<BoardListItem>(5);
+        viewBoardList, viewPageNumberList, totalSection, setBoardList } = usePagination<ReviewBoardListItem>(5);
     //          state: 검색 결과 개수 상태          //
     const [count, setCount] = useState<number>(0);
 
@@ -34,7 +34,7 @@ export default function Search() {
     
     // useEffect : 특정 상태가 변경될 때마다 실행되는 코드를 지정하는 함수
     useEffect(()=>{
-        setBoardList(userBoardListMock);
+        setBoardList(reviewBoardListMock);
     },[]);
 
     

@@ -63,6 +63,10 @@
 
     font-size: 24px;
     font-weight: 400;
+
+    border: none;
+    outline: none;
+    background: none;
 }
 
 .board-search-icon {
