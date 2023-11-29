@@ -12,7 +12,7 @@ import { usePagination } from 'hooks';
 import PostCommentRequestDto from 'apis/dto/request/board/travelReview/post-comment.request.dto';
 import GetCommentListResponseDto from 'apis/dto/response/board/get-comment-list.response.dto';
 import axios from 'axios';
-import { useUserStore } from 'stores';
+import { useLoginUserStore } from 'stores';
 import ResponseDto from 'apis/dto/response';
 import { BOARD_REVIEW_UPDATE_PATH, MAIN_PATH } from 'constant';
 import { AUTH_PATH } from 'constant';
@@ -41,7 +41,7 @@ export default function Detail() {
 
   const { boardNumber } = useParams();
 
-  const { user } = useUserStore();
+  const { loginUser } = useLoginUserStore();
 
   const [loginUserMock, setUser] = useState<LoginUser[]>([]); 
 
@@ -104,8 +104,8 @@ export default function Detail() {
     const board: Board = { ...responseBody as GetBoardResponseDto };
     setBoard(board);
 
-    if (!user) return;
-    const isWriter = user.userId === board.writerId;
+    if (!loginUser) return;
+    const isWriter = loginUser.userId === board.writerId;
     setWriter(isWriter);
   };
 
@@ -156,7 +156,7 @@ const getFavoriteListResponse = (responseBody: GetFavoriteListResponseDto | Resp
   const {favoriteList} = responseBody as GetFavoriteListResponseDto;
   setFavoriteList(favoriteList);
 
-  const isFavorite = favoriteList.findIndex(item => item.userId === user?.userId) ! == -1;
+  const isFavorite = favoriteList.findIndex(item => item.userId === loginUser?.userId) ! == -1;
   setFavorite(isFavorite);
 }
 

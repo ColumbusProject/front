@@ -1,9 +1,9 @@
-import { User } from "types";
+import { LoginUser } from "types";
 import { create } from "zustand";
 
 interface LoginUserStore {
-  loginUser: User | null;
-  setLoginUser: (loginUser: User) => void;
+  loginUser: LoginUser | null;
+  setLoginUser: (loginUser: LoginUser) => void;
   resetLoginUser: () => void;
 };
 

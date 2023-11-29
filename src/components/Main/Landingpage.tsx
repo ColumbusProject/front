@@ -4,24 +4,28 @@ import backgroundVideo from 'assets/videoplayback.mp4';
 import Footer from 'layouts/Footer';
 import MainHeader from 'layouts/Header/MainHeader';
 import { useNavigate } from 'react-router-dom';
-import { BOARD_ITINERARY_MAIN_PATH, BOARD_REVIEW_MAIN_PATH, BOARD_TRADE_MAIN_PATH, MY_LOGBOOK_PATH } from 'constant';
-import ItineraryMain from 'views/Board/Itinerary/Main';
+import { useLoginUserStore } from 'stores';
 
 //          component:  메인화면 컴포넌트          //
 export default function Landingpage() {
+
+  //          state: 로그인 유저 상태         //
+  const { loginUser, setLoginUser, resetLoginUser } = useLoginUserStore();
 
   //          function: navigator 함수          //
   const navigator = useNavigate();
 
   //          event handler: 네비게이션 클릭 이벤트 처리          //
   const onMyTripClick = () => {
-    navigator(MY_LOGBOOK_PATH('userId'));
+    if (!loginUser) return;
+    const { userId } = loginUser;
+    navigator(`user/my-logbook/${userId}`);
   }
 
   const onItineraryClick = () => {
     navigator(`board/itinerary`);
   }
-
+  
   const onReviewClick = () => {
     navigator(`board/review`);
   }

@@ -10,17 +10,16 @@ import Write from 'views/Board/Review/Write';
 import MyPage from 'views/User/MyPage';
 import LogBook from 'views/User/LogBook';
 import Container from 'layouts/Container';
-import { AUTH_PATH, BOARD_ITINERARY_MAIN_PATH, BOARD_PATH, BOARD_REVIEW_DETAIL_PATH, BOARD_REVIEW_MAIN_PATH, BOARD_REVIEW_UPDATE_PATH, BOARD_TRADE_MAIN_PATH, MAIN_PATH, MY_LOGBOOK_PATH, MY_PAGE_PATH, USER_PATH } from 'constant';
+import { AUTH_PATH, BOARD_ITINERARY_DETAIL_PATH, BOARD_ITINERARY_MAIN_PATH, BOARD_ITINERARY_WRITE_PATH, BOARD_REVIEW_DETAIL_PATH, BOARD_REVIEW_MAIN_PATH, BOARD_REVIEW_SEARCH_PATH, BOARD_REVIEW_UPDATE_PATH, BOARD_REVIEW_WRITE_PATH, BOARD_TRADE_MAIN_PATH, MAIN_PATH, MY_LOGBOOK_PATH, MY_PAGE_PATH } from 'constant';
 import Authentication from 'views/Authentication';
 import ItineraryMain from 'views/Board/Itinerary/Main';
 import ReviewMain from 'views/Board/Review/Main';
 import { useCookies } from 'react-cookie';
-import { useLoginUserStore, useUserStore } from 'stores';
+import { useLoginUserStore } from 'stores';
 import { getSignInUserRequest } from 'apis';
 import { GetSignInUserResponseDto } from 'apis/dto/response/user';
 import ResponseDto from 'apis/dto/response';
-import { User } from 'types';
-import TradeLatestList from 'components/Trade/TradeLatestList';
+import { LoginUser } from 'types';
 import Cards from 'components/Trade(willbefinal)/cards';
 
 //          component: Application 컴포넌트         //
@@ -30,7 +29,7 @@ function App() {
   const navigator = useNavigate();
 
   //          state: 로그인 유저 전역 상태          //
-  const { setLoginUser, resetLoginUser } = useLoginUserStore();
+  const { loginUser, setLoginUser, resetLoginUser } = useLoginUserStore();
   //          state: cookie 상태          //
   const [cookies, setCookie] = useCookies();
 
@@ -42,7 +41,7 @@ function App() {
       resetLoginUser();
       return;
     }
-    const loginUser: User = { ...(responseBody as GetSignInUserResponseDto) };
+    const loginUser: LoginUser = { ...(responseBody as GetSignInUserResponseDto) };
     setLoginUser(loginUser);
   }
 
@@ -76,22 +75,20 @@ function App() {
       <Route path={MAIN_PATH()}>
         <Route index element={<Landingpage />} />
         <Route path={AUTH_PATH()} element={<Authentication />} />
-        <Route path={USER_PATH()} >
-          <Route path={MY_PAGE_PATH(':userId')} element={<MyPage />}/>
-          <Route path={MY_LOGBOOK_PATH(':userId')} element={<LogBook />} />
-        </Route>
-        <Route path={BOARD_PATH()} element={<Container />}>
+        <Route path={MY_PAGE_PATH(':userId')} element={<MyPage />}/>
+        <Route path={MY_LOGBOOK_PATH(':userId')} element={<LogBook />} />
+        <Route element={<Container />}>
           <Route path={BOARD_ITINERARY_MAIN_PATH()}>
             <Route index element={<ItineraryMain />} />
             <Route path='search-list/:searchWord' element={<></>} />
-            <Route path='write' element={<ItineraryBoardWrite />} />
+            <Route path={BOARD_ITINERARY_WRITE_PATH()} element={<ItineraryBoardWrite />} />
             <Route path='update/:boardNumber' element={<></>} />
-            <Route path=':boardNumber' element={<ItineraryDetail />} />
+            <Route path={BOARD_ITINERARY_DETAIL_PATH(':boardNumber')} element={<ItineraryDetail />} />
           </Route>
           <Route path={BOARD_REVIEW_MAIN_PATH()}>
             <Route index element={<ReviewMain />} />
-            <Route path='search-list/:searchWord' element={<Search />} />
-            <Route path='write' element={<Write />} />
+            <Route path={BOARD_REVIEW_SEARCH_PATH(':serchWord')} element={<Search />} />
+            <Route path={BOARD_REVIEW_WRITE_PATH()} element={<Write />} />
             <Route path={BOARD_REVIEW_UPDATE_PATH(':boardNumber')} element={<></>} />
             <Route path={BOARD_REVIEW_DETAIL_PATH(':boardNumber')} element={<Detail/>} /> 
           </Route>
