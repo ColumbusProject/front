@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import './style.css';
-import { AUTH_PATH, BOARD_ITINERARY_MAIN_PATH, BOARD_REVIEW_MAIN_PATH, BOARD_TRADE_MAIN_PATH, MAIN_PATH, MY_LOGBOOK_PATH, MY_PAGE_PATH, USER_PATH } from 'constant';
+import { AUTH_PATH, BOARD_ITINERARY_MAIN_PATH, BOARD_REVIEW_MAIN_PATH, BOARD_TRADE_MAIN_PATH, MAIN_PATH, MY_LOGBOOK_PATH, MY_PAGE_PATH } from 'constant';
 import { useLoginUserStore } from 'stores';
 import { useCookies } from 'react-cookie';
 
@@ -18,7 +18,7 @@ export default function Header() {
     //          state: userId path variable 상태          //
     const { userId } = useParams();
     //          state: cookie 상태          //
-    const [cookies, setCookie] = useCookies();
+    const [ cookies, setCookie ] = useCookies();
     //          state: url 상태          //
     const [ boardState, setBoardState ] =useState<string>('');
 

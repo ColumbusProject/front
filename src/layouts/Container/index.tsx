@@ -1,4 +1,3 @@
-import { AUTH_PATH, BOARD_ITINERARY_MAIN_PATH, BOARD_PATH, MAIN_PATH } from "constant";
 import Footer from "layouts/Footer";
 import Header from "layouts/Header";
 import { Outlet, useLocation } from "react-router-dom";
