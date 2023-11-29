@@ -15,12 +15,11 @@ import Authentication from 'views/Authentication';
 import ItineraryMain from 'views/Board/Itinerary/Main';
 import ReviewMain from 'views/Board/Review/Main';
 import { useCookies } from 'react-cookie';
-import { useLoginUserStore, useUserStore } from 'stores';
+import { useLoginUserStore } from 'stores';
 import { getSignInUserRequest } from 'apis';
 import { GetSignInUserResponseDto } from 'apis/dto/response/user';
 import ResponseDto from 'apis/dto/response';
-import { User } from 'types';
-import TradeLatestList from 'components/Trade/TradeLatestList';
+import { LoginUser } from 'types';
 import Cards from 'components/Trade(willbefinal)/cards';
 
 //          component: Application 컴포넌트         //
@@ -30,7 +29,7 @@ function App() {
   const navigator = useNavigate();
 
   //          state: 로그인 유저 전역 상태          //
-  const { setLoginUser, resetLoginUser } = useLoginUserStore();
+  const { loginUser, setLoginUser, resetLoginUser } = useLoginUserStore();
   //          state: cookie 상태          //
   const [cookies, setCookie] = useCookies();
 
@@ -42,7 +41,7 @@ function App() {
       resetLoginUser();
       return;
     }
-    const loginUser: User = { ...(responseBody as GetSignInUserResponseDto) };
+    const loginUser: LoginUser = { ...(responseBody as GetSignInUserResponseDto) };
     setLoginUser(loginUser);
   }
 

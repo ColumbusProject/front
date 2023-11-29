@@ -1,6 +1,6 @@
 import React, { useState, useRef, ChangeEvent, useEffect } from 'react'
 import './style.css';
-import { useBoardStore, useLoginUserStore, useUserStore } from 'stores';
+import { useBoardStore, useLoginUserStore } from 'stores';
 import { useNavigate } from 'react-router-dom';
 import { AUTH_PATH, MAIN_PATH, MY_PAGE_PATH } from 'constant';
 import { useCookies } from 'react-cookie';

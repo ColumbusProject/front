@@ -28,7 +28,7 @@ import { useLoginUserStore } from "stores";
     const onMypageClick = () => {
       if (!loginUser) return;
       const { userId } = loginUser;
-      navigator(MY_PAGE_PATH(userId));
+      navigator(`user/my-page/${userId}`);
     }
     //          event handler: 로그아웃 버튼 클릭 이벤트 처리         //
     const onLogOutClick = () => {
