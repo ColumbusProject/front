@@ -5,6 +5,7 @@ import Footer from 'layouts/Footer';
 import MainHeader from 'layouts/Header/MainHeader';
 import { useNavigate } from 'react-router-dom';
 import { useLoginUserStore } from 'stores';
+import { AUTH_PATH, BOARD_ITINERARY_MAIN_PATH, BOARD_REVIEW_MAIN_PATH, BOARD_TRADE_MAIN_PATH, MY_LOGBOOK_PATH } from 'constant';
 
 //          component:  메인화면 컴포넌트          //
 export default function Landingpage() {
@@ -17,21 +18,25 @@ export default function Landingpage() {
 
   //          event handler: 네비게이션 클릭 이벤트 처리          //
   const onMyTripClick = () => {
-    if (!loginUser) return;
+    if (!loginUser) {
+      alert('로그인이 필요한 서비스입니다');
+      navigator(AUTH_PATH());
+      return;
+    } 
     const { userId } = loginUser;
-    navigator(`user/my-logbook/${userId}`);
+    navigator(MY_LOGBOOK_PATH(userId));
   }
 
   const onItineraryClick = () => {
-    navigator(`board/itinerary`);
+    navigator(BOARD_ITINERARY_MAIN_PATH());
   }
   
   const onReviewClick = () => {
-    navigator(`board/review`);
+    navigator(BOARD_REVIEW_MAIN_PATH());
   }
 
   const onTradeClick = () => {
-    navigator(`board/trade`);
+    navigator(BOARD_TRADE_MAIN_PATH());
   }
 
   //          render: 메인화면 컴포넌트 렌더링          // 
